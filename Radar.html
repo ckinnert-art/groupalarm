@@ -23,7 +23,7 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 .tl .lb{position:absolute;bottom:calc(var(--H)*.36 + var(--H)*.25);transform:translateX(-50%);font-size:clamp(8px,2.6vh,13px);color:#6f7686;font-weight:500}
 .tl .jt{position:absolute;top:calc(var(--H)*.68);transform:translateX(-50%);font-size:clamp(8px,2.6vh,13px);color:#555c6b}
 .tl .nl{position:absolute;bottom:calc(var(--H)*.36);height:calc(var(--H)*.55);width:1.5px;background:#7d8493}
-.tl .hd{position:absolute;bottom:calc(var(--H)*.36 + 1.5px);width:0;height:0;transition:left .12s linear}
+.tl .hd{position:absolute;bottom:calc(var(--H)*.36 + 1.5px);width:0;height:0}
 .tl .knob{position:absolute;width:clamp(12px,5vh,19px);height:clamp(12px,5vh,19px);left:calc(clamp(12px,5vh,19px)/-2);bottom:calc(clamp(12px,5vh,19px)/-2);border:2.5px solid #0b3a8a;background:#fff;border-radius:50%;box-sizing:border-box}
 .tl .stem{position:absolute;left:-1px;bottom:0;width:2px;height:calc(var(--H)*.64 + 3px);background:#262b36}
 .tl .bub{position:absolute;left:0;transform:translateX(-50%);bottom:calc(var(--H)*.64 + 3px);background:#edf0f9;border:1px solid #c3c7d2;border-bottom:0;border-radius:6px 6px 0 0;padding:1px clamp(5px,1.4vw,9px);font-size:clamp(10px,3.4vh,17px);font-weight:700;color:#1b2030;white-space:nowrap}
@@ -47,7 +47,7 @@ if(!window.L){mapEl.innerHTML='<div class="msg">Karte konnte nicht geladen werde
 var ADDR=q.get("adresse")||"Wischhofweg 24, 23569 Lübeck";
 function geo(cb){if(q.get("lat"))return cb();try{var c=JSON.parse(localStorage.getItem("geoDummersdorf1"));if(c&&c.length==2){lat=c[0];lon=c[1];return cb()}}catch(e){}
 fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=de&q="+encodeURIComponent(ADDR)).then(function(x){return x.json()}).then(function(j){if(j&&j[0]){lat=parseFloat(j[0].lat);lon=parseFloat(j[0].lon);try{localStorage.setItem("geoDummersdorf1",JSON.stringify([lat,lon]))}catch(e){}}cb()}).catch(function(){cb()})}
-var map=L.map("map",{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,keyboard:false}).setView([lat,lon],zoom);
+var map=L.map("map",{zoomControl:false,fadeAnimation:false,zoomAnimation:false,markerZoomAnimation:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,keyboard:false}).setView([lat,lon],zoom);
 var E="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
 L.tileLayer(E+"World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,attribution:"Karte © Esri, HERE, OSM | Radar © DWD"}).addTo(map);
 map.createPane("radar").style.zIndex=250;
@@ -59,7 +59,8 @@ L.tileLayer(E+"World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:12
 var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e03131",fillOpacity:1}).addTo(map);
 var LUE=[53.8655,10.6866];
 function cen(){return q.get("lat")?[lat,lon]:[(lat+LUE[0])/2,(lon+LUE[1])/2]}
-geo(function(){map.setView(cen(),zoom);home.setLatLng([lat,lon])});
+var geoReady=false,onGeo=null;
+geo(function(){map.setView(cen(),zoom);home.setLatLng([lat,lon]);geoReady=true;if(onGeo)onGeo()});
 L.circleMarker(LUE,{radius:4,color:"#fff",weight:2,fillColor:"#fff",fillOpacity:1}).addTo(map).bindTooltip("Lübeck",{permanent:true,direction:"bottom",offset:[0,6],className:"luebeck"});
 try{map.attributionControl.setPosition("topright")}catch(e){}
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
@@ -110,10 +111,11 @@ function loadFrames(){
     });
   });
 }
-function clearFrames(){clearTimeout(timer);frames.forEach(function(f){map.removeLayer(f.l)});frames=[]}
+var curI=-1;function clearFrames(){clearTimeout(timer);frames.forEach(function(f){map.removeLayer(f.l);if(f.blob)try{URL.revokeObjectURL(f.url)}catch(e){}});frames=[];curI=-1}
 function rel(t){var m=Math.round((t-Date.now())/60000);if(m>=-2&&m<=2)return "jetzt";return m<0?"vor "+(-m)+" Min":"in "+m+" Min"}
 function show(i){
-  frames.forEach(function(f,k){f.l.setOpacity(k===i?OP:0)});
+  if(curI>=0&&frames[curI])frames[curI].l.setOpacity(0);
+  frames[i].l.setOpacity(OP);curI=i;
   var f=frames[i];
   if(hd){hd.style.left=((f.t-T0)/(TN-T0)*100)+"%";var fc=f.t>Date.now()+150000;bub.textContent=hm(new Date(f.t));bub.className="bub"+(fc?" f":"")}
 }
@@ -140,34 +142,51 @@ function play(){
   idx=(idx+1)%frames.length;
   timer=setTimeout(play,wait);
 }
+function imgUrl(name,t){
+  var b=map.getBounds(),sw=L.CRS.EPSG3857.project(b.getSouthWest()),ne=L.CRS.EPSG3857.project(b.getNorthEast()),z=map.getSize();
+  return WMS+"?service=WMS&version=1.1.1&request=GetMap&layers=dwd:"+name+"&styles=&format=image/png&transparent=true&srs=EPSG:3857&bbox="+[sw.x,sw.y,ne.x,ne.y].join(",")+"&width="+z.x+"&height="+z.y+"&TIME="+new Date(t).toISOString().replace(".000Z","Z");
+}
+/* Bild laden und im Speicher halten, damit beim Abspielen nichts nachlädt */
+function loadImg(url){
+  return fetch(url).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){return {url:URL.createObjectURL(b),blob:true}})
+  .catch(function(){return new Promise(function(res){var im=new Image();im.onload=function(){res({url:url,blob:false})};im.onerror=function(){res(null)};im.src=url})});
+}
+var busy=false;
 function start(best){
   var now=Date.now(),t=best.t,ni=0;
   t.forEach(function(x,i){if(x<=now+150000)ni=i});
-  /* ca. 10-Minuten-Raster um "jetzt": bis 60 Min zurück, bis 120 Min voraus */
+  /* 5-Minuten-Raster um "jetzt": bis 60 Min zurück, bis 120 Min voraus */
   var step=Math.max(1,Math.round(5*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
   var pick=[];for(var k=-12;k<=24;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
-  if(ni+0<t.length&&pick.indexOf(t[ni])<0)pick.push(t[ni]);
+  if(pick.indexOf(t[ni])<0)pick.push(t[ni]);
   pick.sort(function(a,b){return a-b});
-  if(pick.length<2)return;
+  if(pick.length<2)throw 0;
   log("Layer: "+best.name+"  Stufen: "+t.length+"  von "+new Date(t[0]).toISOString()+" bis "+new Date(t[t.length-1]).toISOString()+"  gezeigt: "+pick.length);
-  clearFrames();
-  pick.forEach(function(x){
-    var l=L.tileLayer.wms(WMS,{layers:"dwd:"+best.name,format:"image/png",transparent:true,version:"1.3.0",opacity:0,pane:"radar",crossOrigin:false,TIME:new Date(x).toISOString().replace(".000Z","Z")}).addTo(map);
-    frames.push({t:x,l:l});
+  var jobs=pick.map(function(x){return loadImg(imgUrl(best.name,x))});
+  var all=Promise.all(jobs),limit=new Promise(function(r){setTimeout(function(){r(null)},40000)});
+  return Promise.race([all,limit]).then(function(res){
+    if(!res)throw 0;
+    var ok=[];res.forEach(function(r,i){if(r)ok.push({t:pick[i],url:r.url,blob:r.blob})});
+    if(ok.length<2)throw 0;
+    /* erst jetzt austauschen: kein Flackern beim Neuladen */
+    clearFrames();
+    var bounds=map.getBounds();
+    ok.forEach(function(f){f.l=L.imageOverlay(f.url,bounds,{pane:"radar",opacity:0,interactive:false}).addTo(map);frames.push(f)});
+    map.removeLayer(staticLayer);
+    buildTl();idx=0;play();
   });
-  map.removeLayer(staticLayer);
-  buildTl();
-  idx=0;
-  setTimeout(play,3000); /* Bilder zuerst vorladen lassen */
 }
 function refresh(){
-  loadFrames().then(start).catch(function(){
+  if(busy)return;busy=true;
+  loadFrames().then(start).then(function(){busy=false},function(){busy=false;throw 0}).catch(function(){
     /* Ohne Zeitstufen: Standbild des DWD neu laden */
+    if(frames.length)return; /* laufende Animation behalten */
     clearFrames();tl.style.display="none";st.style.display="";hd=null;if(!map.hasLayer(staticLayer))staticLayer.addTo(map);
     staticLayer.setParams({_t:Date.now()});stampStatic();
   });
 }
-refresh();
+if(geoReady)refresh();else onGeo=refresh;
 setInterval(refresh,5*60*1000);
 })();
-</script></body></html>
+</script><script>setTimeout(function(){try{var u=new URL(location.href);u.searchParams.set("_r",Date.now());location.replace(u.toString())}catch(e){location.reload()}},60*60*1000);</script>
+</body></html>

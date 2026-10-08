@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wetter Dummersdorf</title>
+<style>
+:root{--head:#4f4f4c;--bg:#424242;--txt:#f1f3f5;--dim:#aeb4bb;--line:rgba(255,255,255,.14);--ok:#4cc38a}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--txt);font-family:Roboto,"Segoe UI",Arial,sans-serif;overflow:hidden}
+.w{height:100%;display:flex;flex-direction:column;container-type:size}
+h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:17vh;font-size:clamp(16px,8vh,44px);line-height:1;padding:0 1vw;background:var(--head)}
+.main{flex:1;min-height:0;display:flex;flex-direction:column;padding:1.2vh 1.4vw 0;gap:1.2vh}
+/* aktuell */
+.now{flex:none;display:flex;align-items:center;justify-content:center;gap:3vw}
+.now svg.ic{height:clamp(44px,15vh,110px);width:auto}
+.temp{font-size:clamp(34px,14vh,100px);font-weight:300;line-height:1}
+.temp small{font-size:.45em;font-weight:400;color:var(--dim)}
+.cond{font-size:clamp(11px,3vh,22px);color:var(--dim);margin-top:.4vh}
+.wind{display:flex;align-items:center;gap:1vw;border-left:1px solid var(--line);padding-left:3vw}
+.wind svg{height:clamp(30px,10vh,70px);width:auto}
+.wv{font-size:clamp(16px,6vh,40px);font-weight:500;line-height:1}
+.wv small{font-size:.5em;color:var(--dim);font-weight:400}
+.wd{white-space:nowrap;font-size:clamp(11px,3vh,22px);color:var(--dim);margin-top:.4vh}
+/* stündlich */
+.hours{flex:1 1 0;min-height:0;display:flex;flex-direction:column;border-top:1px solid var(--line);padding-top:1vh}
+.hr{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;align-items:center;text-align:center;font-size:clamp(10px,2.7vh,19px)}
+.hr .t{color:var(--dim)}
+.hr svg{height:clamp(16px,5vh,36px);width:auto;margin:auto}
+.hr .p{color:#7cc0ff;min-height:1.2em}
+.hr .tp{font-weight:500}
+#curve{flex:1;min-height:20px;width:100%}
+/* Tage */
+.days{flex:none;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border-top:1px solid var(--line)}
+.day{text-align:center;padding:1vh .4vw;border-left:1px solid var(--line);font-size:clamp(11px,3vh,22px)}
+.day:first-child{border-left:0}
+.day b{display:block;font-weight:700}
+.day svg{height:clamp(22px,7vh,50px);width:auto;margin:.4vh auto;display:block}
+.day .mm{font-weight:500}.day .mm span{color:var(--dim);font-weight:400}
+.day .pp{color:#7cc0ff;font-size:.85em;min-height:1.2em}
+/* Warnung */
+.warn{flex:none;padding:1vh 1.4vw;background:rgba(0,0,0,.2);font-size:clamp(11px,3vh,22px);display:flex;flex-direction:column;gap:.4vh}
+.warn div{display:flex;gap:.6em;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.warn i{flex:none;width:.9em;height:.9em;border-radius:50%;display:inline-block}
+.warn .none{color:var(--ok)}
+.foot{flex:none;text-align:right;font-size:clamp(8px,1.8vh,13px);color:var(--dim);padding:0 1.4vw .6vh;background:rgba(0,0,0,.2)}
+.msg{margin:auto;color:var(--dim);font-size:clamp(12px,3vh,22px);text-align:center;padding:2vh}
+</style>
+</head>
+<body>
+<div class="w">
+  <h1 id="h">Wetter Dummersdorf</h1>
+  <div class="main" id="main"><div class="msg">Lade Wetter …</div></div>
+  <div class="warn" id="warn"></div>
+  <div class="foot" id="foot">Quelle: Deutscher Wetterdienst</div>
+</div>
+<script>
+(function(){
+var q=new URLSearchParams(location.search);
+var lat=parseFloat(q.get("lat"))||53.945, lon=parseFloat(q.get("lon"))||10.745;
+var name=q.get("name")||"Dummersdorf";
+if(q.get("bg"))document.documentElement.style.setProperty("--bg","#"+q.get("bg"));
+if(q.get("head"))document.documentElement.style.setProperty("--head","#"+q.get("head"));
+document.getElementById("h").textContent="Wetter "+name;
+var ADDR=q.get("adresse")||"Wischhofweg 24, 23569 Lübeck";
+function geo(cb){if(q.get("lat"))return cb();try{var c=JSON.parse(localStorage.getItem("geoDummersdorf1"));if(c&&c.length==2){lat=c[0];lon=c[1];return cb()}}catch(e){}
+fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=de&q="+encodeURIComponent(ADDR)).then(function(x){return x.json()}).then(function(j){if(j&&j[0]){lat=parseFloat(j[0].lat);lon=parseFloat(j[0].lon);try{localStorage.setItem("geoDummersdorf1",JSON.stringify([lat,lon]))}catch(e){}}cb()}).catch(function(){cb()})}
+var API="https://api.brightsky.dev";
+var TZ="Europe/Berlin";
+
+/* ---------- Icons (inline SVG) ---------- */
+var SUN='<circle cx="32" cy="32" r="11" fill="#ffd43b"/><g stroke="#ffd43b" stroke-width="4" stroke-linecap="round"><path d="M32 8v7M32 49v7M8 32h7M49 32h7M15 15l5 5M44 44l5 5M15 49l5-5M44 20l5-5"/></g>';
+var MOON='<path d="M40 12a20 20 0 1 0 12 32A17 17 0 0 1 40 12z" fill="#dfe6f2"/>';
+var CLOUD='<path d="M20 48a11 11 0 0 1 1-22 15 15 0 0 1 28 5 9 9 0 0 1-2 17z" fill="#c9ced6"/>';
+var CLOUDD='<path d="M20 48a11 11 0 0 1 1-22 15 15 0 0 1 28 5 9 9 0 0 1-2 17z" fill="#8b929c"/>';
+var RAIN='<g stroke="#5aaeff" stroke-width="4" stroke-linecap="round"><path d="M22 52l-3 7M33 52l-3 7M44 52l-3 7"/></g>';
+var SNOW='<g fill="#fff"><circle cx="22" cy="56" r="2.6"/><circle cx="33" cy="58" r="2.6"/><circle cx="44" cy="56" r="2.6"/></g>';
+var BOLT='<path d="M35 40l-8 12h7l-3 10 12-15h-7l4-7z" fill="#ffd43b"/>';
+var FOG='<g stroke="#b5bbc4" stroke-width="4" stroke-linecap="round"><path d="M12 24h40M8 34h44M14 44h38"/></g>';
+var WINDI='<g fill="none" stroke="#c9ced6" stroke-width="4" stroke-linecap="round"><path d="M8 26h30a6 6 0 1 0-6-6M8 38h40a6 6 0 1 1-6 6M8 32h20"/></g>';
+function sm(x){return '<g transform="translate(-6 -8) scale(.8)">'+x+'</g>'}
+function icon(k,cls){
+  var b;
+  switch(k){
+    case "clear-day":b=SUN;break;
+    case "clear-night":b=MOON;break;
+    case "partly-cloudy-day":b=sm(SUN)+'<g transform="translate(8 6)">'+CLOUD+'</g>';break;
+    case "partly-cloudy-night":b=sm(MOON)+'<g transform="translate(8 6)">'+CLOUD+'</g>';break;
+    case "cloudy":b=CLOUD;break;
+    case "fog":b=FOG;break;
+    case "wind":b=WINDI;break;
+    case "rain":b=CLOUDD+RAIN;break;
+    case "sleet":b=CLOUDD+RAIN.replace('M44 52l-3 7','')+'<circle cx="44" cy="56" r="2.6" fill="#fff"/>';break;
+    case "snow":b=CLOUDD+SNOW;break;
+    case "hail":b=CLOUDD+SNOW;break;
+    case "thunderstorm":b=CLOUDD+BOLT;break;
+    default:b=CLOUD;
+  }
+  return '<svg class="'+(cls||'')+'" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">'+b+'</svg>';
+}
+var COND={"clear-day":"Sonnig","clear-night":"Klar","partly-cloudy-day":"Heiter","partly-cloudy-night":"Wolkig","cloudy":"Bewölkt","fog":"Nebel","wind":"Windig","rain":"Regen","sleet":"Schneeregen","snow":"Schnee","hail":"Hagel","thunderstorm":"Gewitter"};
+var RANK={"thunderstorm":9,"hail":8,"snow":7,"sleet":6,"rain":5,"fog":4,"wind":3,"cloudy":2,"partly-cloudy-day":1,"partly-cloudy-night":1,"clear-day":0,"clear-night":0};
+
+/* ---------- Hilfen ---------- */
+var DIRS=["Nord","Nordost","Ost","Südost","Süd","Südwest","West","Nordwest"];
+function dirName(d){return DIRS[Math.round(((d%360)+360)%360/45)%8]}
+function arrow(d){ /* Pfeil zeigt, wohin der Wind weht */
+  return '<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="29" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="2.5"/><g transform="rotate('+(d+180)+' 32 32)"><path d="M32 8l11 26H35v22h-6V34H21z" fill="#6db3ff"/></g></svg>';
+}
+function part(d,t){var p=new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",hourCycle:"h23",weekday:"short"}).formatToParts(d),o={};p.forEach(function(x){o[x.type]=x.value});return o}
+function dayKey(d){var o=part(d);return o.year+"-"+o.month+"-"+o.day}
+function hourOf(d){return +part(d).hour}
+var WD={Mon:"Mo",Tue:"Di",Wed:"Mi",Thu:"Do",Fri:"Fr",Sat:"Sa",Sun:"So"};
+function wd(d){return WD[part(d).weekday]}
+function r(x){return Math.round(x)}
+function get(u){return fetch(u,{cache:"no-store"}).then(function(x){if(!x.ok)throw new Error(x.status);return x.json()})}
+function ymd(d){return dayKey(d)}
+
+/* ---------- Wetter ---------- */
+function loadWeather(){
+  var now=new Date(), end=new Date(now.getTime()+4*86400000);
+  var u1=API+"/current_weather?lat="+lat+"&lon="+lon+"&tz="+TZ;
+  var u2=API+"/weather?lat="+lat+"&lon="+lon+"&date="+ymd(now)+"&last_date="+ymd(end)+"&tz="+TZ;
+  return Promise.all([get(u1),get(u2)]).then(function(a){render(a[0],a[1],now)});
+}
+function render(cur,fc,now){
+  var c=cur.weather||{}, rows=(fc.weather||[]);
+  var main=document.getElementById("main");
+  var ci=c.icon||"cloudy";
+  var gust=c.wind_gust_speed_10||c.wind_gust_speed_30||0;
+  var ws=c.wind_speed_10!=null?c.wind_speed_10:(c.wind_speed_30||0);
+  var wdg=c.wind_direction_10!=null?c.wind_direction_10:(c.wind_direction_30||0);
+  var h='<div class="now">'+icon(ci,"ic")+
+    '<div><div class="temp">'+(c.temperature!=null?r(c.temperature):"–")+'<small>°C</small></div><div class="cond">'+(COND[ci]||"")+'</div></div>'+
+    '<div class="wind">'+arrow(wdg)+'<div><div class="wv">'+r(ws)+'<small> km/h</small></div><div class="wd">'+dirName(wdg)+(gust>ws+5?' · Böen '+r(gust):'')+'</div></div></div></div>';
+
+  /* nächste 12 Stunden */
+  var start=new Date(Math.floor(now.getTime()/3600000)*3600000);
+  var hrs=rows.filter(function(x){return new Date(x.timestamp)>=start}).slice(0,12);
+  if(hrs.length){
+    var T=hrs.map(function(x){return x.temperature});
+    h+='<div class="hours"><div class="hr">'+hrs.map(function(x,i){var d=new Date(x.timestamp);return '<div class="t">'+(i===0?'Jetzt':hourOf(d))+'</div>'}).join('')+'</div>'+
+       '<div class="hr">'+hrs.map(function(x){return icon(x.icon)}).join('')+'</div>'+
+       '<canvas id="curve"></canvas>'+
+       '<div class="hr">'+hrs.map(function(x){return '<div class="tp">'+r(x.temperature)+'°</div>'}).join('')+'</div>'+
+       '<div class="hr">'+hrs.map(function(x){return '<div class="p">'+(x.precipitation>=0.1?x.precipitation.toFixed(1).replace('.',',')+' mm':'')+'</div>'}).join('')+'</div></div>';
+  }
+
+  /* Tage */
+  var by={},order=[];
+  rows.forEach(function(x){var d=new Date(x.timestamp),k=dayKey(d);if(!by[k]){by[k]={d:d,t:[],p:0,ic:[]};order.push(k)}by[k].t.push(x.temperature);by[k].p+=x.precipitation||0;var hh=hourOf(d);if(hh>=7&&hh<=21)by[k].ic.push(x.icon)});
+  var todayK=dayKey(now);
+  var days=order.slice(0,4).map(function(k,i){
+    var o=by[k],ic=o.ic.slice().sort(function(a,b){return (RANK[b]||0)-(RANK[a]||0)});
+    var show=ic.length?(ic[0]==="clear-night"?"clear-day":ic[0]==="partly-cloudy-night"?"partly-cloudy-day":ic[0]):"cloudy";
+    /* nur wenn Niederschlag-Icons wirklich vorkommen, das schlimmste wählen; sonst häufigstes */
+    if((RANK[show]||0)<5){var cnt={};o.ic.forEach(function(z){cnt[z]=(cnt[z]||0)+1});var best=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a]})[0];if(best)show=best.replace("night","day").replace("clear-day","clear-day")}
+    var lab=k===todayK?"Heute":(i===1?"Morgen":wd(o.d));
+    return '<div class="day"><b>'+lab+'</b>'+icon(show)+'<div class="mm">'+r(Math.max.apply(null,o.t))+'° <span>'+r(Math.min.apply(null,o.t))+'°</span></div><div class="pp">'+(o.p>=0.2?o.p.toFixed(1).replace('.',',')+' mm':'')+'</div></div>';
+  });
+  h+='<div class="days">'+days.join('')+'</div>';
+  main.innerHTML=h;
+  /* Hauptbereich ohne seitlichen Rand für die Tage */
+  if(hrs.length)drawCurve(hrs.map(function(x){return x.temperature}));
+  var d=new Date();
+  document.getElementById("foot").textContent="Quelle: Deutscher Wetterdienst · Abruf "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);
+}
+function drawCurve(T){
+  var cv=document.getElementById("curve");if(!cv)return;
+  var w=cv.clientWidth,h=cv.clientHeight,dpr=window.devicePixelRatio||1;
+  cv.width=w*dpr;cv.height=h*dpr;var g=cv.getContext("2d");g.scale(dpr,dpr);
+  var mn=Math.min.apply(null,T),mx=Math.max.apply(null,T);if(mx-mn<2){mx+=1;mn-=1}
+  var n=T.length,colw=w/n,pad=8;
+  var pts=T.map(function(v,i){return [colw*(i+.5),pad+(h-2*pad)*(1-(v-mn)/(mx-mn))]});
+  var gr=g.createLinearGradient(0,0,0,h);gr.addColorStop(0,"rgba(255,170,70,.35)");gr.addColorStop(1,"rgba(255,170,70,0)");
+  g.beginPath();g.moveTo(pts[0][0],h);pts.forEach(function(p){g.lineTo(p[0],p[1])});g.lineTo(pts[n-1][0],h);g.closePath();g.fillStyle=gr;g.fill();
+  g.beginPath();pts.forEach(function(p,i){i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])});g.strokeStyle="#ffb44d";g.lineWidth=2.5;g.lineJoin="round";g.stroke();
+  g.fillStyle="#ffb44d";pts.forEach(function(p){g.beginPath();g.arc(p[0],p[1],3,0,7);g.fill()});
+}
+window.addEventListener("resize",function(){load(true)});
+
+/* ---------- Warnung ---------- */
+var SEV={minor:["#ffd43b",1],moderate:["#ff9f1c",2],severe:["#ff4d4d",3],extreme:["#c2185b",4]};
+function hm(d){var o=part(d);return +o.hour}
+function when(a){
+  var now=new Date(),on=new Date(a.onset||a.effective),ex=new Date(a.expires||a.end||0);
+  var t=dayKey(now),tm=dayKey(new Date(now.getTime()+86400000));
+  function dl(d){var k=dayKey(d);return k===t?"heute":k===tm?"morgen":wd(d)}
+  if(on<=now)return "jetzt bis "+dl(ex)+" "+hm(ex)+" Uhr";
+  return dl(on)+" ab "+hm(on)+" Uhr";
+}
+function loadWarn(){
+  return get(API+"/alerts?lat="+lat+"&lon="+lon+"&tz="+TZ).then(function(j){
+    var now=new Date(),lim=new Date(now.getTime()+48*3600000);
+    var a=(j.alerts||[]).filter(function(x){var ex=new Date(x.expires||x.end||0),on=new Date(x.onset||x.effective);return ex>now&&on<lim});
+    a.sort(function(x,y){return ((SEV[y.severity]||[0,0])[1])-((SEV[x.severity]||[0,0])[1])});
+    var el=document.getElementById("warn");
+    if(!a.length){el.innerHTML='<div class="none">✓ Keine aktuelle Unwetterwarnung</div>';return}
+    el.innerHTML=a.slice(0,2).map(function(x){var c=(SEV[x.severity]||["#ffd43b"])[0];return '<div><i style="background:'+c+'"></i><b>'+(x.event_de||x.headline_de||"Warnung")+'</b><span style="color:var(--dim)">· '+when(x)+'</span></div>'}).join('');
+  });
+}
+
+var lastData=null;
+function load(redrawOnly){
+  if(redrawOnly&&lastData){render(lastData[0],lastData[1],new Date());return}
+  loadWeather().catch(function(){var m=document.getElementById("main");if(!m.querySelector(".now"))m.innerHTML='<div class="msg">Wetterdaten nicht erreichbar</div>'});
+  loadWarn().catch(function(){document.getElementById("warn").innerHTML='<div style="color:var(--dim)">Warnungen nicht abrufbar</div>'});
+}
+/* Daten für Resize merken */
+var _r=render;render=function(c,f,n){lastData=[c,f];_r(c,f,n)};
+geo(function(){load();setInterval(load,10*60*1000)});
+})();
+</script>
+</body>
+</html>

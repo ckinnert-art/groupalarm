@@ -13,6 +13,7 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 #map{flex:1;min-height:0;background:#1d2026}
 .leaflet-container{font-family:inherit}
 .stand{position:absolute;right:6px;bottom:6px;z-index:1000;background:rgba(20,24,34,.75);color:#dfe3f0;font-size:clamp(10px,1.8vh,15px);padding:2px 8px;border-radius:4px}
+.bar{position:absolute;left:6px;bottom:6px;z-index:1000;display:flex;gap:3px;align-items:flex-end}.bar i{display:block;width:clamp(4px,.9vw,9px);height:clamp(4px,.9vw,9px);border-radius:50%;background:rgba(255,255,255,.28)}.bar i.past{background:rgba(255,255,255,.6)}.bar i.on{background:#fff;transform:scale(1.35)}
 .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-align:center;padding:20px}
 .leaflet-control-attribution{font-size:9px !important;background:rgba(20,24,34,.6) !important;color:#aab !important}
 .leaflet-control-attribution a{color:#cdd !important}
@@ -33,15 +34,81 @@ fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycod
 var map=L.map("map",{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,keyboard:false}).setView([lat,lon],zoom);
 var E="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
 L.tileLayer(E+"World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,attribution:"Karte © Esri, HERE, OSM | Radar © DWD"}).addTo(map);
-var radar=L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms",{layers:"dwd:Niederschlagsradar",format:"image/png",transparent:true,version:"1.3.0",opacity:.75,crossOrigin:false});
-radar.addTo(map);
-L.tileLayer(E+"World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,opacity:.8}).addTo(map);
+map.createPane("radar").style.zIndex=250;
+var lp=map.createPane("lab");lp.style.zIndex=260;lp.style.pointerEvents="none";
+var WMS="https://maps.dwd.de/geoserver/dwd/wms",LAYER="dwd:Niederschlagsradar",OP=.75;
+function mk(extra){var o={layers:LAYER,format:"image/png",transparent:true,version:"1.3.0",opacity:OP,pane:"radar",crossOrigin:false};for(var k in extra)o[k]=extra[k];return L.tileLayer.wms(WMS,o)}
+var staticLayer=mk({}).addTo(map);
+L.tileLayer(E+"World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,opacity:.8,pane:"lab"}).addTo(map);
 var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e03131",fillOpacity:1}).addTo(map);
 geo(function(){map.setView([lat,lon],zoom);home.setLatLng([lat,lon])});
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
 var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);
-function stamp(){var d=new Date();st.textContent="Abruf "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
-stamp();
-setInterval(function(){radar.setParams({_t:Date.now()});stamp();},5*60*1000);
+var bar=document.createElement("div");bar.className="bar";mapEl.appendChild(bar);
+function hm(d){return new Intl.DateTimeFormat("de-DE",{timeZone:"Europe/Berlin",hour:"2-digit",minute:"2-digit"}).format(d)}
+var frames=[],idx=0,timer=null,loadedAt=new Date();
+function stampStatic(){st.textContent="Abruf "+hm(new Date())}
+stampStatic();
+/* Zeitstufen aus den Capabilities lesen */
+function dur(p){var m=/^P(?:T)?(?:(\d+)H)?(?:(\d+)M)?$/.exec(p||"");if(!m)return 5*60000;return ((+m[1]||0)*60+(+m[2]||0))*60000||5*60000}
+function parseTimes(xml){
+  var doc=new DOMParser().parseFromString(xml,"text/xml"),dims=doc.getElementsByTagName("Dimension"),out=[];
+  for(var i=0;i<dims.length;i++){
+    if(String(dims[i].getAttribute("name")).toLowerCase()!=="time")continue;
+    var txt=(dims[i].textContent||"").trim();if(!txt)continue;
+    txt.split(",").forEach(function(p){
+      p=p.trim();if(!p)return;
+      var r=p.split("/");
+      if(r.length>=2){var a=Date.parse(r[0]),z=Date.parse(r[1]),step=dur(r[2]);if(isNaN(a)||isNaN(z))return;
+        for(var t=z,n=0;t>=a&&n<40;t-=step,n++)out.push(t)}
+      else{var t1=Date.parse(p);if(!isNaN(t1))out.push(t1)}
+    });
+    break;
+  }
+  out.sort(function(x,y){return x-y});
+  return out.filter(function(t,i){return i===0||t!==out[i-1]});
+}
+function getCaps(u){return fetch(u,{cache:"no-store"}).then(function(x){if(!x.ok)throw new Error(x.status);return x.text()})}
+function loadFrames(){
+  var u1="https://maps.dwd.de/geoserver/dwd/Niederschlagsradar/wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now();
+  var u2="https://maps.dwd.de/geoserver/dwd/wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now();
+  return getCaps(u1).then(parseTimes).then(function(t){if(t.length<2)throw 0;return t}).catch(function(){return getCaps(u2).then(parseTimes)});
+}
+function clearFrames(){clearTimeout(timer);frames.forEach(function(f){map.removeLayer(f.l)});frames=[]}
+function show(i){
+  frames.forEach(function(f,k){f.l.setOpacity(k===i?OP:0)});
+  var f=frames[i],last=i===frames.length-1;
+  st.textContent=hm(new Date(f.t))+" Uhr"+(last?" · aktuell":"");
+  var d=bar.children;for(var k=0;k<d.length;k++)d[k].className=k===i?"on":(k<i?"past":"");
+}
+function play(){
+  if(!frames.length)return;
+  show(idx);
+  var wait=idx===frames.length-1?2800:550;
+  idx=(idx+1)%frames.length;
+  timer=setTimeout(play,wait);
+}
+function start(times){
+  var lastT=times[times.length-1],now=Date.now();
+  var ts=times.filter(function(t){return t>=lastT-65*60000&&t<=now+15*60000});
+  if(ts.length<2)return;
+  clearFrames();bar.innerHTML="";
+  ts.forEach(function(t){
+    var l=mk({TIME:new Date(t).toISOString().replace(".000Z","Z"),opacity:0}).addTo(map);
+    frames.push({t:t,l:l});bar.appendChild(document.createElement("i"));
+  });
+  map.removeLayer(staticLayer);
+  idx=0;
+  setTimeout(play,2500); /* Bilder zuerst vorladen lassen */
+}
+function refresh(){
+  loadFrames().then(start).catch(function(){
+    /* Ohne Zeitstufen: Standbild des DWD neu laden */
+    clearFrames();bar.innerHTML="";if(!map.hasLayer(staticLayer))staticLayer.addTo(map);
+    staticLayer.setParams({_t:Date.now()});stampStatic();
+  });
+}
+refresh();
+setInterval(refresh,5*60*1000);
 })();
 </script></body></html>

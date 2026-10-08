@@ -167,11 +167,10 @@ function getModel(){
 function start(best){
   var now=Date.now(),t=best.t,ni=0;
   t.forEach(function(x,i){if(x<=now+150000)ni=i});
-  /* 5-Minuten-Raster um "jetzt": bis 60 Min zurück, bis 120 Min voraus */
-  var step=Math.max(1,Math.round(10*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
-  var pick=[];for(var k=-6;k<=12;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
-  if(pick.indexOf(t[ni])<0)pick.push(t[ni]);
-  pick.sort(function(a,b){return a-b});
+  /* Zeitfenster fest: 60 Min zurück bis 120 Min voraus, höchstens alle 10 Minuten ein Bild */
+  var cand=t.filter(function(x){return x>=now-65*60000&&x<=now+125*60000});
+  var pick=[],lastK=-1e15;
+  cand.forEach(function(x){if(x-lastK>=9*60000){pick.push(x);lastK=x}});
   if(pick.length<2)throw 0;
   var items=pick.map(function(x){return {t:x,name:best.name}});
   var endNow=pick[pick.length-1];

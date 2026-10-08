@@ -9,7 +9,7 @@
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--txt);font-family:Roboto,"Segoe UI",Arial,sans-serif;overflow:hidden}
 .w{height:100%;display:flex;flex-direction:column;container-type:size}
-h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:17vh;font-size:clamp(16px,8vh,44px);line-height:1;padding:0 1vw;background:var(--head)}
+h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:min(24vh,64px);font-size:clamp(16px,min(9.5vh,38px),44px);line-height:1;padding:0 1vw;background:var(--head)}
 .main{flex:1;min-height:0;display:flex;flex-direction:column;padding:1.2vh 1.4vw 0;gap:1.2vh}
 /* aktuell */
 .now{flex:none;display:flex;align-items:center;justify-content:center;gap:3vw}
@@ -23,13 +23,13 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 .wv small{font-size:.5em;color:var(--dim);font-weight:400}
 .wd{white-space:nowrap;font-size:clamp(11px,3vh,22px);color:var(--dim);margin-top:.4vh}
 /* stündlich */
-.hours{flex:1 1 0;min-height:0;display:flex;flex-direction:column;border-top:1px solid var(--line);padding-top:1vh}
-.hr{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;align-items:center;text-align:center;font-size:clamp(10px,2.7vh,19px)}
+.hours{flex:1 1 0;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;border-top:1px solid var(--line);padding-top:.6vh;overflow:hidden}
+.hr{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;align-items:center;text-align:center;font-size:clamp(9px,min(3.2vh,3.3cqw),20px);white-space:nowrap}
 .hr .t{color:var(--dim)}
-.hr svg{height:clamp(16px,5vh,36px);width:auto;margin:auto}
-.hr .p{color:#7cc0ff;min-height:1.2em}
-.hr .tp{font-weight:500}
-#curve{flex:1;min-height:20px;width:100%}
+.hr svg{height:clamp(18px,min(7vh,7cqw),50px);width:auto;margin:auto;display:block}
+.hr .p{color:#7cc0ff}
+.hr .tp{font-weight:500;font-size:1.25em}
+.hr .tp.sun{font-size:.9em;font-weight:400;color:var(--dim)}
 /* Tage */
 .days{flex:none;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border-top:1px solid var(--line)}
 .day{text-align:center;padding:1vh .4vw;border-left:1px solid var(--line);font-size:clamp(11px,3vh,22px)}
@@ -116,6 +116,24 @@ function r(x){return Math.round(x)}
 function get(u){return fetch(u,{cache:"no-store"}).then(function(x){if(!x.ok)throw new Error(x.status);return x.json()})}
 function ymd(d){return dayKey(d)}
 
+
+function hm2(d){var o=part(d);var m=new Intl.DateTimeFormat("de-DE",{timeZone:TZ,hour:"2-digit",minute:"2-digit"}).format(d);return m}
+function sunIcon(up){return '<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M14 44h36" stroke="#e8ecf1" stroke-width="4" stroke-linecap="round"/><path d="M20 44a12 12 0 0 1 24 0z" fill="#ffd43b"/><g stroke="#ffd43b" stroke-width="3.5" stroke-linecap="round"><path d="M32 22v4M17 29l3 3M47 29l-3 3M10 44h3M51 44h3"/></g><g fill="none" stroke="#e8ecf1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">'+(up?'<path d="M32 58V48M27 53l5-5 5 5"/>':'<path d="M32 48v10M27 53l5 5 5-5"/>')+'</g></svg>'}
+/* Sonnenstand (NOAA-Näherung) */
+function sunTimes(date){
+  var rad=Math.PI/180,J=date.getTime()/86400000+2440587.5-2451545.0+0.0008;
+  var n=Math.round(J+lon/360),Js=n-lon/360;
+  var M=(357.5291+0.98560028*Js)%360,C=1.9148*Math.sin(M*rad)+0.02*Math.sin(2*M*rad)+0.0003*Math.sin(3*M*rad);
+  var L=(M+C+180+102.9372)%360,Jt=2451545.0+Js+0.0053*Math.sin(M*rad)-0.0069*Math.sin(2*L*rad);
+  var dec=Math.asin(Math.sin(L*rad)*Math.sin(23.44*rad));
+  var w=Math.acos((Math.sin(-0.833*rad)-Math.sin(lat*rad)*Math.sin(dec))/(Math.cos(lat*rad)*Math.cos(dec)));
+  var toD=function(j){return new Date((j-2440587.5)*86400000)};
+  return {rise:toD(Jt-w/(2*Math.PI)),set:toD(Jt+w/(2*Math.PI))};
+}
+function nextSun(now){
+  var c=[];[-1,0,1].forEach(function(o){var s=sunTimes(new Date(now.getTime()+o*86400000));c.push({t:s.rise,up:true},{t:s.set,up:false})});
+  c=c.filter(function(x){return x.t>now}).sort(function(a,b){return a.t-b.t});return c[0];
+}
 /* ---------- Wetter ---------- */
 function loadWeather(){
   var now=new Date(), end=new Date(now.getTime()+4*86400000);
@@ -134,16 +152,17 @@ function render(cur,fc,now){
     '<div><div class="temp">'+(c.temperature!=null?r(c.temperature):"–")+'<small>°C</small></div><div class="cond">'+(COND[ci]||"")+'</div></div>'+
     '<div class="wind">'+arrow(wdg)+'<div><div class="wv">'+r(ws)+'<small> km/h</small></div><div class="wd">'+dirName(wdg)+(gust>ws+5?' · Böen '+r(gust):'')+'</div></div></div></div>';
 
-  /* nächste 12 Stunden */
+  /* nächste Stunden + Sonnenauf-/untergang */
   var start=new Date(Math.floor(now.getTime()/3600000)*3600000);
-  var hrs=rows.filter(function(x){return new Date(x.timestamp)>=start}).slice(0,12);
+  var hrs=rows.filter(function(x){return new Date(x.timestamp)>=start}).slice(0,7);
   if(hrs.length){
-    var T=hrs.map(function(x){return x.temperature});
-    h+='<div class="hours"><div class="hr">'+hrs.map(function(x,i){var d=new Date(x.timestamp);return '<div class="t">'+(i===0?'Jetzt':hourOf(d))+'</div>'}).join('')+'</div>'+
-       '<div class="hr">'+hrs.map(function(x){return icon(x.icon)}).join('')+'</div>'+
-       '<canvas id="curve"></canvas>'+
-       '<div class="hr">'+hrs.map(function(x){return '<div class="tp">'+r(x.temperature)+'°</div>'}).join('')+'</div>'+
-       '<div class="hr">'+hrs.map(function(x){return '<div class="p">'+(x.precipitation>=0.1?x.precipitation.toFixed(1).replace('.',',')+' mm':'')+'</div>'}).join('')+'</div></div>';
+    var cols=hrs.map(function(x,i){var d=new Date(x.timestamp);return {ts:d.getTime(),t:i===0?'Jetzt':hourOf(d)+' Uhr',ic:icon(x.icon),tp:r(x.temperature)+'°',p:(x.precipitation>=0.1?x.precipitation.toFixed(1).replace('.',',')+' mm':'')}});
+    var ev=nextSun(now);
+    if(ev&&ev.t<hrs[hrs.length-1].timestamp+0&&false){}
+    if(ev){var lastTs=new Date(hrs[hrs.length-1].timestamp).getTime()+3600000;
+      if(ev.t.getTime()<lastTs){var pos=0;cols.forEach(function(c,i){if(c.ts<=ev.t.getTime())pos=i+1});
+        cols.splice(pos,0,{t:hm2(ev.t),ic:sunIcon(ev.up),tp:ev.up?'Aufgang':'Untergang',p:'',sun:true});cols=cols.slice(0,8)}}
+    h+='<div class="hours">'+['t','ic','tp','p'].map(function(k){return '<div class="hr '+k+'r">'+cols.map(function(c){return '<div class="'+k+(c.sun?' sun':'')+'">'+(c[k]||'&nbsp;')+'</div>'}).join('')+'</div>'}).join('')+'</div>';
   }
 
   /* Tage */
@@ -161,7 +180,6 @@ function render(cur,fc,now){
   h+='<div class="days">'+days.join('')+'</div>';
   main.innerHTML=h;
   /* Hauptbereich ohne seitlichen Rand für die Tage */
-  if(hrs.length)drawCurve(hrs.map(function(x){return x.temperature}));
   var d=new Date();
   document.getElementById("foot").textContent="Quelle: Deutscher Wetterdienst · Abruf "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);
 }

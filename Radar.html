@@ -61,7 +61,6 @@ var LUE=[53.8655,10.6866];
 function cen(){return q.get("lat")?[lat,lon]:[(lat+LUE[0])/2,(lon+LUE[1])/2]}
 var geoReady=false,onGeo=null;
 geo(function(){map.setView(cen(),zoom);home.setLatLng([lat,lon]);geoReady=true;if(onGeo)onGeo()});
-L.circleMarker(LUE,{radius:4,color:"#fff",weight:2,fillColor:"#fff",fillOpacity:1}).addTo(map).bindTooltip("Lübeck",{permanent:true,direction:"bottom",offset:[0,6],className:"luebeck"});
 try{map.attributionControl.setPosition("topright")}catch(e){}
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
 var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);
@@ -124,7 +123,8 @@ function buildTl(){
   T0=frames[0].t;TN=frames[frames.length-1].t;var now=Math.min(Math.max(Date.now(),T0),TN);
   var pc=function(t){return ((t-T0)/(TN-T0)*100)+"%"};
   var h='<div class="trk"><div class="fcz" style="left:'+pc(now)+'"></div><div class="line"></div>';
-  for(var t=Math.ceil(T0/300000)*300000;t<=TN;t+=300000){
+  var ts=(TN-T0)>4*3600000?1800000:300000;
+  for(var t=Math.ceil(T0/ts)*ts;t<=TN;t+=ts){
     var mn=new Date(t).getMinutes();
     var cls=mn===0?"tk h":(mn%15===0?"tk q":"tk");
     h+='<div class="'+cls+'" style="left:'+pc(t)+'"></div>';
@@ -138,7 +138,7 @@ function buildTl(){
 function play(){
   if(!frames.length)return;
   show(idx);
-  var wait=(idx===frames.length-1)?2800:(frames[idx].t<=Date.now()+150000&&(idx+1<frames.length&&frames[idx+1].t>Date.now()+150000)?1400:330);
+  var wait=(idx===frames.length-1)?2800:(frames[idx].t<=Date.now()+150000&&(idx+1<frames.length&&frames[idx+1].t>Date.now()+150000)?1400:(frames[idx].model?600:330));
   idx=(idx+1)%frames.length;
   timer=setTimeout(play,wait);
 }
@@ -151,7 +151,17 @@ function loadImg(url){
   return fetch(url).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){return {url:URL.createObjectURL(b),blob:true}})
   .catch(function(){return new Promise(function(res){var im=new Image();im.onload=function(){res({url:url,blob:false})};im.onerror=function(){res(null)};im.src=url})});
 }
-var busy=false;
+var busy=false,modelP=null,modelAt=0;
+function getModel(){
+  if(!modelP||Date.now()-modelAt>3600000){
+    modelAt=Date.now();
+    modelP=getCaps("https://maps.dwd.de/geoserver/dwd/wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now())
+      .then(function(x){var all=parseCaps(x,/prec|niederschlag|regen|rain/i);for(var k in all){if(/radar|^rv|^wn|^rw|^rx|^hx|^sf|^ry/i.test(k))delete all[k]}
+        if(dbg){var ks=Object.keys(all);log("Modell-Kandidaten: "+(ks.length?ks.slice(0,8).map(function(k){var t=all[k];return k+" ["+new Date(t[0]).toISOString().slice(5,16)+" bis "+new Date(t[t.length-1]).toISOString().slice(5,16)+"]"}).join("; "):"keine"))}
+        return all}).catch(function(e){log("Modell: "+e);return {}});
+  }
+  return modelP;
+}
 function start(best){
   var now=Date.now(),t=best.t,ni=0;
   t.forEach(function(x,i){if(x<=now+150000)ni=i});
@@ -161,19 +171,29 @@ function start(best){
   if(pick.indexOf(t[ni])<0)pick.push(t[ni]);
   pick.sort(function(a,b){return a-b});
   if(pick.length<2)throw 0;
-  log("Layer: "+best.name+"  Stufen: "+t.length+"  von "+new Date(t[0]).toISOString()+" bis "+new Date(t[t.length-1]).toISOString()+"  gezeigt: "+pick.length);
-  var jobs=pick.map(function(x){return loadImg(imgUrl(best.name,x))});
-  var all=Promise.all(jobs),limit=new Promise(function(r){setTimeout(function(){r(null)},40000)});
-  return Promise.race([all,limit]).then(function(res){
-    if(!res)throw 0;
-    var ok=[];res.forEach(function(r,i){if(r)ok.push({t:pick[i],url:r.url,blob:r.blob})});
-    if(ok.length<2)throw 0;
-    /* erst jetzt austauschen: kein Flackern beim Neuladen */
-    clearFrames();
-    var bounds=map.getBounds();
-    ok.forEach(function(f){f.l=L.imageOverlay(f.url,bounds,{pane:"radar",opacity:0,interactive:false}).addTo(map);frames.push(f)});
-    map.removeLayer(staticLayer);
-    buildTl();idx=0;play();
+  var items=pick.map(function(x){return {t:x,name:best.name}});
+  var endNow=pick[pick.length-1];
+  return getModel().then(function(models){
+    /* Modell-Vorhersage hinter das Radar-Ende anhängen (bis ca. +6 h, alle 30 Min) */
+    var bestM=null,lim=now+6.5*3600000;
+    for(var n in models){var ts=models[n].filter(function(x){return x>endNow+240000&&x<=lim});if(ts.length>=2&&(!bestM||ts.length>bestM.ts.length))bestM={name:n,ts:ts}}
+    if(bestM){var last=endNow;bestM.ts.forEach(function(x){if(x-last>=1700000){items.push({t:x,name:bestM.name,model:true});last=x}});log("Modell-Layer: "+bestM.name)}
+    log("Layer: "+best.name+"  Stufen: "+t.length+"  gezeigt: "+items.length);
+    return items;
+  }).then(function(items){
+    var jobs=items.map(function(f){return loadImg(imgUrl(f.name,f.t))});
+    var all=Promise.all(jobs),limit=new Promise(function(r){setTimeout(function(){r(null)},60000)});
+    return Promise.race([all,limit]).then(function(res){
+      if(!res)throw 0;
+      var ok=[];res.forEach(function(r,i){if(r)ok.push({t:items[i].t,url:r.url,blob:r.blob,model:items[i].model})});
+      if(ok.filter(function(f){return !f.model}).length<2)throw 0;
+      /* erst jetzt austauschen: kein Flackern beim Neuladen */
+      clearFrames();
+      var bounds=map.getBounds();
+      ok.forEach(function(f){f.l=L.imageOverlay(f.url,bounds,{pane:"radar",opacity:0,interactive:false}).addTo(map);frames.push(f)});
+      map.removeLayer(staticLayer);
+      buildTl();idx=0;play();
+    });
   });
 }
 function refresh(){

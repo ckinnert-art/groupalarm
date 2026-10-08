@@ -6,10 +6,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--head:rgba(0,0,0,.28);--bg:transparent}
+:root{--head:#4f4f4c;--bg:#424242}
 html,body{height:100%;margin:0;background:var(--bg);font-family:Roboto,"Segoe UI",Arial,sans-serif}
 .wrap{display:flex;flex-direction:column;height:100%}
-h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;font-size:clamp(14px,3.4vh,30px);line-height:1;padding:1.2vh 1vw;background:var(--head)}
+h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:17vh;font-size:clamp(16px,8vh,44px);line-height:1;padding:0 1vw;background:var(--head)}
 #map{flex:1;min-height:0;background:#1d2026}
 .leaflet-container{font-family:inherit}
 .stand{position:absolute;right:6px;bottom:6px;z-index:1000;background:rgba(20,24,34,.75);color:#dfe3f0;font-size:clamp(10px,1.8vh,15px);padding:2px 8px;border-radius:4px}
@@ -24,9 +24,12 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;font-size:cla
 var q=new URLSearchParams(location.search);
 if(q.get('bg'))document.documentElement.style.setProperty('--bg','#'+q.get('bg'));
 if(q.get('head'))document.documentElement.style.setProperty('--head','#'+q.get('head'));
-var lat=parseFloat(q.get("lat")||"53.945"),lon=parseFloat(q.get("lon")||"10.745"),zoom=parseInt(q.get("zoom")||"9",10);
+var lat=parseFloat(q.get("lat")||"53.945"),lon=parseFloat(q.get("lon")||"10.745"),zoom=parseInt(q.get("zoom")||"10",10);
 var mapEl=document.getElementById("map");
 if(!window.L){mapEl.innerHTML='<div class="msg">Karte konnte nicht geladen werden.</div>';return;}
+var ADDR=q.get("adresse")||"Wischhofweg 24, 23569 Lübeck";
+function geo(cb){if(q.get("lat"))return cb();try{var c=JSON.parse(localStorage.getItem("geoDummersdorf1"));if(c&&c.length==2){lat=c[0];lon=c[1];return cb()}}catch(e){}
+fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=de&q="+encodeURIComponent(ADDR)).then(function(x){return x.json()}).then(function(j){if(j&&j[0]){lat=parseFloat(j[0].lat);lon=parseFloat(j[0].lon);try{localStorage.setItem("geoDummersdorf1",JSON.stringify([lat,lon]))}catch(e){}}cb()}).catch(function(){cb()})}
 var map=L.map("map",{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,keyboard:false}).setView([lat,lon],zoom);
 var E="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
 L.tileLayer(E+"World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,attribution:"Karte © Esri, HERE, OSM | Radar © DWD"}).addTo(map);
@@ -34,6 +37,7 @@ var radar=L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms",{layers:"dwd:N
 radar.addTo(map);
 L.tileLayer(E+"World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,opacity:.8}).addTo(map);
 var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e03131",fillOpacity:1}).addTo(map);
+geo(function(){map.setView([lat,lon],zoom);home.setLatLng([lat,lon])});
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
 var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);
 function stamp(){var d=new Date();st.textContent="Abruf "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}

@@ -13,7 +13,23 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 #map{flex:1;min-height:0;background:#1d2026}
 .leaflet-container{font-family:inherit}
 .stand{position:absolute;right:6px;bottom:6px;z-index:1000;background:rgba(20,24,34,.75);color:#dfe3f0;font-size:clamp(10px,1.8vh,15px);padding:2px 8px;border-radius:4px}
-.bar{position:absolute;left:6px;bottom:6px;z-index:1000;display:flex;gap:3px;align-items:flex-end}.bar i{display:block;width:clamp(4px,.9vw,9px);height:clamp(4px,.9vw,9px);border-radius:50%;background:rgba(255,255,255,.28)}.bar i.past{background:rgba(255,255,255,.6)}.bar i.fc{background:rgba(109,179,255,.45)}.bar i.fc.past{background:rgba(109,179,255,.8)}.bar i.on{background:#fff;transform:scale(1.35)}
+.tl{--H:clamp(36px,16vh,60px);position:absolute;left:6px;right:6px;bottom:6px;height:var(--H);z-index:1000;display:none;background:rgba(237,240,249,.95);border-radius:10px;font-family:inherit}
+.trk{position:absolute;left:16px;right:16px;top:0;bottom:0}
+.tl .fcz{position:absolute;top:0;bottom:0;right:-16px;background:rgba(120,150,225,.16);border-radius:0 10px 10px 0}
+.tl .line{position:absolute;left:-4px;right:-4px;bottom:calc(var(--H)*.36);height:3px;border-radius:2px;background:#c3c7d2}
+.tl .tk{position:absolute;bottom:calc(var(--H)*.36 + 3px);width:1px;height:calc(var(--H)*.1);background:#9aa0ad}
+.tl .tk.q{height:calc(var(--H)*.16);background:#8a91a0}
+.tl .tk.h{height:calc(var(--H)*.22);background:#6f7686}
+.tl .lb{position:absolute;bottom:calc(var(--H)*.36 + var(--H)*.25);transform:translateX(-50%);font-size:clamp(8px,2.6vh,13px);color:#6f7686;font-weight:500}
+.tl .jt{position:absolute;top:calc(var(--H)*.68);transform:translateX(-50%);font-size:clamp(8px,2.6vh,13px);color:#555c6b}
+.tl .nl{position:absolute;bottom:calc(var(--H)*.36);height:calc(var(--H)*.55);width:1.5px;background:#7d8493}
+.tl .hd{position:absolute;bottom:calc(var(--H)*.36 + 1.5px);width:0;height:0;transition:left .12s linear}
+.tl .knob{position:absolute;width:clamp(12px,5vh,19px);height:clamp(12px,5vh,19px);left:calc(clamp(12px,5vh,19px)/-2);bottom:calc(clamp(12px,5vh,19px)/-2);border:2.5px solid #0b3a8a;background:#fff;border-radius:50%;box-sizing:border-box}
+.tl .stem{position:absolute;left:-1px;bottom:0;width:2px;height:calc(var(--H)*.64 + 3px);background:#262b36}
+.tl .bub{position:absolute;left:0;transform:translateX(-50%);bottom:calc(var(--H)*.64 + 3px);background:#edf0f9;border:1px solid #c3c7d2;border-bottom:0;border-radius:6px 6px 0 0;padding:1px clamp(5px,1.4vw,9px);font-size:clamp(10px,3.4vh,17px);font-weight:700;color:#1b2030;white-space:nowrap}
+.tl .bub.f{background:#dbe6fb}
+.luebeck{background:rgba(0,0,0,.55) !important;color:#fff !important;border:0 !important;box-shadow:none !important;font-weight:700;font-size:clamp(12px,3.8vh,20px);padding:1px 7px !important;text-shadow:0 0 4px #000}
+.luebeck:before{display:none !important}
 .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-align:center;padding:20px}
 .leaflet-control-attribution{font-size:9px !important;background:rgba(20,24,34,.6) !important;color:#aab !important}
 .leaflet-control-attribution a{color:#cdd !important}
@@ -41,10 +57,15 @@ function mk(extra){var o={layers:LAYER,format:"image/png",transparent:true,versi
 var staticLayer=mk({}).addTo(map);
 L.tileLayer(E+"World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,opacity:.8,pane:"lab"}).addTo(map);
 var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e03131",fillOpacity:1}).addTo(map);
-geo(function(){map.setView([lat,lon],zoom);home.setLatLng([lat,lon])});
+var LUE=[53.8655,10.6866];
+function cen(){return q.get("lat")?[lat,lon]:[(lat+LUE[0])/2,(lon+LUE[1])/2]}
+geo(function(){map.setView(cen(),zoom);home.setLatLng([lat,lon])});
+L.circleMarker(LUE,{radius:4,color:"#fff",weight:2,fillColor:"#fff",fillOpacity:1}).addTo(map).bindTooltip("Lübeck",{permanent:true,direction:"bottom",offset:[0,6],className:"luebeck"});
+try{map.attributionControl.setPosition("topright")}catch(e){}
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
 var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);
-var bar=document.createElement("div");bar.className="bar";mapEl.appendChild(bar);
+var tl=document.createElement("div");tl.className="tl";mapEl.appendChild(tl);
+var hd=null,bub=null,T0=0,TN=1;
 function hm(d){return new Intl.DateTimeFormat("de-DE",{timeZone:"Europe/Berlin",hour:"2-digit",minute:"2-digit"}).format(d)}
 var frames=[],idx=0,timer=null,loadedAt=new Date();
 function stampStatic(){st.textContent="Abruf "+hm(new Date())}
@@ -94,13 +115,28 @@ function rel(t){var m=Math.round((t-Date.now())/60000);if(m>=-2&&m<=2)return "je
 function show(i){
   frames.forEach(function(f,k){f.l.setOpacity(k===i?OP:0)});
   var f=frames[i];
-  st.textContent=hm(new Date(f.t))+" Uhr · "+(f.t>Date.now()+150000?"Vorhersage "+rel(f.t):rel(f.t));
-  var d=bar.children;for(var k=0;k<d.length;k++)d[k].className=(frames[k].t>Date.now()+150000?"fc ":"")+(k===i?"on":(k<i?"past":""));
+  if(hd){hd.style.left=((f.t-T0)/(TN-T0)*100)+"%";var fc=f.t>Date.now()+150000;bub.textContent=hm(new Date(f.t));bub.className="bub"+(fc?" f":"")}
+}
+
+function buildTl(){
+  T0=frames[0].t;TN=frames[frames.length-1].t;var now=Math.min(Math.max(Date.now(),T0),TN);
+  var pc=function(t){return ((t-T0)/(TN-T0)*100)+"%"};
+  var h='<div class="trk"><div class="fcz" style="left:'+pc(now)+'"></div><div class="line"></div>';
+  for(var t=Math.ceil(T0/300000)*300000;t<=TN;t+=300000){
+    var mn=new Date(t).getMinutes();
+    var cls=mn===0?"tk h":(mn%15===0?"tk q":"tk");
+    h+='<div class="'+cls+'" style="left:'+pc(t)+'"></div>';
+    if(mn===0)h+='<div class="lb" style="left:'+pc(t)+'">'+parseInt(hm(new Date(t)).slice(0,2),10)+'</div>';
+  }
+  h+='<div class="nl" style="left:'+pc(now)+'"></div><div class="jt" style="left:'+pc(now)+'">Jetzt</div>';
+  h+='<div class="hd"><div class="stem"></div><div class="bub"></div><div class="knob"></div></div></div>';
+  tl.innerHTML=h;tl.style.display="block";st.style.display="none";
+  hd=tl.querySelector(".hd");bub=tl.querySelector(".bub");
 }
 function play(){
   if(!frames.length)return;
   show(idx);
-  var wait=(idx===frames.length-1)?2800:(frames[idx].t<=Date.now()+150000&&(idx+1<frames.length&&frames[idx+1].t>Date.now()+150000)?1400:500);
+  var wait=(idx===frames.length-1)?2800:(frames[idx].t<=Date.now()+150000&&(idx+1<frames.length&&frames[idx+1].t>Date.now()+150000)?1400:330);
   idx=(idx+1)%frames.length;
   timer=setTimeout(play,wait);
 }
@@ -108,25 +144,26 @@ function start(best){
   var now=Date.now(),t=best.t,ni=0;
   t.forEach(function(x,i){if(x<=now+150000)ni=i});
   /* ca. 10-Minuten-Raster um "jetzt": bis 60 Min zurück, bis 120 Min voraus */
-  var step=Math.max(1,Math.round(10*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
-  var pick=[];for(var k=-6;k<=12;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
+  var step=Math.max(1,Math.round(5*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
+  var pick=[];for(var k=-12;k<=24;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
   if(ni+0<t.length&&pick.indexOf(t[ni])<0)pick.push(t[ni]);
   pick.sort(function(a,b){return a-b});
   if(pick.length<2)return;
   log("Layer: "+best.name+"  Stufen: "+t.length+"  von "+new Date(t[0]).toISOString()+" bis "+new Date(t[t.length-1]).toISOString()+"  gezeigt: "+pick.length);
-  clearFrames();bar.innerHTML="";
+  clearFrames();
   pick.forEach(function(x){
     var l=L.tileLayer.wms(WMS,{layers:"dwd:"+best.name,format:"image/png",transparent:true,version:"1.3.0",opacity:0,pane:"radar",crossOrigin:false,TIME:new Date(x).toISOString().replace(".000Z","Z")}).addTo(map);
-    frames.push({t:x,l:l});bar.appendChild(document.createElement("i"));
+    frames.push({t:x,l:l});
   });
   map.removeLayer(staticLayer);
+  buildTl();
   idx=0;
   setTimeout(play,3000); /* Bilder zuerst vorladen lassen */
 }
 function refresh(){
   loadFrames().then(start).catch(function(){
     /* Ohne Zeitstufen: Standbild des DWD neu laden */
-    clearFrames();bar.innerHTML="";if(!map.hasLayer(staticLayer))staticLayer.addTo(map);
+    clearFrames();tl.style.display="none";st.style.display="";hd=null;if(!map.hasLayer(staticLayer))staticLayer.addTo(map);
     staticLayer.setParams({_t:Date.now()});stampStatic();
   });
 }

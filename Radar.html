@@ -28,9 +28,11 @@ var lat=parseFloat(q.get("lat")||"53.945"),lon=parseFloat(q.get("lon")||"10.745"
 var mapEl=document.getElementById("map");
 if(!window.L){mapEl.innerHTML='<div class="msg">Karte konnte nicht geladen werden.</div>';return;}
 var map=L.map("map",{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,keyboard:false}).setView([lat,lon],zoom);
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:12,attribution:"© OpenStreetMap, © CARTO | Radar © DWD"}).addTo(map);
+var E="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
+L.tileLayer(E+"World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,attribution:"Karte © Esri, HERE, OSM | Radar © DWD"}).addTo(map);
 var radar=L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms",{layers:"dwd:Niederschlagsradar",format:"image/png",transparent:true,version:"1.3.0",opacity:.75,crossOrigin:false});
 radar.addTo(map);
+L.tileLayer(E+"World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,opacity:.8}).addTo(map);
 var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e03131",fillOpacity:1}).addTo(map);
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
 var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);

@@ -51,6 +51,9 @@ var map=L.map("map",{zoomControl:false,fadeAnimation:false,zoomAnimation:false,m
 var E="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/";
 L.tileLayer(E+"World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:12,attribution:"Karte © Esri, HERE, OSM | Radar © DWD"}).addTo(map);
 map.createPane("radar").style.zIndex=250;
+var cv=document.createElement("canvas"),ctx=cv.getContext("2d");cv.style.cssText="position:absolute;pointer-events:none;display:none";map.getPane("radar").appendChild(cv);
+function placeCv(){var z=map.getSize();if(cv.width!==z.x||cv.height!==z.y){cv.width=z.x;cv.height=z.y}L.DomUtil.setPosition(cv,map.containerPointToLayerPoint([0,0]));if(curI>=0&&frames[curI]){ctx.clearRect(0,0,cv.width,cv.height);ctx.globalAlpha=OP;ctx.drawImage(frames[curI].img,0,0,cv.width,cv.height)}}
+map.on("moveend resize",placeCv);
 var lp=map.createPane("lab");lp.style.zIndex=260;lp.style.pointerEvents="none";
 var WMS="https://maps.dwd.de/geoserver/dwd/wms",LAYER="dwd:Niederschlagsradar",OP=.75;
 function mk(extra){var o={layers:LAYER,format:"image/png",transparent:true,version:"1.3.0",opacity:OP,pane:"radar",crossOrigin:false};for(var k in extra)o[k]=extra[k];return L.tileLayer.wms(WMS,o)}
@@ -60,7 +63,7 @@ var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e0
 var LUE=[53.8655,10.6866];
 function cen(){return q.get("lat")?[lat,lon]:[(lat+LUE[0])/2,(lon+LUE[1])/2]}
 var geoReady=false,onGeo=null;
-geo(function(){map.setView(cen(),zoom);home.setLatLng([lat,lon]);geoReady=true;if(onGeo)onGeo()});
+geo(function(){map.setView(cen(),zoom);home.setLatLng([lat,lon]);placeCv();geoReady=true;if(onGeo)onGeo()});
 try{map.attributionControl.setPosition("topright")}catch(e){}
 home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
 var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);
@@ -110,11 +113,10 @@ function loadFrames(){
     });
   });
 }
-var curI=-1;function clearFrames(){clearTimeout(timer);frames.forEach(function(f){map.removeLayer(f.l);if(f.blob)try{URL.revokeObjectURL(f.url)}catch(e){}});frames=[];curI=-1}
+var curI=-1;function clearFrames(){clearTimeout(timer);frames.forEach(function(f){if(f.bitmap&&f.img.close)try{f.img.close()}catch(e){}});frames=[];curI=-1;if(ctx)ctx.clearRect(0,0,cv.width,cv.height)}
 function rel(t){var m=Math.round((t-Date.now())/60000);if(m>=-2&&m<=2)return "jetzt";return m<0?"vor "+(-m)+" Min":"in "+m+" Min"}
 function show(i){
-  if(curI>=0&&frames[curI])frames[curI].l.setOpacity(0);
-  frames[i].l.setOpacity(OP);curI=i;
+  ctx.clearRect(0,0,cv.width,cv.height);ctx.globalAlpha=OP;ctx.drawImage(frames[i].img,0,0,cv.width,cv.height);curI=i;
   var f=frames[i];
   if(hd){hd.style.left=((f.t-T0)/(TN-T0)*100)+"%";var fc=f.t>Date.now()+150000;bub.textContent=hm(new Date(f.t));bub.className="bub"+(fc?" f":"")}
 }
@@ -148,8 +150,8 @@ function imgUrl(name,t){
 }
 /* Bild laden und im Speicher halten, damit beim Abspielen nichts nachlädt */
 function loadImg(url){
-  return fetch(url).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){return {url:URL.createObjectURL(b),blob:true}})
-  .catch(function(){return new Promise(function(res){var im=new Image();im.onload=function(){res({url:url,blob:false})};im.onerror=function(){res(null)};im.src=url})});
+  return fetch(url).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){return window.createImageBitmap?createImageBitmap(b):Promise.reject()}).then(function(bm){return {img:bm,bitmap:true}})
+  .catch(function(){return new Promise(function(res){var im=new Image();im.onload=function(){res({img:im})};im.onerror=function(){res(null)};im.src=url})});
 }
 var busy=false,modelP=null,modelAt=0;
 function getModel(){
@@ -166,14 +168,14 @@ function start(best){
   var now=Date.now(),t=best.t,ni=0;
   t.forEach(function(x,i){if(x<=now+150000)ni=i});
   /* 5-Minuten-Raster um "jetzt": bis 60 Min zurück, bis 120 Min voraus */
-  var step=Math.max(1,Math.round(5*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
-  var pick=[];for(var k=-12;k<=24;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
+  var step=Math.max(1,Math.round(10*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
+  var pick=[];for(var k=-6;k<=12;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
   if(pick.indexOf(t[ni])<0)pick.push(t[ni]);
   pick.sort(function(a,b){return a-b});
   if(pick.length<2)throw 0;
   var items=pick.map(function(x){return {t:x,name:best.name}});
   var endNow=pick[pick.length-1];
-  return getModel().then(function(models){
+  return (q.get("modell")?getModel():Promise.resolve({})).then(function(models){
     /* Modell-Vorhersage hinter das Radar-Ende anhängen (bis ca. +6 h, alle 30 Min) */
     var bestM=null,lim=now+6.5*3600000;
     for(var n in models){var ts=models[n].filter(function(x){return x>endNow+240000&&x<=lim});if(ts.length>=2&&(!bestM||ts.length>bestM.ts.length))bestM={name:n,ts:ts}}
@@ -185,12 +187,12 @@ function start(best){
     var all=Promise.all(jobs),limit=new Promise(function(r){setTimeout(function(){r(null)},60000)});
     return Promise.race([all,limit]).then(function(res){
       if(!res)throw 0;
-      var ok=[];res.forEach(function(r,i){if(r)ok.push({t:items[i].t,url:r.url,blob:r.blob,model:items[i].model})});
+      var ok=[];res.forEach(function(r,i){if(r)ok.push({t:items[i].t,img:r.img,bitmap:r.bitmap,model:items[i].model})});
       if(ok.filter(function(f){return !f.model}).length<2)throw 0;
       /* erst jetzt austauschen: kein Flackern beim Neuladen */
       clearFrames();
-      var bounds=map.getBounds();
-      ok.forEach(function(f){f.l=L.imageOverlay(f.url,bounds,{pane:"radar",opacity:0,interactive:false}).addTo(map);frames.push(f)});
+      ok.forEach(function(f){frames.push(f)});
+      cv.style.display="block";
       map.removeLayer(staticLayer);
       buildTl();idx=0;play();
     });
@@ -201,12 +203,12 @@ function refresh(){
   loadFrames().then(start).then(function(){busy=false},function(){busy=false;throw 0}).catch(function(){
     /* Ohne Zeitstufen: Standbild des DWD neu laden */
     if(frames.length)return; /* laufende Animation behalten */
-    clearFrames();tl.style.display="none";st.style.display="";hd=null;if(!map.hasLayer(staticLayer))staticLayer.addTo(map);
+    clearFrames();cv.style.display="none";tl.style.display="none";st.style.display="";hd=null;if(!map.hasLayer(staticLayer))staticLayer.addTo(map);
     staticLayer.setParams({_t:Date.now()});stampStatic();
   });
 }
 if(geoReady)refresh();else onGeo=refresh;
-setInterval(refresh,5*60*1000);
+setInterval(refresh,10*60*1000);
 })();
 </script><script>setTimeout(function(){try{var u=new URL(location.href);u.searchParams.set("_r",Date.now());location.replace(u.toString())}catch(e){location.reload()}},60*60*1000);</script>
 </body></html>

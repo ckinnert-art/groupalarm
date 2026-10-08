@@ -9,11 +9,11 @@
 :root{--head:#4f4f4c;--bg:#424242}
 html,body{height:100%;margin:0;background:var(--bg);font-family:Roboto,"Segoe UI",Arial,sans-serif}
 .wrap{display:flex;flex-direction:column;height:100%}
-h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:min(24vh,64px);font-size:clamp(16px,min(9.5vh,38px),44px);line-height:1;padding:0 1vw;background:var(--head)}
+h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:min(29vh,76px);font-size:clamp(16px,min(11vh,42px),46px);line-height:1;padding:0 1vw;background:var(--head)}
 #map{flex:1;min-height:0;background:#1d2026}
 .leaflet-container{font-family:inherit}
 .stand{position:absolute;right:6px;bottom:6px;z-index:1000;background:rgba(20,24,34,.75);color:#dfe3f0;font-size:clamp(10px,1.8vh,15px);padding:2px 8px;border-radius:4px}
-.bar{position:absolute;left:6px;bottom:6px;z-index:1000;display:flex;gap:3px;align-items:flex-end}.bar i{display:block;width:clamp(4px,.9vw,9px);height:clamp(4px,.9vw,9px);border-radius:50%;background:rgba(255,255,255,.28)}.bar i.past{background:rgba(255,255,255,.6)}.bar i.on{background:#fff;transform:scale(1.35)}
+.bar{position:absolute;left:6px;bottom:6px;z-index:1000;display:flex;gap:3px;align-items:flex-end}.bar i{display:block;width:clamp(4px,.9vw,9px);height:clamp(4px,.9vw,9px);border-radius:50%;background:rgba(255,255,255,.28)}.bar i.past{background:rgba(255,255,255,.6)}.bar i.fc{background:rgba(109,179,255,.45)}.bar i.fc.past{background:rgba(109,179,255,.8)}.bar i.on{background:#fff;transform:scale(1.35)}
 .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-align:center;padding:20px}
 .leaflet-control-attribution{font-size:9px !important;background:rgba(20,24,34,.6) !important;color:#aab !important}
 .leaflet-control-attribution a{color:#cdd !important}
@@ -51,55 +51,77 @@ function stampStatic(){st.textContent="Abruf "+hm(new Date())}
 stampStatic();
 /* Zeitstufen aus den Capabilities lesen */
 function dur(p){var m=/^P(?:T)?(?:(\d+)H)?(?:(\d+)M)?$/.exec(p||"");if(!m)return 5*60000;return ((+m[1]||0)*60+(+m[2]||0))*60000||5*60000}
-function parseTimes(xml){
-  var doc=new DOMParser().parseFromString(xml,"text/xml"),dims=doc.getElementsByTagName("Dimension"),out=[];
-  for(var i=0;i<dims.length;i++){
-    if(String(dims[i].getAttribute("name")).toLowerCase()!=="time")continue;
-    var txt=(dims[i].textContent||"").trim();if(!txt)continue;
-    txt.split(",").forEach(function(p){
-      p=p.trim();if(!p)return;
-      var r=p.split("/");
-      if(r.length>=2){var a=Date.parse(r[0]),z=Date.parse(r[1]),step=dur(r[2]);if(isNaN(a)||isNaN(z))return;
-        for(var t=z,n=0;t>=a&&n<40;t-=step,n++)out.push(t)}
-      else{var t1=Date.parse(p);if(!isNaN(t1))out.push(t1)}
-    });
-    break;
+function timesOf(dimText){
+  var out=[];(dimText||"").trim().split(",").forEach(function(p){
+    p=p.trim();if(!p)return;var r=p.split("/");
+    if(r.length>=2){var a=Date.parse(r[0]),z=Date.parse(r[1]),step=dur(r[2]);if(isNaN(a)||isNaN(z))return;for(var t=z,n=0;t>=a&&n<60;t-=step,n++)out.push(t)}
+    else{var t1=Date.parse(p);if(!isNaN(t1))out.push(t1)}
+  });
+  out.sort(function(x,y){return x-y});return out.filter(function(t,i){return i===0||t!==out[i-1]});
+}
+/* liefert {Layername: [Zeiten]} für alle Layer mit Zeitdimension, deren Name zum Filter passt */
+function parseCaps(xml,re){
+  var doc=new DOMParser().parseFromString(xml,"text/xml"),ls=doc.getElementsByTagName("Layer"),res={};
+  for(var i=0;i<ls.length;i++){
+    var nm=null,dm=null,ch=ls[i].children;
+    for(var k=0;k<ch.length;k++){if(ch[k].tagName==="Name")nm=ch[k].textContent.trim();else if(ch[k].tagName==="Dimension"&&String(ch[k].getAttribute("name")).toLowerCase()==="time")dm=ch[k].textContent}
+    if(nm&&dm&&re.test(nm)){var t=timesOf(dm);if(t.length)res[nm.replace(/^dwd:/,"")]=t}
   }
-  out.sort(function(x,y){return x-y});
-  return out.filter(function(t,i){return i===0||t!==out[i-1]});
+  return res;
 }
 function getCaps(u){return fetch(u,{cache:"no-store"}).then(function(x){if(!x.ok)throw new Error(x.status);return x.text()})}
+var CAND=["Radar_wn-product_1x1km_ger","Niederschlagsradar"];
+var dbg=q.get("debug")?document.createElement("div"):null;
+if(dbg){dbg.style.cssText="position:absolute;left:4px;top:4px;z-index:2000;background:rgba(0,0,0,.8);color:#9f9;font:10px monospace;padding:3px 5px;max-width:95%;white-space:pre-wrap";mapEl.appendChild(dbg)}
+function log(t){if(dbg)dbg.textContent+=t+"\n"}
 function loadFrames(){
-  var u1="https://maps.dwd.de/geoserver/dwd/Niederschlagsradar/wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now();
-  var u2="https://maps.dwd.de/geoserver/dwd/wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now();
-  return getCaps(u1).then(parseTimes).then(function(t){if(t.length<2)throw 0;return t}).catch(function(){return getCaps(u2).then(parseTimes)});
+  var base="https://maps.dwd.de/geoserver/dwd/",qs="/wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now();
+  var jobs=CAND.map(function(n){return getCaps(base+n+qs).then(function(x){return parseCaps(x,/./)}).catch(function(e){log(n+": "+e);return {}})});
+  return Promise.all(jobs).then(function(arr){
+    var all={};arr.forEach(function(o){for(var k in o)all[k]=o[k]});
+    var best=null;for(var k in all){var t=all[k],last=t[t.length-1];if(!best||last>best.last)best={name:k,t:t,last:last}}
+    if(best)return best;
+    /* Notfall: gesamte Capabilities durchsuchen */
+    return getCaps(base+"wms?service=WMS&version=1.3.0&request=GetCapabilities&_t="+Date.now()).then(function(x){
+      var all=parseCaps(x,/radar|niederschlag|wn-|rv-/i),best=null;
+      for(var k in all){var t=all[k],last=t[t.length-1];if(!best||last>best.last)best={name:k,t:t,last:last}}
+      if(!best)throw 0;return best;
+    });
+  });
 }
 function clearFrames(){clearTimeout(timer);frames.forEach(function(f){map.removeLayer(f.l)});frames=[]}
+function rel(t){var m=Math.round((t-Date.now())/60000);if(m>=-2&&m<=2)return "jetzt";return m<0?"vor "+(-m)+" Min":"in "+m+" Min"}
 function show(i){
   frames.forEach(function(f,k){f.l.setOpacity(k===i?OP:0)});
-  var f=frames[i],last=i===frames.length-1;
-  st.textContent=hm(new Date(f.t))+" Uhr"+(last?" · aktuell":"");
-  var d=bar.children;for(var k=0;k<d.length;k++)d[k].className=k===i?"on":(k<i?"past":"");
+  var f=frames[i];
+  st.textContent=hm(new Date(f.t))+" Uhr · "+(f.t>Date.now()+150000?"Vorhersage "+rel(f.t):rel(f.t));
+  var d=bar.children;for(var k=0;k<d.length;k++)d[k].className=(frames[k].t>Date.now()+150000?"fc ":"")+(k===i?"on":(k<i?"past":""));
 }
 function play(){
   if(!frames.length)return;
   show(idx);
-  var wait=idx===frames.length-1?2800:550;
+  var wait=(idx===frames.length-1)?2800:(frames[idx].t<=Date.now()+150000&&(idx+1<frames.length&&frames[idx+1].t>Date.now()+150000)?1400:500);
   idx=(idx+1)%frames.length;
   timer=setTimeout(play,wait);
 }
-function start(times){
-  var lastT=times[times.length-1],now=Date.now();
-  var ts=times.filter(function(t){return t>=lastT-65*60000&&t<=now+15*60000});
-  if(ts.length<2)return;
+function start(best){
+  var now=Date.now(),t=best.t,ni=0;
+  t.forEach(function(x,i){if(x<=now+150000)ni=i});
+  /* ca. 10-Minuten-Raster um "jetzt": bis 60 Min zurück, bis 120 Min voraus */
+  var step=Math.max(1,Math.round(10*60000/(t.length>1?(t[t.length-1]-t[0])/(t.length-1):300000)));
+  var pick=[];for(var k=-6;k<=12;k++){var j=ni+k*step;if(j>=0&&j<t.length)pick.push(t[j])}
+  if(ni+0<t.length&&pick.indexOf(t[ni])<0)pick.push(t[ni]);
+  pick.sort(function(a,b){return a-b});
+  if(pick.length<2)return;
+  log("Layer: "+best.name+"  Stufen: "+t.length+"  von "+new Date(t[0]).toISOString()+" bis "+new Date(t[t.length-1]).toISOString()+"  gezeigt: "+pick.length);
   clearFrames();bar.innerHTML="";
-  ts.forEach(function(t){
-    var l=mk({TIME:new Date(t).toISOString().replace(".000Z","Z"),opacity:0}).addTo(map);
-    frames.push({t:t,l:l});bar.appendChild(document.createElement("i"));
+  pick.forEach(function(x){
+    var l=L.tileLayer.wms(WMS,{layers:"dwd:"+best.name,format:"image/png",transparent:true,version:"1.3.0",opacity:0,pane:"radar",crossOrigin:false,TIME:new Date(x).toISOString().replace(".000Z","Z")}).addTo(map);
+    frames.push({t:x,l:l});bar.appendChild(document.createElement("i"));
   });
   map.removeLayer(staticLayer);
   idx=0;
-  setTimeout(play,2500); /* Bilder zuerst vorladen lassen */
+  setTimeout(play,3000); /* Bilder zuerst vorladen lassen */
 }
 function refresh(){
   loadFrames().then(start).catch(function(){

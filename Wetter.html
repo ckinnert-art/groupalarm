@@ -28,9 +28,11 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 .hr .t{color:var(--dim)}
 .hr svg{height:clamp(18px,min(7vh,7cqw),50px);width:auto;margin:auto;display:block}
 .hr .p{color:#7cc0ff}
+.hr .mm{color:#9fb4cc;font-size:.92em}
 .hr .tp{font-weight:500;font-size:1.25em}
 .hr .tp.sun{font-size:.9em;font-weight:400;color:var(--dim)}
 /* Tage */
+@container (max-height:260px){.hr.mmr{display:none}}
 @container (max-height:320px){.day .pp .mm{display:none}.now svg.ic{height:clamp(30px,11vh,90px)}.temp{font-size:clamp(30px,11vh,100px)}.cond{display:none}.wind svg{height:clamp(26px,8vh,70px)}.wv{font-size:clamp(14px,5vh,40px)}.main{gap:.4vh;padding-top:.6vh}.hr svg{height:clamp(14px,5vh,50px)}.hr .tp{font-size:1.1em}.day svg{height:clamp(18px,6vh,50px);margin:0 auto}.day{padding:.5vh .4vw}}
 .days{flex:none;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border-top:1px solid var(--line)}
 .day{text-align:center;padding:1vh .4vw;border-left:1px solid var(--line);font-size:clamp(11px,3vh,22px)}
@@ -43,6 +45,7 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 .warn{flex:none;padding:1vh 1.4vw;background:rgba(0,0,0,.2);font-size:clamp(11px,3vh,22px);display:flex;flex-direction:column;gap:.4vh}
 .warn div{display:flex;gap:.6em;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .warn i{flex:none;width:.9em;height:.9em;border-radius:50%;display:inline-block}
+.warn .dt{color:#fff;font-weight:500}
 .warn .none{color:var(--ok)}
 .foot{flex:none;text-align:right;font-size:clamp(8px,1.8vh,13px);color:var(--dim);padding:0 1.4vw .6vh;background:rgba(0,0,0,.2)}
 .msg{margin:auto;color:var(--dim);font-size:clamp(12px,3vh,22px);text-align:center;padding:2vh}
@@ -157,13 +160,13 @@ function render(cur,fc,now){
   var start=new Date(Math.floor(now.getTime()/3600000)*3600000);
   var hrs=rows.filter(function(x){return new Date(x.timestamp)>=start}).slice(0,7);
   if(hrs.length){
-    var cols=hrs.map(function(x,i){var d=new Date(x.timestamp);return {ts:d.getTime(),t:i===0?'Jetzt':hourOf(d)+' Uhr',ic:icon(x.icon),tp:r(x.temperature)+'°',p:(x.precipitation_probability!=null?'☂ '+x.precipitation_probability+' %':(x.precipitation>=0.1?x.precipitation.toFixed(1).replace('.',',')+' mm':''))}});
+    var cols=hrs.map(function(x,i){var d=new Date(x.timestamp);return {ts:d.getTime(),t:i===0?'Jetzt':hourOf(d)+' Uhr',ic:icon(x.icon),tp:r(x.temperature)+'°',p:(x.precipitation_probability!=null?'☂ '+x.precipitation_probability+' %':''),mm:(x.precipitation>=0.05?x.precipitation.toFixed(1).replace('.',',')+' mm':'0 mm')}});
     var ev=nextSun(now);
     if(ev&&ev.t<hrs[hrs.length-1].timestamp+0&&false){}
     if(ev){var lastTs=new Date(hrs[hrs.length-1].timestamp).getTime()+3600000;
       if(ev.t.getTime()<lastTs){var pos=0;cols.forEach(function(c,i){if(c.ts<=ev.t.getTime())pos=i+1});
-        cols.splice(pos,0,{t:hm2(ev.t),ic:sunIcon(ev.up),tp:ev.up?'Aufgang':'Untergang',p:'',sun:true});cols=cols.slice(0,8)}}
-    h+='<div class="hours">'+['t','ic','tp','p'].map(function(k){return '<div class="hr '+k+'r">'+cols.map(function(c){return '<div class="'+k+(c.sun?' sun':'')+'">'+(c[k]||'&nbsp;')+'</div>'}).join('')+'</div>'}).join('')+'</div>';
+        cols.splice(pos,0,{t:hm2(ev.t),ic:sunIcon(ev.up),tp:ev.up?'Aufgang':'Untergang',p:'',mm:'',sun:true});cols=cols.slice(0,8)}}
+    h+='<div class="hours">'+['t','ic','tp','p','mm'].map(function(k){return '<div class="hr '+k+'r">'+cols.map(function(c){return '<div class="'+k+(c.sun?' sun':'')+'">'+(c[k]||'&nbsp;')+'</div>'}).join('')+'</div>'}).join('')+'</div>';
   }
 
   /* Tage */
@@ -208,6 +211,16 @@ function when(a){
   if(on<=now)return "jetzt bis "+dl(ex)+" "+hm(ex)+" Uhr";
   return dl(on)+" ab "+hm(on)+" Uhr";
 }
+
+function details(x){
+  var t=(x.description_de||"")+" "+(x.headline_de||""),out=[],m,re;
+  function mx(r){var v=[];while((m=r.exec(t)))v.push(parseFloat(m[1].replace(",",".")));return v.length?Math.max.apply(null,v):null}
+  var kmh=mx(/(\d{2,3})\s*km\/h/g);if(kmh)out.push("bis "+Math.round(kmh)+" km/h");
+  var lm=mx(/(\d+(?:[.,]\d+)?)\s*l\/m²/g);
+  if(lm){var h=/in\s+(\d+)\s*Stunden/.exec(t);out.push("bis "+Math.round(lm)+" l/m²"+(h?" in "+h[1]+" Std.":""))}
+  var cm=mx(/(\d+(?:[.,]\d+)?)\s*cm/g);if(cm)out.push("bis "+Math.round(cm)+" cm");
+  return out.join(" · ");
+}
 function loadWarn(){
   return get(API+"/alerts?lat="+lat+"&lon="+lon+"&tz="+TZ).then(function(j){
     var now=new Date(),lim=new Date(now.getTime()+48*3600000);
@@ -215,7 +228,7 @@ function loadWarn(){
     a.sort(function(x,y){return ((SEV[y.severity]||[0,0])[1])-((SEV[x.severity]||[0,0])[1])});
     var el=document.getElementById("warn");
     if(!a.length){el.innerHTML='<div class="none">✓ Keine aktuelle Unwetterwarnung</div>';return}
-    el.innerHTML=a.slice(0,2).map(function(x){var c=(SEV[x.severity]||["#ffd43b"])[0];return '<div><i style="background:'+c+'"></i><b>'+(x.event_de||x.headline_de||"Warnung")+'</b><span style="color:var(--dim)">· '+when(x)+'</span></div>'}).join('');
+    el.innerHTML=a.slice(0,3).map(function(x){var c=(SEV[x.severity]||["#ffd43b"])[0],dt=details(x);var ev=String(x.event_de||x.headline_de||"Warnung");ev=ev.charAt(0).toUpperCase()+ev.slice(1).toLowerCase();return '<div><i style="background:'+c+'"></i><b>'+ev+'</b>'+(dt?'<span class="dt">'+dt+'</span>':'')+'<span style="color:var(--dim)">· '+when(x)+'</span></div>'}).join('');
   });
 }
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Regenradar Dummersdorf</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--head:rgba(0,0,0,.28);--bg:transparent}
+html,body{height:100%;margin:0;background:var(--bg);font-family:Roboto,"Segoe UI",Arial,sans-serif}
+.wrap{display:flex;flex-direction:column;height:100%}
+h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;font-size:clamp(14px,3.4vh,30px);line-height:1;padding:1.2vh 1vw;background:var(--head)}
+#map{flex:1;min-height:0;background:#1d2026}
+.leaflet-container{font-family:inherit}
+.stand{position:absolute;right:6px;bottom:6px;z-index:1000;background:rgba(20,24,34,.75);color:#dfe3f0;font-size:clamp(10px,1.8vh,15px);padding:2px 8px;border-radius:4px}
+.msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-align:center;padding:20px}
+.leaflet-control-attribution{font-size:9px !important;background:rgba(20,24,34,.6) !important;color:#aab !important}
+.leaflet-control-attribution a{color:#cdd !important}
+</style></head>
+<body><div class="wrap"><h1>Regenradar</h1><div id="map"></div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+var q=new URLSearchParams(location.search);
+if(q.get('bg'))document.documentElement.style.setProperty('--bg','#'+q.get('bg'));
+if(q.get('head'))document.documentElement.style.setProperty('--head','#'+q.get('head'));
+var lat=parseFloat(q.get("lat")||"53.945"),lon=parseFloat(q.get("lon")||"10.745"),zoom=parseInt(q.get("zoom")||"9",10);
+var mapEl=document.getElementById("map");
+if(!window.L){mapEl.innerHTML='<div class="msg">Karte konnte nicht geladen werden.</div>';return;}
+var map=L.map("map",{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,keyboard:false}).setView([lat,lon],zoom);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:12,attribution:"© OpenStreetMap, © CARTO | Radar © DWD"}).addTo(map);
+var radar=L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms",{layers:"dwd:Niederschlagsradar",format:"image/png",transparent:true,version:"1.3.0",opacity:.75,crossOrigin:false});
+radar.addTo(map);
+var home=L.circleMarker([lat,lon],{radius:7,color:"#fff",weight:2,fillColor:"#e03131",fillOpacity:1}).addTo(map);
+home.bindTooltip("Dummersdorf",{permanent:true,direction:"right",offset:[8,0]});
+var st=document.createElement("div");st.className="stand";mapEl.appendChild(st);
+function stamp(){var d=new Date();st.textContent="Abruf "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
+stamp();
+setInterval(function(){radar.setParams({_t:Date.now()});stamp();},5*60*1000);
+})();
+</script></body></html>

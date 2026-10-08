@@ -31,12 +31,13 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 .hr .tp{font-weight:500;font-size:1.25em}
 .hr .tp.sun{font-size:.9em;font-weight:400;color:var(--dim)}
 /* Tage */
+@container (max-height:320px){.day .pp .mm{display:none}.now svg.ic{height:clamp(30px,11vh,90px)}.temp{font-size:clamp(30px,11vh,100px)}.cond{display:none}.wind svg{height:clamp(26px,8vh,70px)}.wv{font-size:clamp(14px,5vh,40px)}.main{gap:.4vh;padding-top:.6vh}.hr svg{height:clamp(14px,5vh,50px)}.hr .tp{font-size:1.1em}.day svg{height:clamp(18px,6vh,50px);margin:0 auto}.day{padding:.5vh .4vw}}
 .days{flex:none;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border-top:1px solid var(--line)}
 .day{text-align:center;padding:1vh .4vw;border-left:1px solid var(--line);font-size:clamp(11px,3vh,22px)}
 .day:first-child{border-left:0}
 .day b{display:block;font-weight:700}
 .day svg{height:clamp(22px,7vh,50px);width:auto;margin:.4vh auto;display:block}
-.day .mm{font-weight:500}.day .mm span{color:var(--dim);font-weight:400}
+.day>.mm{font-weight:500}.day>.mm span{color:var(--dim);font-weight:400}
 .day .pp{color:#7cc0ff;font-size:.85em;min-height:1.2em}
 /* Warnung */
 .warn{flex:none;padding:1vh 1.4vw;background:rgba(0,0,0,.2);font-size:clamp(11px,3vh,22px);display:flex;flex-direction:column;gap:.4vh}
@@ -156,7 +157,7 @@ function render(cur,fc,now){
   var start=new Date(Math.floor(now.getTime()/3600000)*3600000);
   var hrs=rows.filter(function(x){return new Date(x.timestamp)>=start}).slice(0,7);
   if(hrs.length){
-    var cols=hrs.map(function(x,i){var d=new Date(x.timestamp);return {ts:d.getTime(),t:i===0?'Jetzt':hourOf(d)+' Uhr',ic:icon(x.icon),tp:r(x.temperature)+'°',p:(x.precipitation>=0.1?x.precipitation.toFixed(1).replace('.',',')+' mm':'')}});
+    var cols=hrs.map(function(x,i){var d=new Date(x.timestamp);return {ts:d.getTime(),t:i===0?'Jetzt':hourOf(d)+' Uhr',ic:icon(x.icon),tp:r(x.temperature)+'°',p:(x.precipitation_probability!=null?'☂ '+x.precipitation_probability+' %':(x.precipitation>=0.1?x.precipitation.toFixed(1).replace('.',',')+' mm':''))}});
     var ev=nextSun(now);
     if(ev&&ev.t<hrs[hrs.length-1].timestamp+0&&false){}
     if(ev){var lastTs=new Date(hrs[hrs.length-1].timestamp).getTime()+3600000;
@@ -167,7 +168,7 @@ function render(cur,fc,now){
 
   /* Tage */
   var by={},order=[];
-  rows.forEach(function(x){var d=new Date(x.timestamp),k=dayKey(d);if(!by[k]){by[k]={d:d,t:[],p:0,ic:[]};order.push(k)}by[k].t.push(x.temperature);by[k].p+=x.precipitation||0;var hh=hourOf(d);if(hh>=7&&hh<=21)by[k].ic.push(x.icon)});
+  rows.forEach(function(x){var d=new Date(x.timestamp),k=dayKey(d);if(!by[k]){by[k]={d:d,t:[],p:0,pp:null,ic:[]};order.push(k)}by[k].t.push(x.temperature);by[k].p+=x.precipitation||0;if(x.precipitation_probability!=null)by[k].pp=Math.max(by[k].pp||0,x.precipitation_probability);var hh=hourOf(d);if(hh>=7&&hh<=21)by[k].ic.push(x.icon)});
   var todayK=dayKey(now);
   var days=order.slice(0,4).map(function(k,i){
     var o=by[k],ic=o.ic.slice().sort(function(a,b){return (RANK[b]||0)-(RANK[a]||0)});
@@ -175,7 +176,7 @@ function render(cur,fc,now){
     /* nur wenn Niederschlag-Icons wirklich vorkommen, das schlimmste wählen; sonst häufigstes */
     if((RANK[show]||0)<5){var cnt={};o.ic.forEach(function(z){cnt[z]=(cnt[z]||0)+1});var best=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a]})[0];if(best)show=best.replace("night","day").replace("clear-day","clear-day")}
     var lab=k===todayK?"Heute":(i===1?"Morgen":wd(o.d));
-    return '<div class="day"><b>'+lab+'</b>'+icon(show)+'<div class="mm">'+r(Math.max.apply(null,o.t))+'° <span>'+r(Math.min.apply(null,o.t))+'°</span></div><div class="pp">'+(o.p>=0.2?o.p.toFixed(1).replace('.',',')+' mm':'')+'</div></div>';
+    return '<div class="day"><b>'+lab+'</b>'+icon(show)+'<div class="mm">'+r(Math.max.apply(null,o.t))+'° <span>'+r(Math.min.apply(null,o.t))+'°</span></div><div class="pp">'+(o.pp!=null?'☂ '+o.pp+' %':'&nbsp;')+(o.p>=0.2?'<span class="mm"> · '+o.p.toFixed(1).replace('.',',')+' mm</span>':'')+'</div></div>';
   });
   h+='<div class="days">'+days.join('')+'</div>';
   main.innerHTML=h;

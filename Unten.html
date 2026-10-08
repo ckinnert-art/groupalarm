@@ -5,14 +5,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--zoom:1.9;--cropv:34;--cropE:46;--bg:#2e3548;--head:#56668a;--ok:#4cc38a;--low:#6db3ff;--high:#ff7a7a}
+:root{--zoom:2.05;--cropv:42;--cropE:46;--bg:#35383e;--head:#56668a;--ok:#4cc38a;--low:#6db3ff;--high:#ff7a7a}
 html,body{height:100%;margin:0;background:#1f2536;overflow:hidden}
 body{font-family:Roboto,"Segoe UI",Arial,sans-serif;color:#fff}
-.grid{box-sizing:border-box;height:100%;display:grid;grid-template-columns:1.15fr .95fr 1.3fr .8fr;gap:6px;padding:0}
+.grid{box-sizing:border-box;height:100%;display:grid;grid-template-columns:1.3fr 1.05fr .95fr .85fr;gap:6px;padding:0}
 .cell{container-type:size;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
 .cell>h2{margin:0;flex:none;text-align:center;font-weight:700;font-size:clamp(14px,6.2vh,34px);line-height:1;padding:1.4vh 1vw;background:var(--head);color:#fff}
-.body{position:relative;flex:1;min-height:0;overflow:hidden}
-.cv{--crop:var(--cropv)}.ce{--crop:var(--cropE)}
+.body{position:relative;flex:1;min-height:0;overflow:hidden;isolation:isolate}
+.body::after{content:"";position:absolute;inset:0;background:var(--bg);mix-blend-mode:lighten;pointer-events:none}
+.cv .body::before{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--coverv);background:var(--bg);z-index:2;pointer-events:none}
+.cv{--crop:var(--cropv);--coverv:8cqh}.ce{--crop:var(--cropE)}
 .body iframe{position:absolute;left:0;top:calc(var(--crop) * var(--zoom) * -1px);border:0;background:#fff;
 width:calc(100% / var(--zoom) + 24px);height:calc((100% + var(--crop) * var(--zoom) * 1px) / var(--zoom));
 transform:scale(var(--zoom));transform-origin:0 0;
@@ -20,7 +22,7 @@ filter:invert(.9) hue-rotate(180deg) brightness(1.15)}
 .pg{container-type:size;display:flex;flex-direction:column;background:#fff}
 .pg>h2{margin:0;flex:none;text-align:center;font-weight:700;font-size:clamp(14px,6.2vh,34px);line-height:1;padding:1.4vh 1vw;background:var(--head);color:#fff}
 .pg .img{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:1cqh 1cqw}
-.pg img{max-width:100%;max-height:100%;object-fit:contain}
+.pg img{width:100%;height:100%;object-fit:contain}
 .pw{container-type:size;display:flex;flex-direction:column;background:linear-gradient(180deg,#2e3548 0%,#44527a 100%)}
 .pw h1{margin:0;flex:none;text-align:center;font-weight:700;font-size:clamp(14px,6.2vh,34px);line-height:1;padding:1.4vh 1vw;background:var(--head)}
 .rows{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;padding:1cqh 5cqw}
@@ -42,14 +44,15 @@ filter:invert(.9) hue-rotate(180deg) brightness(1.15)}
 <h1>Priwall Besetzung</h1>
 <div class="rows">
 <div class="row ok"><span class="name">Normalstand</span><span class="val">5,0 m</span></div>
-<div class="row low"><span class="name">Niedrigwasser<span class="sub">1 m unter NN</span></span><span class="val">4,0 m</span></div>
-<div class="row high"><span class="name">Hochwasser<span class="sub">1,8 m über NN</span></span><span class="val">6,8 m</span></div>
+<div class="row low"><span class="name">Niedrigwasser<span class="sub">Alarmschwelle: 1 m unter NN</span></span><span class="val">4,0 m</span></div>
+<div class="row high"><span class="name">Hochwasser<span class="sub">Alarmschwelle: 1,8 m über NN</span></span><span class="val">6,8 m</span></div>
 </div></div>
 </div>
 <script>
 (function(){var q=new URLSearchParams(location.search),r=document.documentElement.style;
 if(q.get("zoom"))r.setProperty("--zoom",q.get("zoom"));
 if(q.get("cropv"))r.setProperty("--cropv",q.get("cropv"));
+if(q.get("cover"))r.setProperty("--coverv",q.get("cover"));
 if(q.get("crope"))r.setProperty("--cropE",q.get("crope"));})();
 (function(){var fs=document.querySelectorAll("iframe[data-src]");
 function load(){for(var i=0;i<fs.length;i++){fs[i].src=fs[i].getAttribute("data-src");}}

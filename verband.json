@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "10.10.2026",
+   "zeit": "18:42",
+   "wehr": "FF Kücknitz",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
    "zeit": "12:10",
    "wehr": "IuK",
    "art": "Brandeinsatz"
@@ -137,12 +143,6 @@
    "zeit": "09:51",
    "wehr": "FF Genin",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "23.09.2026",
-   "zeit": "13:34",
-   "wehr": "FF Kücknitz",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-10T17:13:17+00:00"
+ "stand": "2026-10-10T19:58:21+00:00"
 }

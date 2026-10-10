@@ -1,0 +1,121 @@
+# Holt alle 15 Minuten Verbandseinsätze und Verbandsveranstaltungen von luebeck.fox112.de
+# und legt sie als verband.json ins Repository. Die Seite Unten.html liest diese Datei.
+name: Verband aktualisieren
+
+on:
+  schedule:
+    - cron: "2,17,32,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: verband
+  cancel-in-progress: false
+
+jobs:
+  holen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fox-Seiten abrufen
+        run: |
+          python3 - <<'PY'
+          import json, os, re, sys, urllib.request
+          from datetime import datetime, timezone
+          from html.parser import HTMLParser
+
+          BASIS = os.environ.get("BASIS", "https://luebeck.fox112.de/")
+          DATEI = "verband.json"
+          DATUM = re.compile(r"\b(\d{2}\.\d{2}\.\d{4})\b")
+          ZEIT = re.compile(r"\b(\d{1,2}:\d{2})\b")
+
+          def holen(seite):
+              anfrage = urllib.request.Request(BASIS + seite, headers={"User-Agent": "Mozilla/5.0 (Alarmmonitor FF Dummersdorf)"})
+              with urllib.request.urlopen(anfrage, timeout=60) as antwort:
+                  roh = antwort.read()
+                  zeichensatz = antwort.headers.get_content_charset()
+              if not zeichensatz:
+                  m = re.search(rb"charset=[\"']?([\w-]+)", roh[:3000])
+                  zeichensatz = m.group(1).decode() if m else "utf-8"
+              try:
+                  return roh.decode(zeichensatz)
+              except (UnicodeDecodeError, LookupError):
+                  return roh.decode("utf-8", "replace") if zeichensatz.lower() != "utf-8" else roh.decode("latin-1")
+
+          class Zeilen(HTMLParser):
+              """Macht aus der Seite Textzeilen; Zellen werden durch Tabulator getrennt."""
+              UMBRUCH = {"tr", "li", "br", "p", "div", "table", "ul", "ol", "h1", "h2", "h3"}
+              def __init__(self):
+                  super().__init__(convert_charrefs=True); self.text = []; self.aus = 0
+              def handle_starttag(self, tag, attrs):
+                  if tag in ("script", "style"): self.aus += 1
+                  self.text.append("\n" if tag in self.UMBRUCH else "\t")
+              def handle_endtag(self, tag):
+                  if tag in ("script", "style"): self.aus = max(0, self.aus - 1)
+                  self.text.append("\n" if tag in self.UMBRUCH else "\t")
+              def handle_data(self, daten):
+                  if not self.aus: self.text.append(daten.replace("\n", " ").replace("\xa0", " "))
+
+          def zeilen(html):
+              p = Zeilen(); p.feed(html)
+              for zeile in "".join(p.text).split("\n"):
+                  teile = [re.sub(r"\s+", " ", t).strip() for t in zeile.split("\t")]
+                  teile = [t for t in teile if t]
+                  if teile and DATUM.search(" ".join(teile)):
+                      yield teile
+
+          def einsaetze(html):
+              liste = []
+              for teile in zeilen(html):
+                  ganz = " ".join(teile)
+                  d, z = DATUM.search(ganz), ZEIT.search(ganz)
+                  if not z: continue
+                  rest = [t for t in (DATUM.sub("", ZEIT.sub("", t)).strip() for t in teile) if t]
+                  if len(rest) >= 2:
+                      wehr, art = " ".join(rest[:-1]), rest[-1]
+                  elif rest and " " in rest[0]:
+                      wehr, art = rest[0].rsplit(" ", 1)
+                  else:
+                      wehr, art = (rest[0] if rest else ""), ""
+                  liste.append({"datum": d.group(1), "zeit": z.group(1).zfill(5), "wehr": wehr, "art": art})
+              return liste
+
+          def veranstaltungen(html):
+              liste = []
+              for teile in zeilen(html):
+                  ganz = " ".join(teile)
+                  d, z = DATUM.search(ganz), ZEIT.search(ganz)
+                  rest = [t for t in (re.sub(r"-\s*:\s*-", "", DATUM.sub("", ZEIT.sub("", t))).strip() for t in teile) if t]
+                  rest = [t for t in rest if t.lower() not in ("mehr", "details", "info")]
+                  if not rest: continue
+                  liste.append({"datum": d.group(1), "zeit": z.group(1).zfill(5) if z else "",
+                                "name": rest[0], "ort": rest[1] if len(rest) > 1 else ""})
+              return liste
+
+          daten = {"einsaetze": einsaetze(holen("HomePageEinsaetze.php")),
+                   "veranstaltungen": veranstaltungen(holen("HomePageKFVVeranstaltung.php"))}
+          print(len(daten["einsaetze"]), "Einsaetze,", len(daten["veranstaltungen"]), "Veranstaltungen")
+          for e in daten["einsaetze"][:3] + daten["veranstaltungen"][:3]: print("  ", e)
+          if not daten["einsaetze"]:
+              sys.exit("Keine Einsaetze gefunden - die Fox-Seite ist vermutlich anders aufgebaut als erwartet.")
+
+          try:
+              alt = json.load(open(DATEI, encoding="utf-8"))
+              if all(alt.get(k) == daten[k] for k in daten):
+                  print("Keine Aenderung."); sys.exit(0)
+          except (OSError, ValueError):
+              pass
+          daten["stand"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+          with open(DATEI, "w", encoding="utf-8") as f:
+              json.dump(daten, f, ensure_ascii=False, indent=1)
+          PY
+
+      - name: Aenderung speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add verband.json
+          git diff --cached --quiet || (git commit -m "Verband aktualisiert" && git pull --rebase && git push)

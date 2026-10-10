@@ -1,1 +1,80 @@
+# Holt alle 30 Minuten die Baustellen von luebeck.de und legt sie als
+# strassensperrungen.json ins Repository. Die Seite strassensperrungen.html liest diese Datei.
+name: Strassensperrungen aktualisieren
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strassensperrungen
+  cancel-in-progress: false
+
+jobs:
+  holen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baustellen abrufen
+        run: |
+          python3 - <<'PY'
+          import json, os, re, sys, urllib.request
+          from datetime import datetime, timezone
+
+          QUELLE = os.environ.get("QUELLE", "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo")
+          DATEI = "strassensperrungen.json"
+
+          anfrage = urllib.request.Request(QUELLE, headers={"User-Agent": "Mozilla/5.0 (Alarmmonitor FF Dummersdorf)"})
+          html = urllib.request.urlopen(anfrage, timeout=60).read().decode("utf-8", "replace")
+
+          treffer = re.search(r'<script[^>]*id="btl-map-json"[^>]*>(.*?)</script>', html, re.S)
+          if not treffer:
+              sys.exit("Datenblock btl-map-json nicht gefunden - die Stadt hat die Seite vermutlich umgebaut.")
+          roh = json.loads(treffer.group(1))
+          if not isinstance(roh, list) or not roh:
+              sys.exit("Datenblock ist leer - alte Daten bleiben stehen.")
+
+          def text(wert):
+              return re.sub(r"\s+", " ", str(wert or "")).strip()
+
+          baustellen = [{
+              "id": b.get("id"),
+              "title": text(b.get("title")),
+              "status": text(b.get("status")),
+              "plz": text(b.get("plz")),
+              "teil": text(b.get("teil")),
+              "dates": text(b.get("dates")),
+              "wirkung": text(b.get("wirkung")),
+              "lat": b.get("lat"),
+              "lng": b.get("lng"),
+          } for b in roh]
+          baustellen.sort(key=lambda b: (b["title"].lower(), b["id"] or 0))
+
+          jetzt = datetime.now(timezone.utc)
+          try:
+              alt = json.load(open(DATEI, encoding="utf-8"))
+              alter_h = (jetzt - datetime.fromisoformat(alt["stand"])).total_seconds() / 3600
+              if alt.get("baustellen") == baustellen and alter_h < 6:
+                  print("Keine Aenderung.")
+                  sys.exit(0)
+          except (OSError, ValueError, KeyError):
+              pass
+
+          with open(DATEI, "w", encoding="utf-8") as f:
+              json.dump({"stand": jetzt.isoformat(timespec="seconds"), "quelle": QUELLE, "baustellen": baustellen},
+                        f, ensure_ascii=False, indent=1)
+          print(len(baustellen), "Baustellen gespeichert.")
+          PY
+
+      - name: Aenderung speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add strassensperrungen.json
+          git diff --cached --quiet || (git commit -m "Strassensperrungen aktualisiert" && git push)
 

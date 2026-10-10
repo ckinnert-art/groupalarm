@@ -1,0 +1,217 @@
+{
+ "einsaetze": [
+  {
+   "datum": "08.10.2026",
+   "zeit": "12:29",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "08.10.2026",
+   "zeit": "12:07",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "08.10.2026",
+   "zeit": "03:01",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "04.10.2026",
+   "zeit": "17:15",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.10.2026",
+   "zeit": "22:21",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.10.2026",
+   "zeit": "19:04",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.10.2026",
+   "zeit": "14:29",
+   "wehr": "FF Krummesse",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "03.10.2026",
+   "zeit": "14:29",
+   "wehr": "FF Wulfsdorf-Vorrade",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "03.10.2026",
+   "zeit": "01:48",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "30.09.2026",
+   "zeit": "06:34",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "29.09.2026",
+   "zeit": "15:11",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "28.09.2026",
+   "zeit": "22:33",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "28.09.2026",
+   "zeit": "18:14",
+   "wehr": "FF Travemünde",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "28.09.2026",
+   "zeit": "17:31",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "28.09.2026",
+   "zeit": "14:48",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "27.09.2026",
+   "zeit": "18:46",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "27.09.2026",
+   "zeit": "13:24",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "26.09.2026",
+   "zeit": "08:02",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "25.09.2026",
+   "zeit": "14:31",
+   "wehr": "FF Innenstadt",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "25.09.2026",
+   "zeit": "09:51",
+   "wehr": "FF Genin",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.09.2026",
+   "zeit": "13:34",
+   "wehr": "FF Kücknitz",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.09.2026",
+   "zeit": "13:34",
+   "wehr": "FF Dummersdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.09.2026",
+   "zeit": "06:17",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.09.2026",
+   "zeit": "04:23",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  }
+ ],
+ "veranstaltungen": [
+  {
+   "datum": "17.10.2026",
+   "zeit": "",
+   "name": "Motorsägenführer Lehrgang",
+   "ort": ""
+  },
+  {
+   "datum": "17.10.2026",
+   "zeit": "",
+   "name": "Technische Hilfeleistung 2",
+   "ort": ""
+  },
+  {
+   "datum": "02.11.2026",
+   "zeit": "19:00",
+   "name": "WF-Dienstbesprechung mit BL",
+   "ort": ""
+  },
+  {
+   "datum": "09.11.2026",
+   "zeit": "",
+   "name": "Jugendwarteausschusssitzung",
+   "ort": "Kücknitz"
+  },
+  {
+   "datum": "09.11.2026",
+   "zeit": "",
+   "name": "Kreisausbildertreffen",
+   "ort": ""
+  },
+  {
+   "datum": "10.11.2026",
+   "zeit": "",
+   "name": "Fortbildung Führungskräfte",
+   "ort": ""
+  },
+  {
+   "datum": "14.11.2026",
+   "zeit": "",
+   "name": "Nachtwanderung der Jugendfeuerwehren",
+   "ort": "Krummesse"
+  },
+  {
+   "datum": "14.11.2026",
+   "zeit": "",
+   "name": "Truppführer Lehrgang",
+   "ort": ""
+  },
+  {
+   "datum": "21.11.2026",
+   "zeit": "",
+   "name": "Herbstbesichtigung",
+   "ort": ""
+  },
+  {
+   "datum": "23.11.2026",
+   "zeit": "19:00",
+   "name": "WF-Dienstbesprechung",
+   "ort": ""
+  },
+  {
+   "datum": "30.11.2026",
+   "zeit": "",
+   "name": "Fortbildung Sicherheitsbeauftragte",
+   "ort": ""
+  }
+ ],
+ "stand": "2026-10-10T09:45:00+00:00"
+}

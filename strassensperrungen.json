@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-10T20:21:30+00:00",
+ "stand": "2026-10-10T22:21:57+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -309,17 +309,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88784,
    "lng": 10.66546
-  },
-  {
-   "id": 6041,
-   "title": "Fahrenheitweg",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "28.9.2026 bis 10.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.89397,
-   "lng": 10.70984
   },
   {
    "id": 5953,
@@ -1101,17 +1090,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84384,
    "lng": 10.70743
-  },
-  {
-   "id": 5958,
-   "title": "Torneiweg 2-20",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "",
-   "dates": "14.9.2026 bis 10.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88772,
-   "lng": 10.71212
   },
   {
    "id": 6062,

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Straßensperrungen</title>
+<style>
+  :root {
+    --bg: #1f2125;
+    --panel: #62656573;      /* GroupAlarm-Dark-Panel */
+    --kopf: #15171a;
+    --text: #f2f3f5;
+    --leise: #a9adb5;
+    --voll: #e5383b;
+    --halb: #f08a24;
+    --eng: #e9c46a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  html { font-size: clamp(13px, calc(1.05vw + 0.9vh), 44px); }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex; flex-direction: column;
+  }
+  header {
+    background: var(--kopf); padding: .45rem .8rem;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+    flex: none;
+  }
+  h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+  #stand { font-size: .75rem; color: var(--leise); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  #stand.alt { color: var(--halb); font-weight: 600; }
+  main { flex: 1; min-height: 0; padding: .45rem .6rem 0; overflow: hidden; }
+  #liste { height: 100%; overflow: hidden; }
+  h2 {
+    font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--leise); padding: .35rem .2rem .25rem;
+  }
+  .zeile {
+    background: var(--panel); border-left: .32rem solid var(--eng);
+    display: grid; grid-template-columns: 4.2rem minmax(0, 1fr) auto; column-gap: .6rem; align-items: baseline;
+    padding: .32rem .6rem .34rem .5rem; margin-bottom: .22rem;
+  }
+  .zeile.voll { border-left-color: var(--voll); }
+  .zeile.halb { border-left-color: var(--halb); }
+  .art { font-size: .68rem; font-weight: 800; letter-spacing: .06em; color: var(--eng); white-space: nowrap; }
+  .voll .art { color: var(--voll); }
+  .halb .art { color: var(--halb); }
+  .strasse { font-size: 1rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .strasse small { font-size: .72rem; font-weight: 400; color: var(--leise); margin-left: .5rem; }
+  .zeit { font-size: .82rem; color: var(--text); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .geplant { opacity: .78; }
+  .geplant .zeit { color: var(--leise); }
+  .hinweis {
+    grid-column: 2 / 4; font-size: .72rem; color: var(--leise);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .leer { color: var(--leise); font-size: .9rem; padding: .3rem .2rem .6rem; }
+  footer {
+    flex: none; display: flex; justify-content: space-between; gap: 1rem;
+    padding: .25rem .8rem .35rem; font-size: .62rem; color: var(--leise);
+  }
+  #seite { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<header><h1>Straßensperrungen</h1><span id="stand">lädt …</span></header>
+<main><div id="liste"></div></main>
+<footer><span>Quelle: Hansestadt Lübeck, Baustelleninfo</span><span id="seite"></span></footer>
+
+<script>
+/* ===================== EINSTELLUNGEN ===================== */
+
+// Ausrückebereich: hier wird ALLES angezeigt, auch kleine Straßen.
+const BEREICH_STADTTEILE = ["Kücknitz", "Travemünde"];
+const BEREICH_PLZ = ["23569", "23570"];
+const BEREICH_NAME = "Kücknitz bis Travemünde";
+
+// Restliches Lübeck: nur Einträge, deren Titel eine dieser Straßen enthält.
+// Zeilen einfach ergänzen oder löschen. Schreibweise mit oder ohne Bindestrich ist egal.
+const HAUPTSTRASSEN = [
+  "Travemünder Allee", "Travemünder Landstraße",
+  "Ratzeburger Allee", "Ratzeburger Landstraße",
+  "Kronsforder Allee", "Kronsforder Landstraße",
+  "Moislinger Allee", "Hamburger Straße", "Padelügger Weg", "Geniner Straße",
+  "Fackenburger Allee", "Schwartauer Allee", "Schwartauer Landstraße",
+  "Krempelsdorfer Allee", "Stockelsdorfer Straße", "Friedhofsallee",
+  "Ziegelstraße", "Schönböckener Straße",
+  "Bei der Lohmühle", "Karlstraße", "Einsiedelstraße", "Katharinenstraße",
+  "Possehlstraße", "Willy-Brandt-Allee", "Lindenplatz", "Holstentorplatz",
+  "Kanalstraße", "Falkenstraße", "Hüxtertorallee", "Hüxterdamm", "Wallstraße",
+  "Mühlentorplatz", "Berliner Platz", "St. Jürgen Ring",
+  "Untertrave", "Gustav-Radbruch-Platz", "Roeckstraße",
+  "Heiligen-Geist-Kamp", "Marlistraße", "Arnimstraße",
+  "Wesloer Landstraße", "Brandenbaumer Landstraße", "Schlutuper Straße",
+  "Nordtangente", "Herrentunnel", "Brücke", "B 75", "A 1", "A 226"
+];
+
+const SEITENWECHSEL_SEKUNDEN = 12;   // wenn nicht alles auf einmal passt
+const NEU_LADEN_MINUTEN = 10;
+const WARNUNG_AB_STUNDEN = 3;        // Daten älter als das: Uhrzeit wird orange
+
+/* ========================================================== */
+
+const norm = s => String(s || "").toLowerCase()
+  .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+  .replace(/str\./g, "strasse").replace(/[^a-z0-9]/g, "");
+const HAUPT = HAUPTSTRASSEN.map(norm);
+// kurze Kürzel wie "A 1" nur als ganzes Wort werten, sonst träfe "a1" auch Hausnummern
+const hauptTreffer = titel => {
+  const n = norm(titel);
+  return HAUPTSTRASSEN.some((name, i) =>
+    /^[AB] ?\d+$/.test(name)
+      ? new RegExp("(^|[^A-Za-z0-9])" + name.replace(" ", " ?") + "($|[^0-9])").test(titel)
+      : n.includes(HAUPT[i]));
+};
+
+function datum(t) {
+  const m = /(\d{1,2})\.(\d{1,2})\.(\d{4})/.exec(t || "");
+  return m ? new Date(+m[3], +m[2] - 1, +m[1]) : null;
+}
+function kurz(d, heute) {
+  const tt = String(d.getDate()).padStart(2, "0"), mm = String(d.getMonth() + 1).padStart(2, "0");
+  return tt + "." + mm + "." + (d.getFullYear() !== heute.getFullYear() ? String(d.getFullYear()).slice(2) : "");
+}
+function art(w) {
+  if (/vollsperrung|sperrung der stra/i.test(w)) return ["voll", "VOLL"];
+  if (/halbseitig|einbahn/i.test(w)) return ["halb", "HALB"];
+  return ["eng", "ENGSTELLE"];
+}
+const STANDARD = /^(vollsperrung|fahrbahnverengung|sperrung der straße|halbseitige fahrbahnsperrung)$/i;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function aufbereiten(daten) {
+  const heute = new Date(); heute.setHours(0, 0, 0, 0);
+  const bereich = [], haupt = [];
+  for (const b of daten) {
+    const teile = String(b.dates || "").split(/\s+bis\s+/);
+    const von = datum(teile[0]), bis = datum(teile[1] || teile[0]);
+    if (bis && bis < heute) continue;                       // schon vorbei
+    const geplant = von ? von > heute : b.status === "geplant";
+    const imBereich = BEREICH_STADTTEILE.includes(b.teil) || BEREICH_PLZ.includes(b.plz);
+    if (!imBereich && (geplant || !hauptTreffer(b.title))) continue;
+    const [klasse, kuerzel] = art(b.wirkung);
+    let zeit = "";
+    if (von && bis) zeit = geplant ? "ab " + kurz(von, heute) + " – " + kurz(bis, heute) : "bis " + kurz(bis, heute);
+    (imBereich ? bereich : haupt).push({
+      klasse, kuerzel, geplant, zeit, von,
+      titel: b.title, teil: imBereich ? b.teil : (b.teil || ""),
+      hinweis: STANDARD.test(b.wirkung) ? "" : b.wirkung
+    });
+  }
+  const rang = { voll: 0, halb: 1, eng: 2 };
+  const sortieren = l => l.sort((a, b) =>
+    (a.geplant - b.geplant) || (rang[a.klasse] - rang[b.klasse]) ||
+    (a.geplant ? a.von - b.von : 0) || a.titel.localeCompare(b.titel, "de"));
+  return { bereich: sortieren(bereich), haupt: sortieren(haupt) };
+}
+
+function zeileHtml(e) {
+  return '<div class="zeile ' + e.klasse + (e.geplant ? " geplant" : "") + '">' +
+    '<span class="art">' + (e.geplant ? "GEPLANT" : e.kuerzel) + "</span>" +
+    '<span class="strasse">' + esc(e.titel) + (e.teil ? "<small>" + esc(e.teil) + "</small>" : "") + "</span>" +
+    '<span class="zeit">' + esc(e.zeit) + "</span>" +
+    (e.hinweis ? '<span class="hinweis">' + esc(e.hinweis) + "</span>" : "") + "</div>";
+}
+
+let seiten = [], aktuelleSeite = 0, letzteDaten = null;
+
+function seitenBauen() {
+  if (!letzteDaten) return;
+  const { bereich, haupt } = aufbereiten(letzteDaten.baustellen || []);
+  const bloecke = [];
+  const gruppe = (titel, liste) => {
+    if (!liste.length) { bloecke.push({ kopf: titel, html: '<div class="leer">Keine Sperrungen gemeldet.</div>' }); return; }
+    liste.forEach(e => bloecke.push({ kopf: titel, html: zeileHtml(e) }));
+  };
+  gruppe("Ausrückebereich · " + BEREICH_NAME + " (" + bereich.length + ")", bereich);
+  gruppe("Lübeck · Hauptstraßen (" + haupt.length + ")", haupt);
+
+  // Seiten so füllen, dass nichts abgeschnitten wird
+  const liste = document.getElementById("liste");
+  const hoehe = liste.clientHeight;
+  seiten = []; let html = "", kopf = null;
+  liste.style.visibility = "hidden";
+  for (const b of bloecke) {
+    const zusatz = (b.kopf !== kopf ? "<h2>" + esc(b.kopf) + "</h2>" : "") + b.html;
+    liste.innerHTML = html + zusatz;
+    if (html && liste.scrollHeight > hoehe) {
+      seiten.push(html);
+      html = "<h2>" + esc(b.kopf) + (b.kopf === kopf ? " – Fortsetzung" : "") + "</h2>" + b.html;
+    } else html += zusatz;
+    kopf = b.kopf;
+  }
+  if (html) seiten.push(html);
+  liste.style.visibility = "";
+  if (aktuelleSeite >= seiten.length) aktuelleSeite = 0;
+  zeigen();
+}
+
+function zeigen() {
+  document.getElementById("liste").innerHTML = seiten[aktuelleSeite] || "";
+  document.getElementById("seite").textContent = seiten.length > 1 ? "Seite " + (aktuelleSeite + 1) + " / " + seiten.length : "";
+  const el = document.getElementById("stand");
+  const stand = new Date(letzteDaten.stand);
+  if (isNaN(stand)) { el.textContent = ""; return; }
+  const alt = (Date.now() - stand) / 36e5 > WARNUNG_AB_STUNDEN;
+  const uhr = stand.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  const tag = stand.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+  el.textContent = alt ? "Daten vom " + tag + " " + uhr + " Uhr" : "Stand " + uhr + " Uhr";
+  el.classList.toggle("alt", alt);
+}
+
+async function laden() {
+  try {
+    const r = await fetch("strassensperrungen.json?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    letzteDaten = await r.json();
+    seitenBauen();
+  } catch (e) {
+    if (!letzteDaten) document.getElementById("stand").textContent = "Daten nicht erreichbar";
+  }
+}
+
+laden();
+setInterval(laden, NEU_LADEN_MINUTEN * 60000);
+setInterval(() => { if (seiten.length > 1) { aktuelleSeite = (aktuelleSeite + 1) % seiten.length; zeigen(); } }, SEITENWECHSEL_SEKUNDEN * 1000);
+let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(seitenBauen, 200); });
+</script>
+</body>
+</html>

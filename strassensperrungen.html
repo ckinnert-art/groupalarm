@@ -6,68 +6,58 @@
 <title>Straßensperrungen</title>
 <style>
   :root {
-    --bg: #1f2125;
-    --panel: #62656573;      /* GroupAlarm-Dark-Panel */
-    --kopf: #15171a;
-    --text: #f2f3f5;
-    --leise: #a9adb5;
-    --voll: #e5383b;
-    --halb: #f08a24;
-    --eng: #e9c46a;
+    --flaeche: #3d3f42;      /* entspricht dem GroupAlarm-Dark-Panel #62656573 auf dunklem Grund */
+    --kopf: #2f3134;         /* Überschriftszeile, etwas dunkler */
+    --linie: #ffffff1f;
+    --text: #ffffff;
+    --leise: #b9bcc2;
+    --voll: #d9363e;
+    --halb: #e8862a;
+    --eng: #e3bd4f;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; overflow: hidden; }
-  html { font-size: clamp(13px, calc(1.05vw + 0.9vh), 44px); }
+  html { font-size: clamp(12px, calc(1.1vw + 1.6vh), 40px); }
   body {
-    background: var(--bg); color: var(--text);
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--flaeche); color: var(--text);
+    font-family: Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     display: flex; flex-direction: column;
   }
   header {
-    background: var(--kopf); padding: .45rem .8rem;
-    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
-    flex: none;
+    background: var(--kopf); padding: .28rem .6rem; flex: none;
+    display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem; align-items: baseline;
   }
-  h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
-  #stand { font-size: .75rem; color: var(--leise); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  #stand.alt { color: var(--halb); font-weight: 600; }
-  main { flex: 1; min-height: 0; padding: .45rem .6rem 0; overflow: hidden; }
+  h1 { grid-column: 2; text-align: center; font-size: 1.3rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #seite { grid-column: 3; text-align: right; font-size: .95rem; color: var(--leise); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  main { flex: 1; min-height: 0; padding: .1rem .55rem 0; overflow: hidden; }
   #liste { height: 100%; overflow: hidden; }
-  h2 {
-    font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--leise); padding: .35rem .2rem .25rem;
-  }
   .zeile {
-    background: var(--panel); border-left: .32rem solid var(--eng);
-    display: grid; grid-template-columns: 4.2rem minmax(0, 1fr) auto; column-gap: .6rem; align-items: baseline;
-    padding: .32rem .6rem .34rem .5rem; margin-bottom: .22rem;
+    display: grid; grid-template-columns: 2.9em minmax(0, 1fr) auto; column-gap: .5em; align-items: center;
+    padding: .2em 0 .22em; border-bottom: 1px solid var(--linie); line-height: 1.25;
   }
-  .zeile.voll { border-left-color: var(--voll); }
-  .zeile.halb { border-left-color: var(--halb); }
-  .art { font-size: .68rem; font-weight: 800; letter-spacing: .06em; color: var(--eng); white-space: nowrap; }
-  .voll .art { color: var(--voll); }
-  .halb .art { color: var(--halb); }
-  .strasse { font-size: 1rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .strasse small { font-size: .72rem; font-weight: 400; color: var(--leise); margin-left: .5rem; }
-  .zeit { font-size: .82rem; color: var(--text); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .geplant { opacity: .78; }
-  .geplant .zeit { color: var(--leise); }
-  .hinweis {
-    grid-column: 2 / 4; font-size: .72rem; color: var(--leise);
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  .zeile:last-child { border-bottom: 0; }
+  .art {
+    font-size: .58em; font-weight: 700; letter-spacing: .03em; text-align: center; white-space: nowrap;
+    padding: .28em 0 .24em; border-radius: .3em; background: var(--eng); color: #26282b;
   }
-  .leer { color: var(--leise); font-size: .9rem; padding: .3rem .2rem .6rem; }
+  .voll .art { background: var(--voll); color: #fff; }
+  .halb .art { background: var(--halb); color: #26282b; }
+  .strasse b { font-weight: 500; }
+  .strasse { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .strasse small { font-size: .62em; font-weight: 400; color: var(--leise); margin-left: .6em; }
+  .zeit { font-size: .82em; color: var(--leise); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .leer { color: var(--leise); padding: .5em .1em; }
   footer {
-    flex: none; display: flex; justify-content: space-between; gap: 1rem;
-    padding: .25rem .8rem .35rem; font-size: .62rem; color: var(--leise);
+    flex: none; text-align: right; padding: .12rem .6rem .2rem;
+    font-size: .55rem; color: var(--leise); white-space: nowrap;
   }
-  #seite { font-variant-numeric: tabular-nums; }
+  #stand.alt { color: var(--halb); font-weight: 700; }
 </style>
 </head>
 <body>
-<header><h1>Straßensperrungen</h1><span id="stand">lädt …</span></header>
+<header><h1 id="titel">Straßensperrungen</h1><span id="seite"></span></header>
 <main><div id="liste"></div></main>
-<footer><span>Quelle: Hansestadt Lübeck, Baustelleninfo</span><span id="seite"></span></footer>
+<footer>Quelle: Hansestadt Lübeck · <span id="stand">lädt …</span></footer>
 
 <script>
 /* ===================== EINSTELLUNGEN ===================== */
@@ -97,7 +87,14 @@ const HAUPTSTRASSEN = [
   "Nordtangente", "Herrentunnel", "Brücke", "B 75", "A 1", "A 226"
 ];
 
-const SEITENWECHSEL_SEKUNDEN = 12;   // wenn nicht alles auf einmal passt
+// Aufteilung: so viele Seiten bekommt jede Gruppe. Je mehr Seiten, desto größer die Schrift.
+const SEITEN_BEREICH = 2;            // aktuelle Sperrungen im Ausrückebereich
+const SEITEN_HAUPT = 3;              // aktuelle Sperrungen auf Lübecker Hauptstraßen
+const SEITEN_GEPLANT = 1;            // geplante Baustellen im Ausrückebereich
+const SCHRIFT_MAX = 34;              // größte Schrift in Pixel (bei wenigen Einträgen)
+const SCHRIFT_MIN = 15;              // kleiner wird es nie; dann kommen lieber mehr Seiten
+const SCHRIFT_LANGE_NAMEN = 20;      // bis hierhin wird verkleinert, damit lange Straßennamen ganz draufpassen
+const SEITENWECHSEL_SEKUNDEN = 12;
 const NEU_LADEN_MINUTEN = 10;
 const WARNUNG_AB_STUNDEN = 8;        // Daten älter als das: Uhrzeit wird orange (Abruf schreibt spätestens alle 6 Stunden neu)
 
@@ -127,81 +124,92 @@ function kurz(d, heute) {
 function art(w) {
   if (/vollsperrung|sperrung der stra/i.test(w)) return ["voll", "VOLL"];
   if (/halbseitig|einbahn/i.test(w)) return ["halb", "HALB"];
-  return ["eng", "ENGSTELLE"];
+  return ["eng", "ENG"];
 }
-const STANDARD = /^(vollsperrung|fahrbahnverengung|sperrung der straße|halbseitige fahrbahnsperrung)$/i;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 function aufbereiten(daten) {
   const heute = new Date(); heute.setHours(0, 0, 0, 0);
-  const bereich = [], haupt = [];
+  const bereich = [], haupt = [], geplant = [];
   for (const b of daten) {
     const teile = String(b.dates || "").split(/\s+bis\s+/);
     const von = datum(teile[0]), bis = datum(teile[1] || teile[0]);
     if (bis && bis < heute) continue;                       // schon vorbei
-    const geplant = von ? von > heute : b.status === "geplant";
+    const istGeplant = von ? von > heute : b.status === "geplant";
     const imBereich = BEREICH_STADTTEILE.includes(b.teil) || BEREICH_PLZ.includes(b.plz);
-    if (!imBereich && (geplant || !hauptTreffer(b.title))) continue;
+    if (!imBereich && (istGeplant || !hauptTreffer(b.title))) continue;
     const [klasse, kuerzel] = art(b.wirkung);
-    let zeit = "";
-    if (von && bis) zeit = geplant ? "ab " + kurz(von, heute) + " – " + kurz(bis, heute) : "bis " + kurz(bis, heute);
-    (imBereich ? bereich : haupt).push({
-      klasse, kuerzel, geplant, zeit, von,
-      titel: b.title, teil: imBereich ? b.teil : (b.teil || ""),
-      hinweis: STANDARD.test(b.wirkung) ? "" : b.wirkung
-    });
+    const zeit = istGeplant ? (von ? "ab " + kurz(von, heute) : "") : (bis ? "bis " + kurz(bis, heute) : "");
+    (istGeplant ? geplant : imBereich ? bereich : haupt).push({ klasse, kuerzel, zeit, von, titel: b.title, teil: b.teil || "" });
   }
   const rang = { voll: 0, halb: 1, eng: 2 };
-  const sortieren = l => l.sort((a, b) =>
-    (a.geplant - b.geplant) || (rang[a.klasse] - rang[b.klasse]) ||
-    (a.geplant ? a.von - b.von : 0) || a.titel.localeCompare(b.titel, "de"));
-  return { bereich: sortieren(bereich), haupt: sortieren(haupt) };
+  const nachArt = (a, b) => (rang[a.klasse] - rang[b.klasse]) || a.titel.localeCompare(b.titel, "de");
+  bereich.sort(nachArt); haupt.sort(nachArt);
+  geplant.sort((a, b) => (a.von - b.von) || nachArt(a, b));
+  return { bereich, haupt, geplant };
 }
 
 function zeileHtml(e) {
-  return '<div class="zeile ' + e.klasse + (e.geplant ? " geplant" : "") + '">' +
-    '<span class="art">' + (e.geplant ? "GEPLANT" : e.kuerzel) + "</span>" +
-    '<span class="strasse">' + esc(e.titel) + (e.teil ? "<small>" + esc(e.teil) + "</small>" : "") + "</span>" +
-    '<span class="zeit">' + esc(e.zeit) + "</span>" +
-    (e.hinweis ? '<span class="hinweis">' + esc(e.hinweis) + "</span>" : "") + "</div>";
+  return '<div class="zeile ' + e.klasse + '">' +
+    '<span class="art">' + e.kuerzel + "</span>" +
+    '<span class="strasse">' + "<b>" + esc(e.titel) + "</b>" + (e.teil ? "<small>" + esc(e.teil) + "</small>" : "") + "</span>" +
+    '<span class="zeit">' + esc(e.zeit) + "</span></div>";
 }
 
 let seiten = [], aktuelleSeite = 0, letzteDaten = null;
 
+// Größte Schrift, bei der der Inhalt noch ganz in die Fläche passt (0 = passt auch bei SCHRIFT_MIN nicht)
+function schriftFuer(html) {
+  const liste = document.getElementById("liste");
+  liste.innerHTML = html;
+  for (let px = SCHRIFT_MAX; px >= SCHRIFT_MIN; px--) {
+    liste.style.fontSize = px + "px";
+    if (liste.scrollHeight > liste.clientHeight) continue;
+    const abgeschnitten = [...liste.querySelectorAll(".strasse")].some(z => z.firstChild.offsetWidth > z.clientWidth);
+    if (!abgeschnitten || px <= SCHRIFT_LANGE_NAMEN) return px;
+  }
+  return 0;
+}
+
 function seitenBauen() {
   if (!letzteDaten) return;
-  const { bereich, haupt } = aufbereiten(letzteDaten.baustellen || []);
-  const bloecke = [];
-  const gruppe = (titel, liste) => {
-    if (!liste.length) { bloecke.push({ kopf: titel, html: '<div class="leer">Keine Sperrungen gemeldet.</div>' }); return; }
-    liste.forEach(e => bloecke.push({ kopf: titel, html: zeileHtml(e) }));
-  };
-  gruppe("Ausrückebereich · " + BEREICH_NAME + " (" + bereich.length + ")", bereich);
-  gruppe("Lübeck · Hauptstraßen (" + haupt.length + ")", haupt);
-
-  // Seiten so füllen, dass nichts abgeschnitten wird
+  const { bereich, haupt, geplant } = aufbereiten(letzteDaten.baustellen || []);
   const liste = document.getElementById("liste");
-  const hoehe = liste.clientHeight;
-  seiten = []; let html = "", kopf = null;
   liste.style.visibility = "hidden";
-  for (const b of bloecke) {
-    const zusatz = (b.kopf !== kopf ? "<h2>" + esc(b.kopf) + "</h2>" : "") + b.html;
-    liste.innerHTML = html + zusatz;
-    if (html && liste.scrollHeight > hoehe) {
-      seiten.push(html);
-      html = "<h2>" + esc(b.kopf) + (b.kopf === kopf ? " – Fortsetzung" : "") + "</h2>" + b.html;
-    } else html += zusatz;
-    kopf = b.kopf;
-  }
-  if (html) seiten.push(html);
+  seiten = [];
+  const gruppe = (titel, eintraege, wunschSeiten) => {
+    if (!eintraege.length) {
+      seiten.push({ titel, html: '<div class="leer">Keine Sperrungen gemeldet.</div>', px: Math.min(SCHRIFT_MAX, 22) });
+      return;
+    }
+    // mit der gewünschten Seitenzahl anfangen; nur wenn die Schrift zu klein würde, weitere Seiten nehmen
+    for (let n = Math.min(wunschSeiten, eintraege.length); ; n++) {
+      const jeSeite = Math.ceil(eintraege.length / n), teile = [];
+      for (let i = 0; i < eintraege.length; i += jeSeite) teile.push(eintraege.slice(i, i + jeSeite).map(zeileHtml).join(""));
+      const px = schriftFuer(teile[0]);
+      if (px || jeSeite === 1) {
+        teile.forEach((html, i) => seiten.push({
+          titel: titel + " (" + eintraege.length + ")", html, px: px || SCHRIFT_MIN,
+          teil: teile.length > 1 ? (i + 1) + "/" + teile.length : ""
+        }));
+        return;
+      }
+    }
+  };
+  gruppe("Sperrungen Ausrückebereich", bereich, SEITEN_BEREICH);
+  gruppe("Sperrungen Lübeck Hauptstraßen", haupt, SEITEN_HAUPT);
+  if (geplant.length) gruppe("Geplant im Ausrückebereich", geplant, SEITEN_GEPLANT);
   liste.style.visibility = "";
   if (aktuelleSeite >= seiten.length) aktuelleSeite = 0;
   zeigen();
 }
 
 function zeigen() {
-  document.getElementById("liste").innerHTML = seiten[aktuelleSeite] || "";
-  document.getElementById("seite").textContent = seiten.length > 1 ? "Seite " + (aktuelleSeite + 1) + " / " + seiten.length : "";
+  const s = seiten[aktuelleSeite]; if (!s) return;
+  const liste = document.getElementById("liste");
+  liste.style.fontSize = s.px + "px"; liste.innerHTML = s.html;
+  document.getElementById("titel").textContent = s.titel;
+  document.getElementById("seite").textContent = s.teil || "";
   const el = document.getElementById("stand");
   const stand = new Date(letzteDaten.stand);
   if (isNaN(stand)) { el.textContent = ""; return; }

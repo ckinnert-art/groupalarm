@@ -8,7 +8,7 @@
 :root{--zoom:2.05;--cropv:42;--cropE:46;--bg:#424242;--head:#4f4f4c;--ok:#4cc38a;--low:#6db3ff;--high:#ff7a7a}
 html,body{height:100%;margin:0;background:#1f2536;overflow:hidden}
 body{font-family:Roboto,"Segoe UI",Arial,sans-serif;color:#fff}
-.grid{box-sizing:border-box;height:100%;display:grid;grid-template-columns:1.3fr 1.05fr .95fr .85fr;gap:6px;padding:0}
+.grid{box-sizing:border-box;height:100%;display:grid;grid-template-columns:.9fr 1.3fr 1.05fr .85fr .95fr;gap:6px;padding:0}
 .cell{container-type:size;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
 .cell>h2{margin:0;flex:none;display:flex;align-items:center;justify-content:center;height:min(24vh,64px);text-align:center;font-weight:700;font-size:clamp(14px,min(9.5vh,38px),44px);line-height:1;padding:0 1vw;background:var(--head);color:#fff}
 .body{position:relative;flex:1;min-height:0;overflow:hidden;isolation:isolate}
@@ -31,15 +31,22 @@ filter:invert(.9) hue-rotate(180deg) brightness(1.15)}
 .sub{display:block;font-size:min(6.5cqh,4.2cqw);font-weight:400;color:#c4cbe0;margin-top:.3cqh}
 .val{font-size:min(12cqh,8cqw);font-weight:700;white-space:nowrap;color:var(--c)}
 .ok{--c:var(--ok)}.low{--c:var(--low)}.high{--c:var(--high)}
+.dp{position:relative;background:var(--bg)}
+.dp .seite{position:absolute;right:1.2cqw;top:0;height:min(24vh,64px);display:flex;align-items:center;font-size:min(6cqh,4.5cqw);color:#d5d5d5;font-variant-numeric:tabular-nums}
+.dp .liste{flex:1;min-height:0;display:flex;flex-direction:column;padding:0 3cqw}
+.dp .termin{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;line-height:1.1;border-bottom:1px solid #ffffff22;overflow:hidden}
+.dp .termin:last-child{border-bottom:0}
+.dp .wann{font-size:min(6.8cqh,5.6cqw);font-weight:700;color:#ffd166;white-space:nowrap;font-variant-numeric:tabular-nums}
+.dp .wann span{font-weight:400;color:#d5d5d5;margin-left:.5em}
+.dp .was{font-size:min(7.3cqh,5.9cqw);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dp .was b{font-weight:500}
+.dp .heute .wann{color:var(--ok)}
 @media (max-aspect-ratio:1/1){.grid{grid-template-columns:1fr;grid-auto-rows:1fr}}
 </style></head>
 <body><div class="grid">
+<div class="cell dp"><h2 id="dp-titel">Dienstplan</h2><span class="seite" id="dp-seite"></span><div class="liste" id="dp-liste"></div></div>
 <div class="cell cv"><h2>Verbandsveranstaltungen</h2><div class="body"><iframe data-src="https://luebeck.fox112.de/HomePageKFVVeranstaltung.php" title="Verbandsveranstaltungen"></iframe></div></div>
 <div class="cell ce"><h2>Verbandseinsätze</h2><div class="body"><iframe data-src="https://luebeck.fox112.de/HomePageEinsaetze.php" title="Verbandseinsätze"></iframe></div></div>
-<div class="cell pg">
-<h2>Pegelstände Travemünde</h2>
-<div class="img"><img id="pegel" alt="Wasserstand Travemünde (BSH)" referrerpolicy="no-referrer" src="https://www2.bsh.de/aktdat/wvd/ostsee/pegelkurve/de/figures/travemuende-wasserstand-desktop.png"></div>
-</div>
 <div class="cell pw">
 <h1>Priwall Besetzung</h1>
 <div class="rows">
@@ -47,6 +54,10 @@ filter:invert(.9) hue-rotate(180deg) brightness(1.15)}
 <div class="row low"><span class="name">Niedrigwasser<span class="sub">Alarmschwelle: 1 m unter NN</span></span><span class="val">4,0 m</span></div>
 <div class="row high"><span class="name">Hochwasser<span class="sub">Alarmschwelle: 1,8 m über NN</span></span><span class="val">6,8 m</span></div>
 </div></div>
+<div class="cell pg">
+<h2>Pegelstände Travemünde</h2>
+<div class="img"><img id="pegel" alt="Wasserstand Travemünde (BSH)" referrerpolicy="no-referrer" src="https://www2.bsh.de/aktdat/wvd/ostsee/pegelkurve/de/figures/travemuende-wasserstand-desktop.png"></div>
+</div>
 </div>
 <script>
 (function(){var q=new URLSearchParams(location.search),r=document.documentElement.style;
@@ -59,5 +70,65 @@ function load(){for(var i=0;i<fs.length;i++){fs[i].src=fs[i].getAttribute("data-
 load();setInterval(load,5*60*1000);
 var im=document.getElementById("pegel"),base=im.getAttribute("src");
 setInterval(function(){im.src=base+"?t="+Date.now();},5*60*1000);})();
+</script>
+<script>
+/* ===================== DIENSTPLÄNE =====================
+   Eine Zeile pro Termin: ["Datum JJJJ-MM-TT", "Uhrzeit", "Was"]
+   Uhrzeit leer lassen (""), wenn sie noch nicht feststeht.
+   Vergangene Termine verschwinden von selbst.                */
+var DIENSTPLAENE = [
+  { titel: "Dienste Aktive Wehr", termine: [
+    ["2026-10-16", "19:00", "Ausbildungsdienst"],
+    ["2026-11-06", "15:45", "Sternmarsch Kücknitzer Jugend"],
+    ["2026-11-13", "19:00", "Ausbildungsdienst"],
+    ["2026-11-15", "09:00", "Volkstrauertag"],
+    ["2026-11-20", "19:00", "Ausbildungsdienst"],
+    ["2026-11-29", "15:45", "Kinderweihnacht"],
+    ["2026-12-04", "19:00", "Letzter Ausbildungsdienst"],
+    ["2026-12-12", "",      "Weihnachtsfeier"]
+  ]},
+  { titel: "Dienste LZG", termine: [
+    ["2026-10-21", "19:00", "Messen: A-Messgeräte / A-Einsatz"],
+    ["2026-11-04", "19:00", "Gesamt: Grundlagen B-Gefahren"],
+    ["2026-12-09", "18:00", "Weihnachtsmarkt"]
+  ]},
+  { titel: "Dienste Jugendfeuerwehr", termine: [
+  ]}
+];
+var DP_TERMINE_JE_PLAN = 10;     // so viele nächste Termine pro Plan
+var DP_ZEILEN_JE_SEITE = 4;      // weniger Zeilen = größere Schrift
+var DP_SEKUNDEN = 12;            // Anzeigedauer je Seite
+/* ======================================================= */
+(function(){
+  var TAGE=["So","Mo","Di","Mi","Do","Fr","Sa"],seiten=[],nr=-1;
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function bauen(){
+    var h=new Date();h.setHours(0,0,0,0);seiten=[];
+    DIENSTPLAENE.forEach(function(p){
+      var t=p.termine.map(function(e){var d=e[0].split("-");return{d:new Date(+d[0],d[1]-1,+d[2]),zeit:e[1],was:e[2]}})
+        .filter(function(e){return e.d>=h}).sort(function(a,b){return a.d-b.d||a.zeit.localeCompare(b.zeit)}).slice(0,DP_TERMINE_JE_PLAN);
+      var n=Math.ceil(t.length/DP_ZEILEN_JE_SEITE);
+      for(var i=0;i<n;i++)seiten.push({titel:p.titel,teil:n>1?(i+1)+"/"+n:"",t:t.slice(i*DP_ZEILEN_JE_SEITE,(i+1)*DP_ZEILEN_JE_SEITE),heute:h});
+    });
+  }
+  function zeigen(){
+    nr++; if(nr>=seiten.length){bauen();nr=0;}
+    var s=seiten[nr],L=document.getElementById("dp-liste");
+    if(!s){document.getElementById("dp-titel").textContent="Dienstplan";L.innerHTML="";return;}
+    document.getElementById("dp-titel").textContent=s.titel;
+    document.getElementById("dp-seite").textContent=s.teil;
+    var html="";
+    for(var i=0;i<DP_ZEILEN_JE_SEITE;i++){var e=s.t[i];
+      if(!e){html+='<div class="termin" style="border:0"></div>';continue;}
+      var tt=("0"+e.d.getDate()).slice(-2)+"."+("0"+(e.d.getMonth()+1)).slice(-2)+".";
+      var heute=e.d.getTime()===s.heute.getTime();
+      html+='<div class="termin'+(heute?" heute":"")+'"><div class="wann">'+(heute?"Heute":TAGE[e.d.getDay()]+" "+tt)+(e.zeit?"<span>"+esc(e.zeit)+" Uhr</span>":"")+'</div><div class="was"><b>'+esc(e.was)+"</b></div></div>";}
+    L.innerHTML=html;
+    // zu lange Texte einzeln etwas verkleinern, bevor sie abgeschnitten werden
+    [].forEach.call(L.querySelectorAll(".was"),function(z){var b=z.firstChild;
+      if(b.offsetWidth>z.clientWidth)b.style.fontSize=Math.max(.72,z.clientWidth/b.offsetWidth*.99)+"em";});
+  }
+  bauen();zeigen();setInterval(zeigen,DP_SEKUNDEN*1000);
+})();
 </script><script>setTimeout(function(){try{var u=new URL(location.href);u.searchParams.set("_r",Date.now());location.replace(u.toString())}catch(e){location.reload()}},60*60*1000);</script>
 </body></html>

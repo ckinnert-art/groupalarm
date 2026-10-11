@@ -21,6 +21,12 @@
   {
    "datum": "10.10.2026",
    "zeit": "12:10",
+   "wehr": "FF Siems",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
+   "zeit": "12:10",
    "wehr": "IuK",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "14:48",
    "wehr": "FF Büssau",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "27.09.2026",
-   "zeit": "18:46",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-11T10:19:28+00:00"
+ "stand": "2026-10-11T14:57:14+00:00"
 }

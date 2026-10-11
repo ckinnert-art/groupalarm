@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-11T16:51:00+00:00",
+ "stand": "2026-10-11T22:23:07+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -16,7 +16,7 @@
   {
    "id": 6110,
    "title": "Am Dreilingsberg / Ecke Gneversdorfer Weg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "12.10.2026 bis 30.10.2026",
@@ -27,7 +27,7 @@
   {
    "id": 6100,
    "title": "An der Dänischburg ggü. Nr. 27",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23569",
    "teil": "Kücknitz",
    "dates": "12.10.2026 bis 23.10.2026",
@@ -91,17 +91,6 @@
    "lng": 10.65528
   },
   {
-   "id": 6018,
-   "title": "Auf Eutiner Straße von Bornhövedstraße 52",
-   "status": "aktuell",
-   "plz": "23554",
-   "teil": "St. Lorenz-Nord",
-   "dates": "9.9.2026 bis 11.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88841,
-   "lng": 10.66574
-  },
-  {
    "id": 4220,
    "title": "Balauerfohr",
    "status": "aktuell",
@@ -137,7 +126,7 @@
   {
    "id": 6003,
    "title": "Blankenseer Straße 1-5",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 16.10.2026",
@@ -489,7 +478,7 @@
   {
    "id": 6061,
    "title": "Im Trentsaal",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 30.10.2026",
@@ -511,7 +500,7 @@
   {
    "id": 6099,
    "title": "Julius-Brecht-Straße Nr. 14 bis 16",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 12.10.2026",
@@ -588,7 +577,7 @@
   {
    "id": 6098,
    "title": "Kronsforder Allee 40-52(beidseitig)",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 20.10.2026",
@@ -687,7 +676,7 @@
   {
    "id": 6102,
    "title": "Marlistraße 112",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "12.10.2026 bis 21.10.2026",
@@ -698,7 +687,7 @@
   {
    "id": 6095,
    "title": "Meesenring",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "12.10.2026 bis 6.11.2026",
@@ -753,7 +742,7 @@
   {
    "id": 6097,
    "title": "Mönkhofer Weg 101-179, 78-94",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 24.10.2026",
@@ -764,7 +753,7 @@
   {
    "id": 6064,
    "title": "Mühlendamm 14-20",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23552",
    "teil": "Innenstadt",
    "dates": "12.10.2026 bis 15.10.2026",
@@ -885,7 +874,7 @@
   {
    "id": 6089,
    "title": "Ratzeburger Allee",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23564",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 30.10.2026",
@@ -951,7 +940,7 @@
   {
    "id": 6104,
    "title": "Robert-Koch-Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 30.10.2026",
@@ -1083,13 +1072,24 @@
   {
    "id": 5870,
    "title": "Stichweg zwischen Bergenstraße und Am Neuhof",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "12.10.2026 bis 24.10.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84384,
    "lng": 10.70743
+  },
+  {
+   "id": 6068,
+   "title": "Stumpfer Weg",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "Schlutup",
+   "dates": "26.10.2026 bis 13.11.2026",
+   "wirkung": "Baumfällung mit kurzeitiger Straßensperrung",
+   "lat": 53.87812,
+   "lng": 10.80049
   },
   {
    "id": 6062,
@@ -1160,7 +1160,7 @@
   {
    "id": 6049,
    "title": "Weidekamp, Güterschlag und Am Neuhof",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Nord",
    "dates": "12.10.2026 bis 16.11.2026",

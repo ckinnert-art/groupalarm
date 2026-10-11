@@ -9,6 +9,12 @@
   {
    "datum": "10.10.2026",
    "zeit": "12:10",
+   "wehr": "FF Dummersdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
+   "zeit": "12:10",
    "wehr": "IuK",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "08:02",
    "wehr": "FF Büssau",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "25.09.2026",
-   "zeit": "14:31",
-   "wehr": "FF Innenstadt",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-11T06:52:06+00:00"
+ "stand": "2026-10-11T09:59:58+00:00"
 }

@@ -8,6 +8,12 @@
   },
   {
    "datum": "10.10.2026",
+   "zeit": "12:12",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
    "zeit": "12:10",
    "wehr": "FF Dummersdorf",
    "art": "Brandeinsatz"
@@ -52,6 +58,12 @@
    "datum": "08.10.2026",
    "zeit": "03:01",
    "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "07.10.2026",
+   "zeit": "14:22",
+   "wehr": "FF Moisling",
    "art": "Brandeinsatz"
   },
   {
@@ -131,18 +143,6 @@
    "zeit": "18:46",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "27.09.2026",
-   "zeit": "13:24",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "26.09.2026",
-   "zeit": "08:02",
-   "wehr": "FF Büssau",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-11T09:59:58+00:00"
+ "stand": "2026-10-11T10:19:28+00:00"
 }

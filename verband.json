@@ -13,6 +13,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "10.10.2026",
+   "zeit": "12:08",
+   "wehr": "FF Ivendorf",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "08.10.2026",
    "zeit": "12:52",
    "wehr": "FF Siems",
@@ -137,12 +143,6 @@
    "zeit": "14:31",
    "wehr": "FF Innenstadt",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "25.09.2026",
-   "zeit": "09:51",
-   "wehr": "FF Genin",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-10T19:58:21+00:00"
+ "stand": "2026-10-11T06:52:06+00:00"
 }

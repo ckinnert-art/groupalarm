@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-12T09:28:48+00:00",
+ "stand": "2026-10-12T10:27:26+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -243,6 +243,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87704,
    "lng": 10.6444
+  },
+  {
+   "id": 6115,
+   "title": "Dr.-Heinrich-Dräger-Straße und Maiblumenstraße",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Süd",
+   "dates": "26.10.2026 bis 15.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85499,
+   "lng": 10.66822
   },
   {
    "id": 5977,

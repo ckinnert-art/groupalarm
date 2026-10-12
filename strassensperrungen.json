@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-12T16:53:11+00:00",
+ "stand": "2026-10-12T22:23:43+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -23,6 +23,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.96219,
    "lng": 10.85994
+  },
+  {
+   "id": 6048,
+   "title": "An der Bäk 84",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "27.10.2026 bis 30.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.95949,
+   "lng": 10.8477
   },
   {
    "id": 6100,
@@ -137,7 +148,7 @@
   {
    "id": 6103,
    "title": "Bunsenweg 7",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "13.10.2026 bis 30.10.2026",
@@ -291,7 +302,7 @@
   {
    "id": 6101,
    "title": "Ernst-Deecke-Weg 65",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "13.10.2026 bis 30.10.2026",
@@ -434,7 +445,7 @@
   {
    "id": 6109,
    "title": "Helgolandstraße 3",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "13.10.2026 bis 30.10.2026",
@@ -507,17 +518,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.9017,
    "lng": 10.75113
-  },
-  {
-   "id": 6099,
-   "title": "Julius-Brecht-Straße Nr. 14 bis 16",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 12.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84004,
-   "lng": 10.68209
   },
   {
    "id": 6081,
@@ -740,17 +740,6 @@
    "lng": 10.68597
   },
   {
-   "id": 6056,
-   "title": "Moislinger Allee 65 (Stichweg)",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "St. Lorenz-Süd",
-   "dates": "21.9.2026 bis 12.10.2026",
-   "wirkung": "Vollsperrung bei der Baumaßnahme",
-   "lat": 53.85453,
-   "lng": 10.66723
-  },
-  {
    "id": 5996,
    "title": "Morier Straße 44 e",
    "status": "geplant",
@@ -874,7 +863,7 @@
   {
    "id": 6096,
    "title": "Raabrede Nr. 63",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "13.10.2026 bis 23.10.2026",

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-12T04:26:53+00:00",
+ "stand": "2026-10-12T09:28:48+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -542,6 +542,17 @@
    "lng": 10.67708
   },
   {
+   "id": 6113,
+   "title": "Kieperhorst, Auf dem Ruhm",
+   "status": "aktuell",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "12.10.2026 bis 30.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.8389,
+   "lng": 10.67649
+  },
+  {
    "id": 6107,
    "title": "Kiwittredder Nr. 14 bis 18 bzw. gegenüber Nr. 1",
    "status": "geplant",
@@ -936,6 +947,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8383,
    "lng": 10.67631
+  },
+  {
+   "id": 6112,
+   "title": "Ringstraße 20-22a",
+   "status": "aktuell",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "12.10.2026 bis 17.10.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.96128,
+   "lng": 10.8598
   },
   {
    "id": 6104,

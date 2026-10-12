@@ -15,6 +15,12 @@
   {
    "datum": "10.10.2026",
    "zeit": "12:10",
+   "wehr": "FF Kücknitz",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
+   "zeit": "12:10",
    "wehr": "FF Dummersdorf",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "17:31",
    "wehr": "FF Padelügge Buntekuh",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "28.09.2026",
-   "zeit": "14:48",
-   "wehr": "FF Büssau",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-11T14:57:14+00:00"
+ "stand": "2026-10-12T18:53:18+00:00"
 }

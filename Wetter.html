@@ -43,11 +43,17 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 .day>.mm{font-weight:500}.day>.mm span{color:var(--dim);font-weight:400}
 .day .pp{color:#7cc0ff;font-size:.85em;min-height:1.2em}
 /* Warnung */
-.warn{flex:none;padding:1vh 1.4vw;background:rgba(0,0,0,.2);font-size:clamp(11px,3vh,22px);display:flex;flex-direction:column;gap:.4vh}
-.warn div{display:flex;gap:.6em;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Warnzeile: so hoch wie die Tageszeile (wird per Skript angeglichen), große Schrift */
+.warn{flex:none;min-height:3.2em;padding:.4em 1.4vw;background:rgba(0,0,0,.2);border-top:1px solid var(--line);font-size:clamp(14px,4.4vh,30px);
+  display:flex;flex-direction:column;justify-content:center;gap:.25em;overflow:hidden;box-sizing:border-box}
+.warn .w1{display:flex;align-items:center;gap:.5em;white-space:nowrap;overflow:hidden;font-weight:700;line-height:1.1}
+.warn .w1 b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.warn .w1 small{flex:none;font-size:.6em;font-weight:400;color:var(--dim)}
+.warn .w2{padding-left:1.4em;font-size:.72em;line-height:1.15;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.warn .w2 .dt{color:#fff;font-weight:500}
 .warn i{flex:none;width:.9em;height:.9em;border-radius:50%;display:inline-block}
-.warn .dt{color:#fff;font-weight:500}
-.warn .none{color:var(--ok)}
+.warn .none{color:var(--ok);font-weight:500;text-align:center;line-height:1.15}
+.warn .err{color:var(--dim);text-align:center;font-size:.75em}
 .foot{flex:none;text-align:right;font-size:clamp(8px,1.8vh,13px);color:var(--dim);padding:0 1.4vw .6vh;background:rgba(0,0,0,.2)}
 .msg{margin:auto;color:var(--dim);font-size:clamp(12px,3vh,22px);text-align:center;padding:2vh}
 </style>
@@ -186,6 +192,7 @@ function render(cur,fc,now){
   });
   h+='<div class="days">'+days.join('')+'</div>';
   main.innerHTML=h;
+  warnHoehe();
   /* Hauptbereich ohne seitlichen Rand für die Tage */
   var d=new Date();
   document.getElementById("foot").textContent="Quelle: Deutscher Wetterdienst · Abruf "+("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);
@@ -229,17 +236,30 @@ function loadWarn(){
     var now=new Date(),lim=new Date(now.getTime()+48*3600000);
     var a=(j.alerts||[]).filter(function(x){var ex=new Date(x.expires||x.end||0),on=new Date(x.onset||x.effective);return ex>now&&on<lim});
     a.sort(function(x,y){return ((SEV[y.severity]||[0,0])[1])-((SEV[x.severity]||[0,0])[1])});
-    var el=document.getElementById("warn");
-    if(!a.length){el.innerHTML='<div class="none">✓ Keine aktuelle Unwetterwarnung</div>';return}
-    el.innerHTML=a.slice(0,3).map(function(x){var c=(SEV[x.severity]||["#ffd43b"])[0],dt=details(x);var ev=String(x.event_de||x.headline_de||"Warnung");ev=ev.charAt(0).toUpperCase()+ev.slice(1).toLowerCase();return '<div><i style="background:'+c+'"></i><b>'+ev+'</b>'+(dt?'<span class="dt">'+dt+'</span>':'')+'<span style="color:var(--dim)">· '+when(x)+'</span></div>'}).join('');
+    warnListe=a.slice(0,5).map(function(x){var c=(SEV[x.severity]||["#ffd43b"])[0],dt=details(x);var ev=String(x.event_de||x.headline_de||"Warnung");ev=ev.charAt(0).toUpperCase()+ev.slice(1).toLowerCase();
+      return {c:c,ev:ev,zeile2:(dt?'<span class="dt">'+dt+'</span> · ':'')+when(x)}});
+    warnNr=0;warnZeigen();
   });
 }
+/* eine Warnung groß zeigen; bei mehreren alle WARN_SEKUNDEN weiterblättern */
+var WARN_SEKUNDEN=8,warnListe=[],warnNr=0;
+function warnZeigen(){
+  var el=document.getElementById("warn");
+  if(!warnListe.length){el.innerHTML='<div class="none">✓ Keine aktuelle Unwetterwarnung</div>';warnHoehe();return}
+  if(warnNr>=warnListe.length)warnNr=0;
+  var w=warnListe[warnNr];
+  el.innerHTML='<div class="w1"><i style="background:'+w.c+'"></i><b>'+w.ev+'</b>'+(warnListe.length>1?'<small>'+(warnNr+1)+'/'+warnListe.length+'</small>':'')+'</div><div class="w2">'+w.zeile2+'</div>';
+  warnHoehe();
+}
+setInterval(function(){if(warnListe.length>1){warnNr++;warnZeigen()}},WARN_SEKUNDEN*1000);
+/* Warnzeile genau so hoch wie die Tageszeile Heute/Morgen/… */
+function warnHoehe(){var d=document.querySelector(".days"),el=document.getElementById("warn");if(d&&el)el.style.height=d.offsetHeight+"px"}
 
 var lastData=null;
 function load(redrawOnly){
   if(redrawOnly&&lastData){render(lastData[0],lastData[1],new Date());return}
   loadWeather().catch(function(){var m=document.getElementById("main");if(!m.querySelector(".now"))m.innerHTML='<div class="msg">Wetterdaten nicht erreichbar</div>'});
-  loadWarn().catch(function(){document.getElementById("warn").innerHTML='<div style="color:var(--dim)">Warnungen nicht abrufbar</div>'});
+  loadWarn().catch(function(){document.getElementById("warn").innerHTML='<div class="err">Warnungen nicht abrufbar</div>';warnHoehe()});
 }
 /* Daten für Resize merken */
 var _r=render;render=function(c,f,n){lastData=[c,f];_r(c,f,n)};

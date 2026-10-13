@@ -27,9 +27,11 @@
   .zeit{font-size:var(--schrift-zeit);font-weight:700;color:var(--akzent);white-space:nowrap}
   .zeit small{font-size:.5em;color:var(--gedimmt);font-weight:400;margin-left:8px}
   #karte{flex:1;background:#1e1f20}
-  .leiste{position:absolute;left:0;right:0;bottom:0;height:10px;background:rgba(0,0,0,.5);z-index:500}
-  #fortschritt{height:100%;background:var(--akzent);width:0;transition:width .3s}
-  #jetzt{position:absolute;top:-6px;bottom:0;width:3px;background:#fff;margin-left:-1px}
+  /* Zeitleiste: ein Kästchen pro Radarbild */
+  .leiste{position:absolute;left:0;right:0;bottom:0;height:14px;display:flex;gap:3px;
+    padding:0 3px;background:rgba(0,0,0,.6);z-index:500;box-sizing:border-box}
+  .leiste span{flex:1;background:rgba(255,255,255,.18);transition:background-color .3s}
+  .leiste span.jetzt{box-shadow:4px 0 0 #fff}
   .legende{position:absolute;right:12px;bottom:22px;z-index:500;background:rgba(30,31,32,.85);
     padding:8px 10px;border-radius:6px}
   .legende img{display:block;max-height:46vh}
@@ -55,7 +57,7 @@
 </div>
 <div class="legende"><img id="legende" alt=""></div>
 <div class="quelle">Quelle: Deutscher Wetterdienst · Karte © OpenStreetMap-Mitwirkende</div>
-<div class="leiste"><div id="fortschritt"></div><div id="jetzt"></div></div>
+<div class="leiste" id="leiste"></div>
 
 <script>
 /* ===== Einstellungen ===== */
@@ -140,18 +142,33 @@ function zeige(i){
     const alt = Math.round((Date.now()-z.getTime())/60000);
     zeitEl.innerHTML = `${uhr} Uhr<small>${i===jetztNr ? "aktuell" : "vor "+alt+" Min."}</small>`;
   }
-  const f = document.getElementById("fortschritt");
-  f.style.width = ((i+1)/zeiten.length*100)+"%";
-  f.style.background = i > jetztNr ? "var(--vorschau)" : "var(--akzent)";
-  document.getElementById("jetzt").style.left = ((jetztNr+1)/zeiten.length*100)+"%";
+}
+
+/* Dauer, die ein Bild angezeigt wird */
+function dauer(i){
+  if(i === zeiten.length-1) return HALTEN_ENDE_MS;
+  if(i === jetztNr) return HALTEN_JETZT_MS;
+  return TAKT_MS;
+}
+
+/* Zeitleiste: jedes Kästchen = ein Radarbild, läuft genau mit der Uhrzeit oben mit */
+function balken(i){
+  const leiste = document.getElementById("leiste");
+  if(leiste.children.length !== zeiten.length){
+    leiste.innerHTML = zeiten.map(()=>"<span></span>").join("");
+  }
+  [...leiste.children].forEach((el,k)=>{
+    el.className = k===jetztNr ? "jetzt" : "";
+    el.style.background = k<=i ? (k>jetztNr ? "var(--vorschau)" : "var(--akzent)") : "";
+  });
 }
 
 function abspielen(){
   clearTimeout(timer);
   zeige(nr);
+  balken(nr);
   const letztes = nr === zeiten.length-1;
-  const pause = letztes ? HALTEN_ENDE_MS : (nr===jetztNr ? HALTEN_JETZT_MS : TAKT_MS);
-  timer = setTimeout(()=>{ nr = letztes ? 0 : nr+1; abspielen(); }, pause);
+  timer = setTimeout(()=>{ nr = letztes ? 0 : nr+1; abspielen(); }, dauer(nr));
 }
 
 laden();

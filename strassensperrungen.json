@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-13T04:26:59+00:00",
+ "stand": "2026-10-13T10:27:32+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -859,6 +859,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84739,
    "lng": 10.69657
+  },
+  {
+   "id": 6116,
+   "title": "Parkstraße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Gertrud",
+   "dates": "19.10.2026 bis 31.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87958,
+   "lng": 10.70071
   },
   {
    "id": 6096,

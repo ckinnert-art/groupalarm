@@ -5,52 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Regenradar Dummersdorf</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   /* ===== Einstellungen zum Anpassen ===== */
   :root{
     --panel: rgba(98,101,101,0.45);   /* GroupAlarm-Panel #62656573 */
-    --kopf: rgba(40,42,44,0.85);      /* dunklere Überschriftszeile */
+    --kopf: #4f4f4c;                  /* Überschriftszeile wie die anderen Felder */
     --text: #ffffff;
     --gedimmt: #c9cdd2;
     --akzent: #ffcc33;                /* Farbe Vergangenheit/aktuell */
     --vorschau: #5ec8ff;              /* Farbe Vorhersage */
-    --schrift-titel: 34px;
-    --schrift-zeit: 44px;
+    --schrift-titel: 44px;
+    --schrift-zeit: 40px;
   }
   html,body{margin:0;height:100%;background:transparent;color:var(--text);
     font-family:"Roboto","Segoe UI",Arial,sans-serif;overflow:hidden}
   .feld{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--panel)}
-  .kopf{background:var(--kopf);padding:8px 20px;display:flex;align-items:center;
-    justify-content:space-between;gap:16px}
-  .kopf h1{margin:0;font-size:var(--schrift-titel);font-weight:600;white-space:nowrap}
-  .zeit{font-size:var(--schrift-zeit);font-weight:700;color:var(--akzent);white-space:nowrap}
+  /* Titel mittig wie bei GroupAlarm, Uhrzeit rechts daneben */
+  .kopf{background:var(--kopf);padding:6px 20px;display:grid;grid-template-columns:1fr auto 1fr;
+    align-items:center;gap:16px}
+  .kopf h1{grid-column:2;margin:0;font-size:var(--schrift-titel);font-weight:700;white-space:nowrap;text-align:center}
+  .zeit{grid-column:3;justify-self:end;font-size:var(--schrift-zeit);font-weight:700;color:var(--akzent);white-space:nowrap}
   .zeit small{font-size:.5em;color:var(--gedimmt);font-weight:400;margin-left:8px}
   #karte{flex:1;background:#1e1f20}
   /* Zeitleiste: ein Kästchen pro Radarbild */
-  .leiste{position:absolute;left:0;right:0;bottom:0;height:14px;display:flex;gap:3px;
-    padding:0 3px;background:rgba(0,0,0,.6);z-index:500;box-sizing:border-box}
-  .leiste span{flex:1;background:rgba(255,255,255,.18);transition:background-color .3s}
-  .leiste span.jetzt{box-shadow:4px 0 0 #fff}
-  .legende{position:absolute;right:12px;bottom:22px;z-index:500;background:rgba(30,31,32,.85);
+  .leiste{position:absolute;left:0;right:0;bottom:0;height:30px;display:flex;gap:4px;
+    padding:4px;background:rgba(20,21,22,.9);z-index:500;box-sizing:border-box}
+  .leiste span{flex:1;background:rgba(255,255,255,.22);border-radius:3px;color:#e8eaed;
+    font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;
+    white-space:nowrap;overflow:hidden;}
+  .leiste span.an{color:#111}
+  .leiste span.jetzt{outline:3px solid #fff;outline-offset:1px}
+  .legende{position:absolute;right:12px;bottom:40px;z-index:500;background:rgba(30,31,32,.85);
     padding:8px 10px;border-radius:6px}
   .legende img{display:block;max-height:46vh}
-  .quelle{position:absolute;left:12px;bottom:18px;z-index:500;font-size:14px;color:var(--gedimmt);
+  .quelle{position:absolute;left:12px;bottom:38px;z-index:500;font-size:14px;color:var(--gedimmt);
     background:rgba(30,31,32,.7);padding:3px 8px;border-radius:4px}
   .ring-text{color:#fff;font-size:15px;font-weight:600;text-shadow:0 0 4px #000,0 0 4px #000;white-space:nowrap}
   .wache{width:22px;height:22px;border-radius:50%;background:#e30613;border:3px solid #fff;
     box-shadow:0 0 10px rgba(0,0,0,.8)}
   .leaflet-container{background:#1e1f20}
-  /* Helligkeit der Hintergrundkarte: 1 = original, kleiner = dunkler */
-  .radar{transition:opacity .6s ease-in-out}  /* weicher Übergang zwischen den Bildern */
-  .grundkarte{filter:brightness(0.8) saturate(0.7) contrast(1.05)}
   .leaflet-control-attribution{display:none}
 </style>
 </head>
 <body>
 <div class="feld">
   <div class="kopf">
-    <h1>Regenradar mit Vorhersage</h1>
+    <h1>Regenradar</h1>
     <div class="zeit" id="zeit">–<small></small></div>
   </div>
   <div id="karte"></div>
@@ -72,16 +74,19 @@ const VERZUG_MIN   = 10;                // DWD liefert mit ca. 5–10 Min. Verz�
 const TAKT_MS      = 2100;              // Zeit pro Bild in der Animation
 const HALTEN_JETZT_MS = 3000;           // kurzer Halt beim aktuellen Bild
 const HALTEN_ENDE_MS  = 4000;           // Halt am Ende der Vorhersage
+const RADAR_DECKKRAFT = 0.8;           // Deckkraft des Regens
+const KARTE_HELLIGKEIT = 0.85;         // 1 = volle Helligkeit, kleiner = dunkler
 const NEU_LADEN_MIN = 5;                // alle 5 Minuten neue Bilder holen
 const DWD_WMS      = "https://maps.dwd.de/geoserver/dwd/wms";
 const DWD_EBENE    = "dwd:Radar_wn-product_1x1km_ger";  // Radar + 2-Std.-Vorhersage (Nowcast)
 
 /* ===== Karte ===== */
 const karte = L.map("karte", {zoomControl:false, attributionControl:false, dragging:false,
-  scrollWheelZoom:false, doubleClickZoom:false, boxZoom:false, keyboard:false, touchZoom:false, zoomSnap:0.25});
+  scrollWheelZoom:false, doubleClickZoom:false, boxZoom:false, keyboard:false, touchZoom:false, zoomSnap:0.25,
+  fadeAnimation:false, zoomAnimation:false, markerZoomAnimation:false});  // Animationen aus = weniger Last für den Pi
 
-// Hintergrundkarte: OpenStreetMap (wie die GroupAlarm-Karte), leicht abgedunkelt
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:15,className:"grundkarte"}).addTo(karte);
+// Hintergrundkarte: OpenStreetMap (wie die GroupAlarm-Karte), leicht abgedunkelt (ohne rechenintensive Filter)
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:15,opacity:KARTE_HELLIGKEIT}).addTo(karte);
 // Ortsnamen liegen über dem Radar, damit sie lesbar bleiben
 karte.createPane("namen"); karte.getPane("namen").style.zIndex = 450; karte.getPane("namen").style.pointerEvents="none";
 
@@ -118,18 +123,42 @@ function zeitpunkte(){
   return liste;
 }
 
+/* Ein einzelnes Radarbild für den ganzen Kartenausschnitt (statt vieler Kacheln) – schont den Pi */
+function bildAdresse(z){
+  const b = karte.getBounds(), g = karte.getSize();
+  const sw = L.CRS.EPSG3857.project(b.getSouthWest()), ne = L.CRS.EPSG3857.project(b.getNorthEast());
+  const f = Math.min(1, 1000/Math.max(g.x,g.y));          // max. 1000 Pixel breit reicht (1-km-Raster)
+  return DWD_WMS + "?service=WMS&version=1.3.0&request=GetMap&styles=&format=image/png&transparent=true" +
+    "&layers=" + DWD_EBENE + "&crs=EPSG:3857&bbox=" + [sw.x,sw.y,ne.x,ne.y].join(",") +
+    "&width=" + Math.round(g.x*f) + "&height=" + Math.round(g.y*f) +
+    "&time=" + z.toISOString().replace(/\.\d{3}Z$/,".000Z");
+}
+
+let wartend = null;   // fertig geladene neue Bilder, warten auf das Ende des Durchlaufs
+
 function laden(){
-  const neu = zeitpunkte();
-  const neueEbenen = neu.map(z => L.tileLayer.wms(DWD_WMS,{
-    layers:DWD_EBENE, format:"image/png", transparent:true, version:"1.3.0",
-    TIME:z.toISOString().replace(/\.\d{3}Z$/,".000Z"), tileSize:512, opacity:0, zIndex:300, className:"radar"
-  }).addTo(karte));
-  // alte Bilder erst entfernen, wenn die neuen geladen sind (kein Flackern)
-  setTimeout(()=>{ ebenen.forEach(e=>karte.removeLayer(e)); ebenen = neueEbenen; zeiten = neu; nr = 0; abspielen(); }, 4000);
+  const neu = zeitpunkte(), neuJetzt = jetztNr;
+  const adressen = neu.map(bildAdresse);
+  // alle Bilder erst im Hintergrund komplett laden, dann tauschen
+  Promise.all(adressen.map(a => new Promise(ok => {
+    const img = new Image(); img.onload = img.onerror = () => ok(); img.src = a;
+    setTimeout(ok, 30000);
+  }))).then(() => {
+    const bounds = karte.getBounds();
+    const ebenenNeu = adressen.map(a => L.imageOverlay(a, bounds, {opacity:0, interactive:false}).addTo(karte));
+    wartend = {ebenen:ebenenNeu, zeiten:neu, jetzt:neuJetzt};
+    if(!zeiten.length) uebernehmen();      // beim allerersten Laden sofort starten
+  });
+}
+
+function uebernehmen(){
+  ebenen.forEach(e => karte.removeLayer(e));
+  ebenen = wartend.ebenen; zeiten = wartend.zeiten; jetztNr = wartend.jetzt; wartend = null;
+  nr = 0; abspielen();
 }
 
 function zeige(i){
-  ebenen.forEach((e,k)=>e.setOpacity(k===i ? 0.75 : 0));
+  ebenen.forEach((e,k)=>e.setOpacity(k===i ? RADAR_DECKKRAFT : 0));
   const z = zeiten[i];
   const uhr = z.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Berlin"});
   const diff = Math.round((z.getTime()-zeiten[jetztNr].getTime())/60000);
@@ -154,11 +183,11 @@ function dauer(i){
 /* Zeitleiste: jedes Kästchen = ein Radarbild, läuft genau mit der Uhrzeit oben mit */
 function balken(i){
   const leiste = document.getElementById("leiste");
-  if(leiste.children.length !== zeiten.length){
-    leiste.innerHTML = zeiten.map(()=>"<span></span>").join("");
+  if(i===0 || leiste.children.length !== zeiten.length){
+    leiste.innerHTML = zeiten.map(z=>"<span>"+z.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Berlin"})+"</span>").join("");
   }
   [...leiste.children].forEach((el,k)=>{
-    el.className = k===jetztNr ? "jetzt" : "";
+    el.className = (k===jetztNr ? "jetzt " : "") + (k<=i ? "an" : "");
     el.style.background = k<=i ? (k>jetztNr ? "var(--vorschau)" : "var(--akzent)") : "";
   });
 }
@@ -168,7 +197,10 @@ function abspielen(){
   zeige(nr);
   balken(nr);
   const letztes = nr === zeiten.length-1;
-  timer = setTimeout(()=>{ nr = letztes ? 0 : nr+1; abspielen(); }, dauer(nr));
+  timer = setTimeout(()=>{
+    if(letztes && wartend){ uebernehmen(); return; }   // neue Bilder erst am Ende eines Durchlaufs
+    nr = letztes ? 0 : nr+1; abspielen();
+  }, dauer(nr));
 }
 
 laden();

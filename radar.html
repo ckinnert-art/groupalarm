@@ -11,8 +11,9 @@
   /* ===== Einstellungen zum Anpassen ===== */
   :root{
     --panel: rgba(98,101,101,0.45);   /* GroupAlarm-Panel #62656573 */
-    --panel-fest: #313334;            /* gleicher Ton, aber deckend (für die Info-Seite) */
-    --grund: #1e1f20;                 /* dunkler Hintergrund zwischen den Feldern */
+    --panel-fest: #3c3d3b;            /* Feldfarbe Info-Seite, an das Wetter-Feld angeglichen */
+    --grund: #262726;                 /* dunkler Spalt zwischen den Feldern */
+    --priwall-hoehe: 25%;             /* Höhe Priwall-Feld; kleiner = Pegel beginnt weiter oben */
     --kopf: #4f4f4c;                  /* Überschriftszeile wie die anderen Felder */
     --text: #ffffff;
     --gedimmt: #c9cdd2;
@@ -55,7 +56,7 @@
   .leaflet-control-attribution{display:none}
 
   /* ===== Seite 2: oben Priwall-Besetzung, unten Pegel Travemünde (groß) ===== */
-  #info{position:absolute;inset:0;display:none;grid-template-rows:30fr 70fr;gap:8px;background:var(--grund)}
+  #info{position:absolute;inset:0;display:none;grid-template-rows:var(--priwall-hoehe) 1fr;gap:5px;background:var(--grund)}
   body.info #info{display:grid}
   body.info .feld, body.info .legende, body.info .quelle, body.info .leiste{visibility:hidden}
   .ifeld{container-type:size;display:flex;flex-direction:column;background:var(--panel-fest);min-width:0;min-height:0}

@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wetter Dummersdorf</title>
 <style>
-:root{--head:#4f4f4c;--bg:#424242;--txt:#f1f3f5;--dim:#aeb4bb;--line:rgba(255,255,255,.14);--ok:#4cc38a}
+:root{--head:#505050;--bg:#424242;--txt:#f1f3f5;--dim:#aeb4bb;--line:rgba(255,255,255,.14);--ok:#4cc38a}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--txt);font-family:Roboto,"Segoe UI",Arial,sans-serif;overflow:hidden}
 .w{height:100%;display:flex;flex-direction:column;container-type:size}
-h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:min(24vh,64px);font-size:clamp(16px,min(9.5vh,38px),44px);line-height:1;padding:0 1vw;background:var(--head)}
+/* Überschrift wie GroupAlarm: 78 px hoch, 48 px fett, #505050 – wird nur verkleinert, wenn der Text sonst nicht passt */
+h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;height:78px;font-size:48px;line-height:1;padding:0 10px;background:var(--head);white-space:nowrap;overflow:hidden}
 .main{flex:1;min-height:0;display:flex;flex-direction:column;padding:1.2vh 1.4vw 0;gap:1.2vh}
 /* aktuell */
 .now{flex:none;display:flex;align-items:center;justify-content:center;gap:3vw}
@@ -53,7 +54,7 @@ h1{margin:0;flex:none;text-align:center;color:#fff;font-weight:700;display:flex;
 </head>
 <body>
 <div class="w">
-  <h1 id="h">Wetter Dummersdorf</h1>
+  <h1 id="h">Wetter</h1>
   <div class="main" id="main"><div class="msg">Lade Wetter …</div></div>
   <div class="warn" id="warn"></div>
   <div class="foot" id="foot">Quelle: Deutscher Wetterdienst</div>
@@ -65,7 +66,9 @@ var lat=parseFloat(q.get("lat"))||53.945, lon=parseFloat(q.get("lon"))||10.745;
 var name=q.get("name")||"Dummersdorf";
 if(q.get("bg"))document.documentElement.style.setProperty("--bg","#"+q.get("bg"));
 if(q.get("head"))document.documentElement.style.setProperty("--head","#"+q.get("head"));
-document.getElementById("h").textContent="Wetter "+name;
+document.getElementById("h").textContent="Wetter";
+function titelEinpassen(){var t=document.getElementById("h"),g=48;t.style.fontSize=g+"px";while(t.scrollWidth>t.clientWidth&&g>20){g--;t.style.fontSize=g+"px"}}
+window.addEventListener("load",titelEinpassen);window.addEventListener("resize",titelEinpassen);if(document.fonts)document.fonts.ready.then(titelEinpassen);titelEinpassen();
 var ADDR=q.get("adresse")||"Wischhofweg 24, 23569 Lübeck";
 function geo(cb){if(q.get("lat"))return cb();try{var c=JSON.parse(localStorage.getItem("geoDummersdorf1"));if(c&&c.length==2){lat=c[0];lon=c[1];return cb()}}catch(e){}
 fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=de&q="+encodeURIComponent(ADDR)).then(function(x){return x.json()}).then(function(j){if(j&&j[0]){lat=parseFloat(j[0].lat);lon=parseFloat(j[0].lon);try{localStorage.setItem("geoDummersdorf1",JSON.stringify([lat,lon]))}catch(e){}}cb()}).catch(function(){cb()})}

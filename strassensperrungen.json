@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-13T10:27:32+00:00",
+ "stand": "2026-10-13T10:55:53+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -586,6 +586,17 @@
    "lng": 10.64381
   },
   {
+   "id": 6120,
+   "title": "Kottwitzstraße Ecke Werderstraße",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "19.10.2026 bis 30.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87017,
+   "lng": 10.71415
+  },
+  {
    "id": 6057,
    "title": "Kreuzungsbereich Krempelsdorfer Allee Friedhofsallee Stockelsdorfer Straße",
    "status": "aktuell",
@@ -817,6 +828,17 @@
    "lng": 10.70841
   },
   {
+   "id": 6117,
+   "title": "Niendorfer Hauptstraße 6",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Gertrud",
+   "dates": "18.10.2026 bis 25.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.83447,
+   "lng": 10.61156
+  },
+  {
    "id": 6076,
    "title": "Niendorfer Straße 96",
    "status": "geplant",
@@ -1015,6 +1037,17 @@
    "lng": 10.86619
   },
   {
+   "id": 6119,
+   "title": "Scharnhorststraße 5-9",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "14.10.2026 bis 30.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86676,
+   "lng": 10.71621
+  },
+  {
    "id": 6039,
    "title": "Schlutuper Straße 46",
    "status": "aktuell",
@@ -1068,6 +1101,17 @@
    "wirkung": "Vollsperrung - Umleitung ausgeschildert",
    "lat": 53.8627,
    "lng": 10.6636
+  },
+  {
+   "id": 6118,
+   "title": "Siebente Querstraße 10",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "5.10.2026 bis 6.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86912,
+   "lng": 10.68144
   },
   {
    "id": 5882,

@@ -12,7 +12,7 @@
   :root{
     --panel: #424242;                 /* deckend, wie GroupAlarm dunkel (Letzter Alarm, Termine) */
     --spalt: #303030;                 /* Farbe der Lücke wie GroupAlarm (rgb 48,48,48) */
-    --oben-anteil: 25.52%;            /* Höhe Priwall = Höhe Fahrzeugstatus (86 von 337) */
+    --pegel-start: 26.736%;           /* hier beginnt „Pegelstände“ = Oberkante Wetter-iFrame (gemessen 90/336,6) */
     --luecke: 3.6px;                  /* Lücke wie zwischen den GroupAlarm-Feldern (gemessen 3,4–3,6 px) */
     --kopf: #505050;                  /* Überschriftszeile wie GroupAlarm (rgb 80,80,80) */
     --text: #ffffff;
@@ -53,7 +53,7 @@
 
   /* ===== Seite 2: Priwall-Besetzung + Pegel Travemünde ===== */
   #info{position:absolute;inset:0;display:none;grid-template-columns:46fr 54fr;gap:var(--luecke)}
-  @media (max-aspect-ratio:1/1){#info{grid-template-columns:1fr;grid-template-rows:var(--oben-anteil) 1fr;row-gap:var(--luecke)}}
+  @media (max-aspect-ratio:1/1){#info{grid-template-columns:1fr;grid-template-rows:calc(var(--pegel-start) - var(--luecke)) 1fr;row-gap:var(--luecke)}}
   body.info #info{display:grid}
   body.info .feld, body.info .legende, body.info .quelle, body.info .leiste{visibility:hidden}
   .ifeld{container-type:size;display:flex;flex-direction:column;background:var(--panel);min-width:0}

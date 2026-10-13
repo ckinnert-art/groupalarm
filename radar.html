@@ -39,6 +39,8 @@
   .wache{width:22px;height:22px;border-radius:50%;background:#e30613;border:3px solid #fff;
     box-shadow:0 0 10px rgba(0,0,0,.8)}
   .leaflet-container{background:#1e1f20}
+  /* Helligkeit der Hintergrundkarte: 1 = original, kleiner = dunkler */
+  .grundkarte{filter:brightness(0.8) saturate(0.7) contrast(1.05)}
   .leaflet-control-attribution{display:none}
 </style>
 </head>
@@ -51,7 +53,7 @@
   <div id="karte"></div>
 </div>
 <div class="legende"><img id="legende" alt=""></div>
-<div class="quelle">Quelle: Deutscher Wetterdienst · Karte © OpenStreetMap, CARTO</div>
+<div class="quelle">Quelle: Deutscher Wetterdienst · Karte © OpenStreetMap-Mitwirkende</div>
 <div class="leiste"><div id="fortschritt"></div><div id="jetzt"></div></div>
 
 <script>
@@ -74,7 +76,8 @@ const DWD_EBENE    = "dwd:Radar_wn-product_1x1km_ger";  // Radar + 2-Std.-Vorher
 const karte = L.map("karte", {zoomControl:false, attributionControl:false, dragging:false,
   scrollWheelZoom:false, doubleClickZoom:false, boxZoom:false, keyboard:false, touchZoom:false, zoomSnap:0.25});
 
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",{subdomains:"abcd",maxZoom:12}).addTo(karte);
+// Hintergrundkarte: OpenStreetMap (wie die GroupAlarm-Karte), leicht abgedunkelt
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:12,className:"grundkarte"}).addTo(karte);
 // Ortsnamen liegen über dem Radar, damit sie lesbar bleiben
 karte.createPane("namen"); karte.getPane("namen").style.zIndex = 450; karte.getPane("namen").style.pointerEvents="none";
 
@@ -85,10 +88,9 @@ function ausrichten(){
 ausrichten();
 window.addEventListener("resize", ausrichten);
 
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png",{subdomains:"abcd",pane:"namen",maxZoom:12}).addTo(karte);
 
 RINGE_KM.forEach(km=>{
-  L.circle(WACHE,{radius:km*1000,color:"#ffffff",weight:1.5,opacity:.55,dashArray:"6 8",fill:false,interactive:false,pane:"namen"}).addTo(karte);
+  L.circle(WACHE,{radius:km*1000,color:"#1a1a1a",weight:2,opacity:.7,dashArray:"6 8",fill:false,interactive:false,pane:"namen"}).addTo(karte);
   const p = L.latLng(WACHE[0] + km/111.2, WACHE[1]);
   L.marker(p,{interactive:false,pane:"namen",icon:L.divIcon({className:"",html:`<div class="ring-text">${km} km</div>`,iconSize:[60,20],iconAnchor:[30,22]})}).addTo(karte);
 });
@@ -123,7 +125,7 @@ function laden(){
 }
 
 function zeige(i){
-  ebenen.forEach((e,k)=>e.setOpacity(k===i ? 0.8 : 0));
+  ebenen.forEach((e,k)=>e.setOpacity(k===i ? 0.75 : 0));
   const z = zeiten[i];
   const uhr = z.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Berlin"});
   const diff = Math.round((z.getTime()-zeiten[jetztNr].getTime())/60000);

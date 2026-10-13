@@ -10,7 +10,10 @@
 <style>
   /* ===== Einstellungen zum Anpassen ===== */
   :root{
-    --panel: rgba(98,101,101,0.45);   /* GroupAlarm-Panel #62656573 */
+    --panel: #424242;                 /* deckend, wie GroupAlarm dunkel (Letzter Alarm, Termine) */
+    --spalt: #1f2536;                 /* Farbe der Lücke zwischen den Feldern */
+    --oben-anteil: 25.52%;            /* Höhe Priwall = Höhe Fahrzeugstatus (86 von 337) */
+    --luecke: 1.19%;                  /* Lücke wie zwischen Fahrzeugstatus und Wetter (4 von 337) */
     --kopf: #505050;                  /* Überschriftszeile wie GroupAlarm (rgb 80,80,80) */
     --text: #ffffff;
     --gedimmt: #c9cdd2;
@@ -19,7 +22,7 @@
     --schrift-titel: 48px;             /* wie GroupAlarm-Überschrift */
     --schrift-zeit: 40px;
   }
-  html,body{margin:0;height:100%;background:transparent;color:var(--text);
+  html,body{margin:0;height:100%;background:var(--spalt);color:var(--text);
     font-family:"Roboto","Segoe UI",Arial,sans-serif;overflow:hidden}
   .feld{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--panel)}
   /* Titel mittig wie bei GroupAlarm, Uhrzeit rechts daneben */
@@ -50,17 +53,17 @@
 
   /* ===== Seite 2: Priwall-Besetzung + Pegel Travemünde ===== */
   #info{position:absolute;inset:0;display:none;grid-template-columns:46fr 54fr;gap:7px}
-  @media (max-aspect-ratio:1/1){#info{grid-template-columns:1fr;grid-template-rows:42fr 58fr}}
+  @media (max-aspect-ratio:1/1){#info{grid-template-columns:1fr;grid-template-rows:var(--oben-anteil) 1fr;row-gap:var(--luecke)}}
   body.info #info{display:grid}
   body.info .feld, body.info .legende, body.info .quelle, body.info .leiste{visibility:hidden}
   .ifeld{container-type:size;display:flex;flex-direction:column;background:var(--panel);min-width:0}
   .ifeld .kopf{display:flex;justify-content:center}
   .ifeld .kopf h1{font-size:min(var(--schrift-titel), 7.4cqw)}
-  .zeilen{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;padding:2cqh 5cqw}
+  .zeilen{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;padding:1cqh 5cqw}
   .z{display:flex;align-items:baseline;justify-content:space-between;gap:4cqw;line-height:1.1}
-  .z .name{font-size:min(11cqh,7cqw);font-weight:500}
-  .z .sub{display:block;white-space:nowrap;font-size:min(6.5cqh,4.4cqw);font-weight:400;color:var(--gedimmt);margin-top:.4cqh}
-  .z .wert{font-size:min(14cqh,9cqw);font-weight:700;white-space:nowrap;color:var(--c)}
+  .z .name{font-size:min(13cqh,6.4cqw);font-weight:500;white-space:nowrap}
+  .z .sub{white-space:nowrap;font-size:.62em;font-weight:400;color:var(--gedimmt);margin-left:.6em}
+  .z .wert{font-size:min(16cqh,8cqw);font-weight:700;white-space:nowrap;color:var(--c)}
   .ok{--c:#4cc38a}.low{--c:#6db3ff}.high{--c:#ff7a7a}
   .pegelbild{flex:1;min-height:0;margin:1.5cqh 1.5cqw;display:flex;align-items:center;justify-content:center}
   .pegelbild img{max-width:100%;max-height:100%;object-fit:contain;background:#fff;border-radius:4px;
@@ -85,8 +88,8 @@
     <div class="kopf"><h1>Priwall Besetzung</h1></div>
     <div class="zeilen">
       <div class="z ok"><span class="name">Normalstand</span><span class="wert">5,0 m</span></div>
-      <div class="z low"><span class="name">Niedrigwasser<span class="sub">Alarmschwelle: 1 m unter NN</span></span><span class="wert">4,0 m</span></div>
-      <div class="z high"><span class="name">Hochwasser<span class="sub">Alarmschwelle: 1,8 m über NN</span></span><span class="wert">6,8 m</span></div>
+      <div class="z low"><span class="name">Niedrigwasser<span class="sub">1 m unter NN</span></span><span class="wert">4,0 m</span></div>
+      <div class="z high"><span class="name">Hochwasser<span class="sub">1,8 m über NN</span></span><span class="wert">6,8 m</span></div>
     </div>
   </div>
   <div class="ifeld">

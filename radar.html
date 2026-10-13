@@ -47,6 +47,23 @@
     box-shadow:0 0 10px rgba(0,0,0,.8)}
   .leaflet-container{background:#1e1f20}
   .leaflet-control-attribution{display:none}
+
+  /* ===== Seite 2: Priwall-Besetzung + Pegel Travemünde ===== */
+  #info{position:absolute;inset:0;display:none;grid-template-columns:46fr 54fr;gap:8px}
+  body.info #info{display:grid}
+  body.info .feld, body.info .legende, body.info .quelle, body.info .leiste{visibility:hidden}
+  .ifeld{container-type:size;display:flex;flex-direction:column;background:var(--panel);min-width:0}
+  .ifeld .kopf{display:flex;justify-content:center}
+  .ifeld .kopf h1{font-size:min(var(--schrift-titel), 3.6vw)}
+  .zeilen{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;padding:2cqh 5cqw}
+  .z{display:flex;align-items:baseline;justify-content:space-between;gap:4cqw;line-height:1.1}
+  .z .name{font-size:min(8.5cqh,7cqw);font-weight:500}
+  .z .sub{display:block;white-space:nowrap;font-size:min(5cqh,4.4cqw);font-weight:400;color:var(--gedimmt);margin-top:.4cqh}
+  .z .wert{font-size:min(11cqh,9cqw);font-weight:700;white-space:nowrap;color:var(--c)}
+  .ok{--c:#4cc38a}.low{--c:#6db3ff}.high{--c:#ff7a7a}
+  .pegelbild{flex:1;min-height:0;margin:1.5cqh 1.5cqw;background:#fff;border-radius:4px;
+    display:flex;align-items:center;justify-content:center;padding:1cqh 1cqw}
+  .pegelbild img{width:100%;height:100%;object-fit:contain}
 </style>
 </head>
 <body>
@@ -60,6 +77,22 @@
 <div class="legende"><img id="legende" alt=""></div>
 <div class="quelle">Quelle: Deutscher Wetterdienst · Karte © OpenStreetMap-Mitwirkende</div>
 <div class="leiste" id="leiste"></div>
+
+<!-- Seite 2: wird nach jeweils 3 Radar-Durchläufen eingeblendet -->
+<div id="info">
+  <div class="ifeld">
+    <div class="kopf"><h1>Priwall Besetzung</h1></div>
+    <div class="zeilen">
+      <div class="z ok"><span class="name">Normalstand</span><span class="wert">5,0 m</span></div>
+      <div class="z low"><span class="name">Niedrigwasser<span class="sub">Alarmschwelle: 1 m unter NN</span></span><span class="wert">4,0 m</span></div>
+      <div class="z high"><span class="name">Hochwasser<span class="sub">Alarmschwelle: 1,8 m über NN</span></span><span class="wert">6,8 m</span></div>
+    </div>
+  </div>
+  <div class="ifeld">
+    <div class="kopf"><h1>Pegelstände Travemünde</h1></div>
+    <div class="pegelbild"><img id="pegel" alt="Wasserstand Travemünde (BSH)" referrerpolicy="no-referrer"></div>
+  </div>
+</div>
 
 <script>
 /* ===== Einstellungen ===== */
@@ -79,6 +112,11 @@ const KARTE_HELLIGKEIT = 0.85;         // 1 = volle Helligkeit, kleiner = dunkle
 const NEU_LADEN_MIN = 5;                // alle 5 Minuten neue Bilder holen
 const DWD_WMS      = "https://maps.dwd.de/geoserver/dwd/wms";
 const DWD_EBENE    = "dwd:Radar_wn-product_1x1km_ger";  // Radar + 2-Std.-Vorhersage (Nowcast)
+
+/* ===== Wechsel Radar ↔ Priwall/Pegel ===== */
+const RADAR_DURCHLAEUFE = 3;            // so oft läuft das Radar komplett durch …
+const INFO_SEKUNDEN     = 20;           // … dann so lange Priwall-Besetzung + Pegel
+const PEGEL_BILD = "https://www2.bsh.de/aktdat/wvd/ostsee/pegelkurve/de/figures/travemuende-wasserstand-desktop.png";
 
 /* ===== Karte ===== */
 const karte = L.map("karte", {zoomControl:false, attributionControl:false, dragging:false,
@@ -192,15 +230,35 @@ function balken(i){
   });
 }
 
+let runde = 0;   // wie viele komplette Radar-Durchläufe seit der letzten Info-Seite
+
 function abspielen(){
   clearTimeout(timer);
   zeige(nr);
   balken(nr);
   const letztes = nr === zeiten.length-1;
   timer = setTimeout(()=>{
-    if(letztes && wartend){ uebernehmen(); return; }   // neue Bilder erst am Ende eines Durchlaufs
+    if(letztes){
+      runde++;
+      if(runde >= RADAR_DURCHLAEUFE){ runde = 0; infoZeigen(); return; }
+      if(wartend){ uebernehmen(); return; }   // neue Bilder erst am Ende eines Durchlaufs
+    }
     nr = letztes ? 0 : nr+1; abspielen();
   }, dauer(nr));
+}
+
+/* Seite 2 einblenden, danach wieder von vorn mit dem Radar */
+const pegelImg = document.getElementById("pegel");
+function pegelNeu(){ pegelImg.src = PEGEL_BILD + "?t=" + Date.now(); }
+pegelNeu();
+setInterval(pegelNeu, 5*60000);
+
+function infoZeigen(){
+  document.body.classList.add("info");
+  timer = setTimeout(()=>{
+    document.body.classList.remove("info");
+    if(wartend){ uebernehmen(); } else { nr = 0; abspielen(); }
+  }, INFO_SEKUNDEN*1000);
 }
 
 laden();

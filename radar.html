@@ -59,8 +59,8 @@
 <script>
 /* ===== Einstellungen ===== */
 const WACHE        = [53.927, 10.838];  // FF Dummersdorf, Wischhofweg 24
-const RADIUS_KM    = 55;                // so viel Umkreis wird mindestens gezeigt
-const RINGE_KM     = [10, 25, 50];      // Entfernungsringe um die Wache
+const RADIUS_KM    = 22;                // so viel Umkreis wird mindestens gezeigt
+const RINGE_KM     = [5, 10, 20];        // Entfernungsringe um die Wache
 const VERGANGEN_MIN = 60;               // Rückblick: letzte 60 Minuten (5-Min.-Schritte)
 const VORSCHAU_MIN  = 120;              // Vorhersage: bis 2 Stunden voraus (DWD-Maximum)
 const VORSCHAU_SCHRITT = 10;            // Vorhersage in 10-Min.-Schritten
@@ -77,7 +77,7 @@ const karte = L.map("karte", {zoomControl:false, attributionControl:false, dragg
   scrollWheelZoom:false, doubleClickZoom:false, boxZoom:false, keyboard:false, touchZoom:false, zoomSnap:0.25});
 
 // Hintergrundkarte: OpenStreetMap (wie die GroupAlarm-Karte), leicht abgedunkelt
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:12,className:"grundkarte"}).addTo(karte);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:15,className:"grundkarte"}).addTo(karte);
 // Ortsnamen liegen über dem Radar, damit sie lesbar bleiben
 karte.createPane("namen"); karte.getPane("namen").style.zIndex = 450; karte.getPane("namen").style.pointerEvents="none";
 

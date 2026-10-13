@@ -23,7 +23,7 @@
     font-family:"Roboto","Segoe UI",Arial,sans-serif;overflow:hidden}
   .feld{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--panel)}
   /* Titel mittig wie bei GroupAlarm, Uhrzeit rechts daneben */
-  .kopf{background:var(--kopf);padding:6px 20px;display:grid;grid-template-columns:1fr auto 1fr;
+  .kopf{background:var(--kopf);height:75px;box-sizing:border-box;padding:0 20px;display:grid;grid-template-columns:1fr auto 1fr;
     align-items:center;gap:16px}
   .kopf h1{grid-column:2;margin:0;font-size:var(--schrift-titel);font-weight:700;white-space:nowrap;text-align:center}
   .zeit{grid-column:3;justify-self:end;font-size:var(--schrift-zeit);font-weight:700;color:var(--akzent);white-space:nowrap}

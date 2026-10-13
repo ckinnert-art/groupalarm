@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regenradar Dummersdorf</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  /* ===== Einstellungen zum Anpassen ===== */
+  :root{
+    --panel: rgba(98,101,101,0.45);   /* GroupAlarm-Panel #62656573 */
+    --kopf: rgba(40,42,44,0.85);      /* dunklere Überschriftszeile */
+    --text: #ffffff;
+    --gedimmt: #c9cdd2;
+    --akzent: #ffcc33;                /* Farbe Vergangenheit/aktuell */
+    --vorschau: #5ec8ff;              /* Farbe Vorhersage */
+    --schrift-titel: 34px;
+    --schrift-zeit: 44px;
+  }
+  html,body{margin:0;height:100%;background:transparent;color:var(--text);
+    font-family:"Roboto","Segoe UI",Arial,sans-serif;overflow:hidden}
+  .feld{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--panel)}
+  .kopf{background:var(--kopf);padding:8px 20px;display:flex;align-items:center;
+    justify-content:space-between;gap:16px}
+  .kopf h1{margin:0;font-size:var(--schrift-titel);font-weight:600;white-space:nowrap}
+  .zeit{font-size:var(--schrift-zeit);font-weight:700;color:var(--akzent);white-space:nowrap}
+  .zeit small{font-size:.5em;color:var(--gedimmt);font-weight:400;margin-left:8px}
+  #karte{flex:1;background:#1e1f20}
+  .leiste{position:absolute;left:0;right:0;bottom:0;height:10px;background:rgba(0,0,0,.5);z-index:500}
+  #fortschritt{height:100%;background:var(--akzent);width:0;transition:width .3s}
+  #jetzt{position:absolute;top:-6px;bottom:0;width:3px;background:#fff;margin-left:-1px}
+  .legende{position:absolute;right:12px;bottom:22px;z-index:500;background:rgba(30,31,32,.85);
+    padding:8px 10px;border-radius:6px}
+  .legende img{display:block;max-height:46vh}
+  .quelle{position:absolute;left:12px;bottom:18px;z-index:500;font-size:14px;color:var(--gedimmt);
+    background:rgba(30,31,32,.7);padding:3px 8px;border-radius:4px}
+  .ring-text{color:#fff;font-size:15px;font-weight:600;text-shadow:0 0 4px #000,0 0 4px #000;white-space:nowrap}
+  .wache{width:22px;height:22px;border-radius:50%;background:#e30613;border:3px solid #fff;
+    box-shadow:0 0 10px rgba(0,0,0,.8)}
+  .leaflet-container{background:#1e1f20}
+  .leaflet-control-attribution{display:none}
+</style>
+</head>
+<body>
+<div class="feld">
+  <div class="kopf">
+    <h1>Regenradar mit Vorhersage</h1>
+    <div class="zeit" id="zeit">–<small></small></div>
+  </div>
+  <div id="karte"></div>
+</div>
+<div class="legende"><img id="legende" alt=""></div>
+<div class="quelle">Quelle: Deutscher Wetterdienst · Karte © OpenStreetMap, CARTO</div>
+<div class="leiste"><div id="fortschritt"></div><div id="jetzt"></div></div>
+
+<script>
+/* ===== Einstellungen ===== */
+const WACHE        = [53.927, 10.838];  // FF Dummersdorf, Wischhofweg 24
+const RADIUS_KM    = 55;                // so viel Umkreis wird mindestens gezeigt
+const RINGE_KM     = [10, 25, 50];      // Entfernungsringe um die Wache
+const VERGANGEN_MIN = 60;               // Rückblick: letzte 60 Minuten (5-Min.-Schritte)
+const VORSCHAU_MIN  = 120;              // Vorhersage: bis 2 Stunden voraus (DWD-Maximum)
+const VORSCHAU_SCHRITT = 10;            // Vorhersage in 10-Min.-Schritten
+const VERZUG_MIN   = 10;                // DWD liefert mit ca. 5–10 Min. Verzögerung
+const TAKT_MS      = 550;               // Zeit pro Bild in der Animation
+const HALTEN_JETZT_MS = 1500;           // kurzer Halt beim aktuellen Bild
+const HALTEN_ENDE_MS  = 3000;           // Halt am Ende der Vorhersage
+const NEU_LADEN_MIN = 5;                // alle 5 Minuten neue Bilder holen
+const DWD_WMS      = "https://maps.dwd.de/geoserver/dwd/wms";
+const DWD_EBENE    = "dwd:Radar_wn-product_1x1km_ger";  // Radar + 2-Std.-Vorhersage (Nowcast)
+
+/* ===== Karte ===== */
+const karte = L.map("karte", {zoomControl:false, attributionControl:false, dragging:false,
+  scrollWheelZoom:false, doubleClickZoom:false, boxZoom:false, keyboard:false, touchZoom:false, zoomSnap:0.25});
+
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",{subdomains:"abcd",maxZoom:12}).addTo(karte);
+// Ortsnamen liegen über dem Radar, damit sie lesbar bleiben
+karte.createPane("namen"); karte.getPane("namen").style.zIndex = 450; karte.getPane("namen").style.pointerEvents="none";
+
+function ausrichten(){
+  karte.invalidateSize();
+  karte.fitBounds(L.latLng(WACHE).toBounds(RADIUS_KM*2000), {padding:[0,0]});
+}
+ausrichten();
+window.addEventListener("resize", ausrichten);
+
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png",{subdomains:"abcd",pane:"namen",maxZoom:12}).addTo(karte);
+
+RINGE_KM.forEach(km=>{
+  L.circle(WACHE,{radius:km*1000,color:"#ffffff",weight:1.5,opacity:.55,dashArray:"6 8",fill:false,interactive:false,pane:"namen"}).addTo(karte);
+  const p = L.latLng(WACHE[0] + km/111.2, WACHE[1]);
+  L.marker(p,{interactive:false,pane:"namen",icon:L.divIcon({className:"",html:`<div class="ring-text">${km} km</div>`,iconSize:[60,20],iconAnchor:[30,22]})}).addTo(karte);
+});
+L.marker(WACHE,{interactive:false,pane:"namen",icon:L.divIcon({className:"",html:'<div class="wache"></div>',iconSize:[22,22],iconAnchor:[11,11]})}).addTo(karte);
+
+document.getElementById("legende").src = DWD_WMS.replace("/wms","/ows") +
+  "?service=WMS&request=GetLegendGraphic&format=image/png&width=22&height=22&layer=" + DWD_EBENE.split(":")[1] +
+  "&LEGEND_OPTIONS=fontColor:0xFFFFFF;bgColor:0x1E1F20;fontSize:15;fontAntiAliasing:true";
+
+/* ===== Radarbilder ===== */
+let ebenen = [], zeiten = [], nr = 0, timer = null, jetztNr = 0;
+
+function zeitpunkte(){
+  const t = new Date(Date.now() - VERZUG_MIN*60000);
+  t.setUTCSeconds(0,0);
+  t.setUTCMinutes(Math.floor(t.getUTCMinutes()/5)*5);
+  const liste = [];
+  for(let m=-VERGANGEN_MIN; m<=0; m+=5) liste.push(new Date(t.getTime() + m*60000));
+  jetztNr = liste.length-1;
+  for(let m=VORSCHAU_SCHRITT; m<=VORSCHAU_MIN; m+=VORSCHAU_SCHRITT) liste.push(new Date(t.getTime() + m*60000));
+  return liste;
+}
+
+function laden(){
+  const neu = zeitpunkte();
+  const neueEbenen = neu.map(z => L.tileLayer.wms(DWD_WMS,{
+    layers:DWD_EBENE, format:"image/png", transparent:true, version:"1.3.0",
+    TIME:z.toISOString().replace(/\.\d{3}Z$/,".000Z"), tileSize:512, opacity:0, zIndex:300
+  }).addTo(karte));
+  // alte Bilder erst entfernen, wenn die neuen geladen sind (kein Flackern)
+  setTimeout(()=>{ ebenen.forEach(e=>karte.removeLayer(e)); ebenen = neueEbenen; zeiten = neu; nr = 0; abspielen(); }, 4000);
+}
+
+function zeige(i){
+  ebenen.forEach((e,k)=>e.setOpacity(k===i ? 0.8 : 0));
+  const z = zeiten[i];
+  const uhr = z.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Berlin"});
+  const diff = Math.round((z.getTime()-zeiten[jetztNr].getTime())/60000);
+  const zeitEl = document.getElementById("zeit");
+  if(i > jetztNr){
+    zeitEl.style.color = "var(--vorschau)";
+    zeitEl.innerHTML = `${uhr} Uhr<small>Vorhersage +${diff} Min.</small>`;
+  } else {
+    zeitEl.style.color = "var(--akzent)";
+    const alt = Math.round((Date.now()-z.getTime())/60000);
+    zeitEl.innerHTML = `${uhr} Uhr<small>${i===jetztNr ? "aktuell" : "vor "+alt+" Min."}</small>`;
+  }
+  const f = document.getElementById("fortschritt");
+  f.style.width = ((i+1)/zeiten.length*100)+"%";
+  f.style.background = i > jetztNr ? "var(--vorschau)" : "var(--akzent)";
+  document.getElementById("jetzt").style.left = ((jetztNr+1)/zeiten.length*100)+"%";
+}
+
+function abspielen(){
+  clearTimeout(timer);
+  zeige(nr);
+  const letztes = nr === zeiten.length-1;
+  const pause = letztes ? HALTEN_ENDE_MS : (nr===jetztNr ? HALTEN_JETZT_MS : TAKT_MS);
+  timer = setTimeout(()=>{ nr = letztes ? 0 : nr+1; abspielen(); }, pause);
+}
+
+laden();
+setInterval(laden, NEU_LADEN_MIN*60000);
+// Sicherheitsnetz: einmal täglich nachts komplett neu laden
+setInterval(()=>{ if(new Date().getHours()===3) location.reload(); }, 3600000);
+</script>
+</body>
+</html>

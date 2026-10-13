@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-13T17:25:13+00:00",
+ "stand": "2026-10-13T22:03:04+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -808,7 +808,7 @@
   {
    "id": 6093,
    "title": "Nelkenstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Süd",
    "dates": "14.10.2026 bis 14.10.2026",
@@ -1039,7 +1039,7 @@
   {
    "id": 6119,
    "title": "Scharnhorststraße 5-9",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "14.10.2026 bis 30.10.2026",
@@ -1189,6 +1189,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.89294,
    "lng": 10.71081
+  },
+  {
+   "id": 6086,
+   "title": "Vilmring 11",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "28.10.2026 bis 13.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.82229,
+   "lng": 10.68408
   },
   {
    "id": 5917,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-14T21:37:26+00:00",
+ "stand": "2026-10-14T22:33:38+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -443,17 +443,6 @@
    "lng": 10.80825
   },
   {
-   "id": 6067,
-   "title": "Halmweg i. H. Klettenweg 3",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "30.9.2026 bis 14.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91362,
-   "lng": 10.74583
-  },
-  {
    "id": 6083,
    "title": "Hans-Blumenberg-Weg 2",
    "status": "aktuell",
@@ -522,7 +511,7 @@
   {
    "id": 6078,
    "title": "Huntenhorster Weg 25",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23564",
    "teil": "St. Jürgen",
    "dates": "15.10.2026 bis 29.10.2026",
@@ -610,7 +599,7 @@
   {
    "id": 6123,
    "title": "Kastanienallee",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "",
    "dates": "15.10.2026 bis 7.11.2026",
@@ -643,7 +632,7 @@
   {
    "id": 6107,
    "title": "Kiwittredder Nr. 14 bis 18 bzw. gegenüber Nr. 1",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "Moisling",
    "dates": "15.10.2026 bis 28.10.2026",
@@ -720,7 +709,7 @@
   {
    "id": 6094,
    "title": "Kupferstraße 11",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23569",
    "teil": "Kücknitz",
    "dates": "15.10.2026 bis 16.10.2026",
@@ -916,28 +905,6 @@
    "lng": 10.6911
   },
   {
-   "id": 6093,
-   "title": "Nelkenstraße",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "St. Lorenz-Süd",
-   "dates": "14.10.2026 bis 14.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85461,
-   "lng": 10.66617
-  },
-  {
-   "id": 6087,
-   "title": "Niels-Bohr-Ring ggü. Nr. 34",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "28.9.2026 bis 14.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8993,
-   "lng": 10.70841
-  },
-  {
    "id": 6117,
    "title": "Niendorfer Hauptstraße 6",
    "status": "geplant",
@@ -1079,17 +1046,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.91195,
    "lng": 10.80818
-  },
-  {
-   "id": 6069,
-   "title": "Reinsbeker Straße 17a",
-   "status": "aktuell",
-   "plz": "23554",
-   "teil": "St. Lorenz-Nord",
-   "dates": "5.10.2026 bis 14.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88668,
-   "lng": 10.65637
   },
   {
    "id": 5955,

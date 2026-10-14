@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-14T04:06:48+00:00",
+ "stand": "2026-10-14T09:36:36+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -520,6 +520,17 @@
    "lng": 10.75113
   },
   {
+   "id": 6121,
+   "title": "Johannes-Stelling-Straße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "19.10.2026 bis 29.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.61616,
+   "lng": 11.41513
+  },
+  {
    "id": 6081,
    "title": "Kalkbrennerstraße",
    "status": "aktuell",
@@ -540,6 +551,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.82301,
    "lng": 10.66457
+  },
+  {
+   "id": 6123,
+   "title": "Kastanienallee",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "",
+   "dates": "15.10.2026 bis 7.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84481,
+   "lng": 10.70292
   },
   {
    "id": 6065,
@@ -936,6 +958,17 @@
    "wirkung": "Vollsperrung / Wanderbaustelle",
    "lat": 53.8463,
    "lng": 10.7085
+  },
+  {
+   "id": 6122,
+   "title": "Ratzeburger Allee gegenüber Karl-Roß-Weg, defekten Straßenablauf auswechseln",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "St. Jürgen",
+   "dates": "19.10.2026 bis 30.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85278,
+   "lng": 10.70088
   },
   {
    "id": 6033,

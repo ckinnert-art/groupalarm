@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-14T10:11:43+00:00",
+ "stand": "2026-10-14T14:36:32+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -179,6 +179,17 @@
    "lng": 10.71798
   },
   {
+   "id": 6042,
+   "title": "Bülowstraße",
+   "status": "aktuell",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "10.8.2026 bis 20.11.2026",
+   "wirkung": "Vollsperrung während der Arbeitszeit von 6.30 - 16.00 Uhr danach ist die Zufahrt wieder frei - Fahrbahnverengung",
+   "lat": 53.87032,
+   "lng": 10.71798
+  },
+  {
    "id": 4293,
    "title": "Charlottenstraße 24",
    "status": "aktuell",
@@ -331,6 +342,17 @@
    "wirkung": "Halbseitige Fahrbahnsperrung",
    "lat": 53.86116,
    "lng": 10.64899
+  },
+  {
+   "id": 6020,
+   "title": "Fregattenstraße 30",
+   "status": "aktuell",
+   "plz": "23558",
+   "teil": "Buntekuh",
+   "dates": "17.9.2026 bis 23.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85539,
+   "lng": 10.65416
   },
   {
    "id": 5975,
@@ -608,6 +630,17 @@
    "lng": 10.6312
   },
   {
+   "id": 6127,
+   "title": "Kolk Nr. 24",
+   "status": "geplant",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "19.10.2026 bis 13.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86545,
+   "lng": 10.68247
+  },
+  {
    "id": 6035,
    "title": "Korvettenstraße und Kutterweg",
    "status": "aktuell",
@@ -716,6 +749,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.9082,
    "lng": 10.7673
+  },
+  {
+   "id": 6125,
+   "title": "Maikäferstieg 6",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "St. Jürgen",
+   "dates": "27.10.2026 bis 27.10.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.83123,
+   "lng": 10.72501
   },
   {
    "id": 6088,
@@ -1310,6 +1354,17 @@
    "wirkung": "Fahrbahnverengung - Einbahnstr.-Regelung",
    "lat": 53.85643,
    "lng": 10.64056
+  },
+  {
+   "id": 6126,
+   "title": "Zum 1. Fischerbuden",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "St. Jürgen",
+   "dates": "26.10.2026 bis 8.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84738,
+   "lng": 10.72055
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-14T14:36:32+00:00",
+ "stand": "2026-10-14T15:11:18+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -300,6 +300,17 @@
    "lng": 10.66177
   },
   {
+   "id": 6129,
+   "title": "Dürerstraße, Holbeinstraße",
+   "status": "aktuell",
+   "plz": "23564",
+   "teil": "St. Jürgen",
+   "dates": "8.10.2026 bis 22.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.852,
+   "lng": 10.69786
+  },
+  {
    "id": 5978,
    "title": "Elsässer Straße",
    "status": "aktuell",
@@ -518,6 +529,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84213,
    "lng": 10.74461
+  },
+  {
+   "id": 6128,
+   "title": "Im Gleisdreieck, Grootkoppel",
+   "status": "aktuell",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "14.10.2026 bis 12.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86995,
+   "lng": 10.74658
   },
   {
    "id": 6124,
@@ -826,6 +848,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86833,
    "lng": 10.68597
+  },
+  {
+   "id": 6130,
+   "title": "Moorredder 42",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "26.10.2026 bis 20.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.96475,
+   "lng": 10.86939
   },
   {
    "id": 5996,

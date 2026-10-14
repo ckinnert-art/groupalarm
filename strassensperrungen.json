@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-14T09:36:36+00:00",
+ "stand": "2026-10-14T10:11:43+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -496,6 +496,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84213,
    "lng": 10.74461
+  },
+  {
+   "id": 6124,
+   "title": "Im Musennest, Im Eulennest, Marderweg, Hamsterweg, Im Fuchsloch",
+   "status": "geplant",
+   "plz": "23564",
+   "teil": "St. Gertrud",
+   "dates": "26.10.2026 bis 5.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85539,
+   "lng": 10.73302
   },
   {
    "id": 6061,

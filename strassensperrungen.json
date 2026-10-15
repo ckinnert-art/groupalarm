@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-15T12:45:02+00:00",
+ "stand": "2026-10-15T13:45:48+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -628,6 +628,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84481,
    "lng": 10.70292
+  },
+  {
+   "id": 6077,
+   "title": "Katharinenstraße (von Höhe Marquardstraße – Marienstraße)",
+   "status": "aktuell",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "5.10.2026 bis 19.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8716,
+   "lng": 10.67517
   },
   {
    "id": 6065,

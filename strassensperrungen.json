@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-15T20:04:33+00:00",
+ "stand": "2026-10-15T22:02:03+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -764,7 +764,7 @@
   {
    "id": 6075,
    "title": "Libellenweg 25",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "16.10.2026 bis 30.10.2026",
@@ -903,17 +903,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84641,
    "lng": 10.69929
-  },
-  {
-   "id": 6064,
-   "title": "Mühlendamm 14-20",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "12.10.2026 bis 15.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86089,
-   "lng": 10.6845
   },
   {
    "id": 5671,
@@ -1336,7 +1325,7 @@
   {
    "id": 6138,
    "title": "Triftstraße 63a",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "16.10.2026 bis 6.11.2026",

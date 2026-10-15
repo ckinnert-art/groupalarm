@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-15T11:05:56+00:00",
+ "stand": "2026-10-15T12:45:02+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -56,6 +56,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.89465,
    "lng": 10.70877
+  },
+  {
+   "id": 6136,
+   "title": "An der Stadtfreiheit 1+2 und Ziegelstraße 4",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "19.10.2026 bis 20.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8702,
+   "lng": 10.66519
   },
   {
    "id": 6054,
@@ -122,6 +133,17 @@
    "wirkung": "Vollsperrung, Lieferzonen errichtet",
    "lat": 53.8696,
    "lng": 10.6862
+  },
+  {
+   "id": 6140,
+   "title": "Beim Rosenwasser 20",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "26.10.2026 bis 13.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88664,
+   "lng": 10.78909
   },
   {
    "id": 5872,
@@ -1031,7 +1053,7 @@
    "status": "aktuell",
    "plz": "23569",
    "teil": "Kücknitz",
-   "dates": "21.9.2026 bis 22.10.2026",
+   "dates": "21.9.2026 bis 12.11.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.91194,
    "lng": 10.808
@@ -1114,6 +1136,17 @@
    "lng": 10.86619
   },
   {
+   "id": 6135,
+   "title": "Rose, zwischen Moorredder und Boelckestraße sowie Mühlenberg",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "22.10.2026 bis 6.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.96209,
+   "lng": 10.86539
+  },
+  {
    "id": 6119,
    "title": "Scharnhorststraße 5-9",
    "status": "aktuell",
@@ -1169,6 +1202,17 @@
    "lng": 10.65558
   },
   {
+   "id": 6137,
+   "title": "Schönböckener Straße und Knoten Krempelsdorfer Allee",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "29.10.2026 bis 29.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87537,
+   "lng": 10.66421
+  },
+  {
    "id": 3887,
    "title": "Schützenstraße, Töpferweg",
    "status": "aktuell",
@@ -1211,6 +1255,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.90411,
    "lng": 10.77618
+  },
+  {
+   "id": 6139,
+   "title": "St. Gertrud",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "19.10.2026 bis 31.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86221,
+   "lng": 10.74044
   },
   {
    "id": 5993,
@@ -1266,6 +1321,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.89294,
    "lng": 10.71081
+  },
+  {
+   "id": 6138,
+   "title": "Triftstraße 63a",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "16.10.2026 bis 6.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88784,
+   "lng": 10.67822
   },
   {
    "id": 6086,

@@ -17,16 +17,13 @@ h1{flex:1 1 0;min-width:0;overflow:hidden;margin:0;color:#f6f1df;font-family:"Ro
 @media (max-aspect-ratio:3/2){h1{white-space:normal}.bar{flex-direction:column;justify-content:center;text-align:center}.logos{height:45%}}
 
 .blaulicht{flex:none;height:78%;aspect-ratio:1;position:relative}
-.blaulicht .schein{position:absolute;inset:-35%;border-radius:50%;background:radial-gradient(circle,rgba(120,190,255,.85) 0,rgba(70,150,255,.45) 30%,rgba(70,150,255,0) 65%);opacity:0;animation:blitz 1.2s steps(1,end) infinite;will-change:opacity}
 .blaulicht svg{position:absolute;inset:0;width:100%;height:100%}
-.blaulicht .kern{opacity:.2;animation:blitz 1.2s steps(1,end) infinite;will-change:opacity}
-@keyframes blitz{0%{opacity:1}12%{opacity:.15}22%{opacity:1}34%{opacity:.15}100%{opacity:.15}}
-body.ruhig .schein,body.ruhig .kern{animation:none;opacity:.6}
-@media (prefers-reduced-motion:reduce){.blaulicht .schein,.blaulicht .kern{animation:none;opacity:.6}}
+.blaulicht .kern{opacity:.15}
+.blaulicht.an .kern{opacity:1}
 @media (max-aspect-ratio:3/2){.blaulicht{height:26%}}
 </style></head>
 <body><div class="bar">
-<div class="blaulicht" aria-hidden="true"><div class="schein"></div>
+<div class="blaulicht" aria-hidden="true">
 <svg viewBox="0 0 100 100"><defs>
 <linearGradient id="haube" x1="0" x2="1"><stop offset="0" stop-color="#0b3fa8"/><stop offset=".45" stop-color="#3d8bff"/><stop offset="1" stop-color="#0b3fa8"/></linearGradient>
 <radialGradient id="kern" cx=".5" cy=".55" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#9fd0ff"/><stop offset="1" stop-color="#3d8bff" stop-opacity="0"/></radialGradient></defs>
@@ -54,4 +51,9 @@ sp.style.fontSize=lo+"px";}
 fit();window.addEventListener("resize",fit);
 if(window.ResizeObserver){new ResizeObserver(fit).observe(bar);}
 if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}})();
+
+(function(){if(document.body.classList.contains("ruhig"))return;
+var bl=document.querySelector(".blaulicht"),muster=[150,150,150,750],i=0;
+function schritt(){bl.classList.toggle("an",i%2===0);setTimeout(schritt,muster[i]);i=(i+1)%muster.length;}
+schritt();})();
 </script></body></html>

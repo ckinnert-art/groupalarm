@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-16T04:09:01+00:00",
+ "stand": "2026-10-16T06:42:47+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -958,6 +958,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84095,
    "lng": 10.63184
+  },
+  {
+   "id": 6141,
+   "title": "Nordlandring 35 und 65, Moorredder 12, Nordmeerstr. 102",
+   "status": "aktuell",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "15.10.2026 bis 24.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.96762,
+   "lng": 10.86879
   },
   {
    "id": 5789,

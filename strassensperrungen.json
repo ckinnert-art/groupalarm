@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-16T19:33:06+00:00",
+ "stand": "2026-10-16T22:06:21+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -91,17 +91,6 @@
    "lng": 10.65661
   },
   {
-   "id": 6046,
-   "title": "Arnimstraße 44a",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "23.9.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87438,
-   "lng": 10.71631
-  },
-  {
    "id": 6108,
    "title": "Auf der Höhe 6a",
    "status": "aktuell",
@@ -155,17 +144,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.7973,
    "lng": 10.71552
-  },
-  {
-   "id": 6003,
-   "title": "Blankenseer Straße 1-5",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.80486,
-   "lng": 10.69944
   },
   {
    "id": 6103,
@@ -234,20 +212,9 @@
    "lng": 10.67977
   },
   {
-   "id": 5937,
-   "title": "Dieselstraße",
-   "status": "aktuell",
-   "plz": "",
-   "teil": "",
-   "dates": "9.9.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85523,
-   "lng": 10.73571
-  },
-  {
    "id": 6106,
    "title": "Dieselstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "17.10.2026 bis 23.12.2026",
@@ -309,17 +276,6 @@
    "wirkung": "Fahrbahnverengung - Vollsperrung",
    "lat": 53.86814,
    "lng": 10.68693
-  },
-  {
-   "id": 6060,
-   "title": "Dr.-Lena-Ohnesorge-Weg 10",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "St. Lorenz-Süd",
-   "dates": "24.9.2026 bis 16.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.84898,
-   "lng": 10.66177
   },
   {
    "id": 6129,
@@ -432,17 +388,6 @@
    "lng": 10.8417
   },
   {
-   "id": 6045,
-   "title": "Große Altefähre",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "5.10.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87351,
-   "lng": 10.68781
-  },
-  {
    "id": 6080,
    "title": "Große Kiesau 9",
    "status": "aktuell",
@@ -452,39 +397,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.87175,
    "lng": 10.6842
-  },
-  {
-   "id": 6040,
-   "title": "Güldene Straße 2",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "21.9.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.90536,
-   "lng": 10.80825
-  },
-  {
-   "id": 6083,
-   "title": "Hans-Blumenberg-Weg 2",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "28.9.2026 bis 16.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.83617,
-   "lng": 10.69006
-  },
-  {
-   "id": 6025,
-   "title": "Heiligen-Geist-Kamp / Einmündungsbereich zur Stauffenbergstraße",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "28.9.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8778,
-   "lng": 10.7086
   },
   {
    "id": 6109,
@@ -740,17 +652,6 @@
    "lng": 10.85283
   },
   {
-   "id": 6094,
-   "title": "Kupferstraße 11",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "15.10.2026 bis 16.10.2026",
-   "wirkung": "Vollsperrung. Zeitraum der Maßnahme: 15.10.2026 - 23:00 Uhr bis 16.10.2026 - 04:00 Uhr",
-   "lat": 53.90516,
-   "lng": 10.80848
-  },
-  {
    "id": 4282,
    "title": "Lange Reihe 35-39",
    "status": "aktuell",
@@ -804,17 +705,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.83123,
    "lng": 10.72501
-  },
-  {
-   "id": 6088,
-   "title": "Marlistr. 17c",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "7.10.2026 bis 16.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8719,
-   "lng": 10.71094
   },
   {
    "id": 5986,

@@ -45,6 +45,12 @@
   {
    "datum": "10.10.2026",
    "zeit": "12:10",
+   "wehr": "FF Dummersdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
+   "zeit": "12:10",
    "wehr": "FF Kücknitz",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "19:04",
    "wehr": "FF Büssau",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.10.2026",
-   "zeit": "14:29",
-   "wehr": "FF Krummesse",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-17T08:56:17+00:00"
+ "stand": "2026-10-17T09:55:59+00:00"
 }

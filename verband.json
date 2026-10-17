@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "17.10.2026",
+   "zeit": "07:09",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "13.10.2026",
    "zeit": "14:37",
    "wehr": "FF Kücknitz",
@@ -137,12 +143,6 @@
    "zeit": "15:11",
    "wehr": "FF Büssau",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "28.09.2026",
-   "zeit": "22:33",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-15T12:00:07+00:00"
+ "stand": "2026-10-17T07:58:18+00:00"
 }

@@ -19,6 +19,12 @@
    "art": "Hilfeleistungseinsatz"
   },
   {
+   "datum": "15.10.2026",
+   "zeit": "11:10",
+   "wehr": "FF Siems",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "13.10.2026",
    "zeit": "14:37",
    "wehr": "FF Kücknitz",
@@ -137,12 +143,6 @@
    "zeit": "22:21",
    "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.10.2026",
-   "zeit": "19:04",
-   "wehr": "FF Büssau",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-17T09:55:59+00:00"
+ "stand": "2026-10-17T12:25:45+00:00"
 }

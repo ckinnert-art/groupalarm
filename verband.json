@@ -7,6 +7,18 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "15.10.2026",
+   "zeit": "11:10",
+   "wehr": "FF Dummersdorf",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "15.10.2026",
+   "zeit": "11:10",
+   "wehr": "LZG",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "13.10.2026",
    "zeit": "14:37",
    "wehr": "FF Kücknitz",
@@ -63,7 +75,19 @@
   {
    "datum": "08.10.2026",
    "zeit": "12:52",
+   "wehr": "FF Dummersdorf",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "08.10.2026",
+   "zeit": "12:52",
    "wehr": "FF Siems",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "08.10.2026",
+   "zeit": "12:52",
+   "wehr": "LZG",
    "art": "Hilfeleistungseinsatz"
   },
   {
@@ -119,30 +143,6 @@
    "zeit": "14:29",
    "wehr": "FF Krummesse",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "03.10.2026",
-   "zeit": "14:29",
-   "wehr": "FF Wulfsdorf-Vorrade",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "03.10.2026",
-   "zeit": "01:48",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "30.09.2026",
-   "zeit": "06:34",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "29.09.2026",
-   "zeit": "15:11",
-   "wehr": "FF Büssau",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -213,5 +213,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-17T07:58:18+00:00"
+ "stand": "2026-10-17T08:56:17+00:00"
 }

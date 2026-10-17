@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-17T16:31:28+00:00",
+ "stand": "2026-10-17T22:29:33+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -45,17 +45,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.91125,
    "lng": 10.73867
-  },
-  {
-   "id": 6010,
-   "title": "An der Hülshorst 8 bis Torneiweg 33a",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "14.9.2026 bis 17.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89465,
-   "lng": 10.70877
   },
   {
    "id": 6136,
@@ -366,17 +355,6 @@
    "lng": 10.67254
   },
   {
-   "id": 6032,
-   "title": "Glashüttenweg 2 - 10",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "28.9.2026 bis 17.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89071,
-   "lng": 10.70819
-  },
-  {
    "id": 6084,
    "title": "Glindhorn 10",
    "status": "aktuell",
@@ -419,17 +397,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.82355,
    "lng": 10.59929
-  },
-  {
-   "id": 6011,
-   "title": "Hertzweg 1 - 14",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "14.9.2026 bis 17.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89138,
-   "lng": 10.71034
   },
   {
    "id": 5905,
@@ -485,17 +452,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.81859,
    "lng": 10.71349
-  },
-  {
-   "id": 5965,
-   "title": "Johannes-Klöcking-Weg 1-9",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "7.9.2026 bis 17.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.9017,
-   "lng": 10.75113
   },
   {
    "id": 6121,
@@ -819,7 +775,7 @@
   {
    "id": 6117,
    "title": "Niendorfer Hauptstraße 6",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Gertrud",
    "dates": "18.10.2026 bis 25.10.2026",
@@ -980,17 +936,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8383,
    "lng": 10.67631
-  },
-  {
-   "id": 6112,
-   "title": "Ringstraße 20-22a",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "12.10.2026 bis 17.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.96128,
-   "lng": 10.8598
   },
   {
    "id": 6104,

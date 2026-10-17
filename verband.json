@@ -147,18 +147,6 @@
  ],
  "veranstaltungen": [
   {
-   "datum": "17.10.2026",
-   "zeit": "",
-   "name": "Motorsägenführer Lehrgang",
-   "ort": ""
-  },
-  {
-   "datum": "17.10.2026",
-   "zeit": "",
-   "name": "Technische Hilfeleistung 2",
-   "ort": ""
-  },
-  {
    "datum": "02.11.2026",
    "zeit": "19:00",
    "name": "WF-Dienstbesprechung mit BL",
@@ -213,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-17T12:25:45+00:00"
+ "stand": "2026-10-17T22:19:48+00:00"
 }

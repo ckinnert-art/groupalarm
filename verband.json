@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "18.10.2026",
+   "zeit": "12:39",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "18.10.2026",
    "zeit": "10:27",
    "wehr": "FF Büssau",
    "art": "Hilfeleistungseinsatz"
@@ -137,12 +143,6 @@
    "zeit": "14:22",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "04.10.2026",
-   "zeit": "17:15",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-18T10:22:22+00:00"
+ "stand": "2026-10-18T14:05:07+00:00"
 }

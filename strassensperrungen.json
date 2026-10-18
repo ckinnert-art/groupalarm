@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-18T17:01:07+00:00",
+ "stand": "2026-10-18T22:29:58+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -49,7 +49,7 @@
   {
    "id": 6136,
    "title": "An der Stadtfreiheit 1+2 und Ziegelstraße 4",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "St. Lorenz-Nord",
    "dates": "19.10.2026 bis 20.10.2026",
@@ -78,6 +78,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88404,
    "lng": 10.65661
+  },
+  {
+   "id": 6133,
+   "title": "Attendornstraße",
+   "status": "geplant",
+   "plz": "23564",
+   "teil": "St. Gertrud",
+   "dates": "2.11.2026 bis 4.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86846,
+   "lng": 10.69957
   },
   {
    "id": 6108,
@@ -346,7 +357,7 @@
   {
    "id": 6053,
    "title": "Georgstraße 3",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Süd",
    "dates": "19.10.2026 bis 14.11.2026",
@@ -456,7 +467,7 @@
   {
    "id": 6121,
    "title": "Johannes-Stelling-Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "19.10.2026 bis 29.11.2026",
@@ -511,7 +522,7 @@
   {
    "id": 6065,
    "title": "Kieperhorst, Auf dem Ruhm",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "19.10.2026 bis 20.12.2026",
@@ -544,7 +555,7 @@
   {
    "id": 6127,
    "title": "Kolk Nr. 24",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23552",
    "teil": "Innenstadt",
    "dates": "19.10.2026 bis 13.11.2026",
@@ -566,7 +577,7 @@
   {
    "id": 6120,
    "title": "Kottwitzstraße Ecke Werderstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "19.10.2026 bis 30.10.2026",
@@ -696,17 +707,6 @@
    "lng": 10.71635
   },
   {
-   "id": 6023,
-   "title": "Mengstraße",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "",
-   "dates": "5.10.2026 bis 18.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86828,
-   "lng": 10.68495
-  },
-  {
    "id": 6055,
    "title": "Mengstraße 2-14 (Buddenbrookhaus)",
    "status": "aktuell",
@@ -731,7 +731,7 @@
   {
    "id": 5996,
    "title": "Morier Straße 44 e",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "",
    "dates": "19.10.2026 bis 4.11.2026",
@@ -786,7 +786,7 @@
   {
    "id": 6076,
    "title": "Niendorfer Straße 96",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "Moisling",
    "dates": "19.10.2026 bis 21.10.2026",
@@ -830,7 +830,7 @@
   {
    "id": 6082,
    "title": "Pardiesgarten 2-4",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "19.10.2026 bis 30.10.2026",
@@ -841,7 +841,7 @@
   {
    "id": 6116,
    "title": "Parkstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Gertrud",
    "dates": "19.10.2026 bis 31.10.2026",
@@ -896,7 +896,7 @@
   {
    "id": 6122,
    "title": "Ratzeburger Allee gegenüber Karl-Roß-Weg, defekten Straßenablauf auswechseln",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "19.10.2026 bis 30.10.2026",
@@ -925,17 +925,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.91195,
    "lng": 10.80818
-  },
-  {
-   "id": 5955,
-   "title": "Ringstedtenweg 1-35",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "",
-   "dates": "31.8.2026 bis 18.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8383,
-   "lng": 10.67631
   },
   {
    "id": 6104,
@@ -1094,7 +1083,7 @@
   {
    "id": 6105,
    "title": "Siemser Landstraße i. H. Unter der Herrenbrücke 21",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23569",
    "teil": "Kücknitz",
    "dates": "19.10.2026 bis 30.10.2026",
@@ -1105,7 +1094,7 @@
   {
    "id": 6139,
    "title": "St. Gertrud",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "19.10.2026 bis 31.10.2026",

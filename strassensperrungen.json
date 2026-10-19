@@ -1,7 +1,18 @@
 {
- "stand": "2026-10-19T18:42:34+00:00",
+ "stand": "2026-10-19T22:34:21+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
+  {
+   "id": 6134,
+   "title": "Adlerstraße 33c",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "3.11.2026 bis 17.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87234,
+   "lng": 10.67076
+  },
   {
    "id": 2526,
    "title": "Alfstraße 29-31",
@@ -408,17 +419,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.82355,
    "lng": 10.59929
-  },
-  {
-   "id": 5905,
-   "title": "Holzweg",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "10.8.2026 bis 19.10.2026",
-   "wirkung": "Es handelt sich um eine Wanderbaustelle. Es kann zu einer Fahrbahnverengung kommen.",
-   "lat": 53.92457,
-   "lng": 10.78758
   },
   {
    "id": 6078,
@@ -861,17 +861,6 @@
    "lng": 10.64689
   },
   {
-   "id": 3907,
-   "title": "Radschnellweg Ratzeburger Allee",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "7.9.2026 bis 19.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.8564,
-   "lng": 10.6958
-  },
-  {
    "id": 6089,
    "title": "Ratzeburger Allee",
    "status": "aktuell",
@@ -951,7 +940,7 @@
   {
    "id": 6111,
    "title": "Rose 30a",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "20.10.2026 bis 6.11.2026",

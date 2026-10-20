@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-20T11:07:00+00:00",
+ "stand": "2026-10-20T14:38:03+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -822,7 +822,7 @@
    "status": "aktuell",
    "plz": "23560",
    "teil": "Moisling",
-   "dates": "16.7.2026 bis 30.10.2026",
+   "dates": "16.7.2026 bis 18.12.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84095,
    "lng": 10.63184

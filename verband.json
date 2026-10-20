@@ -1,6 +1,18 @@
 {
  "einsaetze": [
   {
+   "datum": "19.10.2026",
+   "zeit": "01:51",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "18.10.2026",
+   "zeit": "21:43",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "18.10.2026",
    "zeit": "12:39",
    "wehr": "FF Moisling",
@@ -43,6 +55,12 @@
    "art": "Hilfeleistungseinsatz"
   },
   {
+   "datum": "15.10.2026",
+   "zeit": "06:16",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "13.10.2026",
    "zeit": "14:37",
    "wehr": "FF Kücknitz",
@@ -52,6 +70,12 @@
    "datum": "13.10.2026",
    "zeit": "13:02",
    "wehr": "FF Ivendorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "13.10.2026",
+   "zeit": "07:03",
+   "wehr": "FF Padelügge Buntekuh",
    "art": "Brandeinsatz"
   },
   {
@@ -119,30 +143,6 @@
    "zeit": "12:52",
    "wehr": "LZG",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "12:29",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "12:07",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "07:52",
-   "wehr": "FF Kücknitz",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "03:01",
-   "wehr": "FF Padelügge Buntekuh",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-20T08:07:34+00:00"
+ "stand": "2026-10-20T11:51:27+00:00"
 }

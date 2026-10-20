@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "19.10.2026",
+   "zeit": "01:51",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "18.10.2026",
    "zeit": "21:43",
    "wehr": "FF Padelügge Buntekuh",
@@ -137,12 +143,6 @@
    "zeit": "12:52",
    "wehr": "LZG",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "12:29",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-20T13:25:06+00:00"
+ "stand": "2026-10-20T16:47:16+00:00"
 }

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-20T21:09:42+00:00",
+ "stand": "2026-10-20T22:05:37+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -56,17 +56,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.91125,
    "lng": 10.73867
-  },
-  {
-   "id": 6136,
-   "title": "An der Stadtfreiheit 1+2 und Ziegelstraße 4",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "19.10.2026 bis 20.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8702,
-   "lng": 10.66519
   },
   {
    "id": 6054,
@@ -617,17 +606,6 @@
    "wirkung": "Bauphase 1 - Vom 05.10.2026 ab 09:00 Uhr bis 11.10.2026 Bauphase 2 - Vom 12.10.2026 bis 21.10.2026 ( Vollsperrung Knoten Stockelsdorfer Straße, Friedhofsallee )",
    "lat": 53.88251,
    "lng": 10.65747
-  },
-  {
-   "id": 6098,
-   "title": "Kronsforder Allee 40-52(beidseitig)",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 20.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85062,
-   "lng": 10.68679
   },
   {
    "id": 6047,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-20T05:07:24+00:00",
+ "stand": "2026-10-20T11:07:00+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -100,6 +100,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86846,
    "lng": 10.69957
+  },
+  {
+   "id": 6143,
+   "title": "Auf dem Baggersand 13",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "26.10.2026 bis 26.10.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.95569,
+   "lng": 10.86224
   },
   {
    "id": 6108,
@@ -331,6 +342,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88784,
    "lng": 10.66546
+  },
+  {
+   "id": 6142,
+   "title": "Fischerweg",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "28.10.2026 bis 28.10.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.90604,
+   "lng": 10.7519
   },
   {
    "id": 5953,
@@ -936,6 +958,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86665,
    "lng": 10.71223
+  },
+  {
+   "id": 5987,
+   "title": "Rosa-Luxemburg-Straße, Paul-Steen-Straße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "28.10.2026 bis 17.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8365,
+   "lng": 10.68365
   },
   {
    "id": 6111,

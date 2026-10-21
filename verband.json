@@ -7,6 +7,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "20.10.2026",
+   "zeit": "00:49",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "19.10.2026",
    "zeit": "01:51",
    "wehr": "FF Padelügge Buntekuh",
@@ -137,12 +143,6 @@
    "zeit": "12:52",
    "wehr": "FF Dummersdorf",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "12:52",
-   "wehr": "FF Siems",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-21T09:11:44+00:00"
+ "stand": "2026-10-21T12:34:14+00:00"
 }

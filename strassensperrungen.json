@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-21T19:37:03+00:00",
+ "stand": "2026-10-21T23:05:01+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -71,7 +71,7 @@
   {
    "id": 6092,
    "title": "Arfrader Straße 11",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "22.10.2026 bis 6.11.2026",
@@ -366,17 +366,6 @@
    "lng": 10.65416
   },
   {
-   "id": 5975,
-   "title": "Fritz-Rörig-Weg",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "21.9.2026 bis 21.10.2026",
-   "wirkung": "Wanderbaustelle - Vollsperrung mit Fahrbahnverengungen",
-   "lat": 53.90289,
-   "lng": 10.75518
-  },
-  {
    "id": 6053,
    "title": "Georgstraße 3",
    "status": "aktuell",
@@ -597,17 +586,6 @@
    "lng": 10.71415
   },
   {
-   "id": 6057,
-   "title": "Kreuzungsbereich Krempelsdorfer Allee Friedhofsallee Stockelsdorfer Straße",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "5.10.2026 bis 21.10.2026",
-   "wirkung": "Bauphase 1 - Vom 05.10.2026 ab 09:00 Uhr bis 11.10.2026 Bauphase 2 - Vom 12.10.2026 bis 21.10.2026 ( Vollsperrung Knoten Stockelsdorfer Straße, Friedhofsallee )",
-   "lat": 53.88251,
-   "lng": 10.65747
-  },
-  {
    "id": 6047,
    "title": "Kumulusstraße 7",
    "status": "aktuell",
@@ -683,17 +661,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86488,
    "lng": 10.71769
-  },
-  {
-   "id": 6102,
-   "title": "Marlistraße 112",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "12.10.2026 bis 21.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86364,
-   "lng": 10.71974
   },
   {
    "id": 6095,
@@ -782,17 +749,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.83447,
    "lng": 10.61156
-  },
-  {
-   "id": 6076,
-   "title": "Niendorfer Straße 96",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "Moisling",
-   "dates": "19.10.2026 bis 21.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.84079,
-   "lng": 10.63149
   },
   {
    "id": 5855,
@@ -973,7 +929,7 @@
   {
    "id": 6135,
    "title": "Rose, zwischen Moorredder und Boelckestraße sowie Mühlenberg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "22.10.2026 bis 6.11.2026",
@@ -991,17 +947,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86676,
    "lng": 10.71621
-  },
-  {
-   "id": 6039,
-   "title": "Schlutuper Straße 46",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "21.9.2026 bis 21.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86476,
-   "lng": 10.72824
   },
   {
    "id": 5952,

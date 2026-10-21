@@ -44,6 +44,12 @@
   },
   {
    "datum": "17.10.2026",
+   "zeit": "13:12",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "17.10.2026",
    "zeit": "07:09",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
@@ -65,6 +71,12 @@
    "zeit": "11:10",
    "wehr": "FF Siems",
    "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "15.10.2026",
+   "zeit": "08:36",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
   },
   {
    "datum": "15.10.2026",
@@ -98,6 +110,12 @@
   },
   {
    "datum": "10.10.2026",
+   "zeit": "12:13",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.10.2026",
    "zeit": "12:12",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
@@ -125,24 +143,6 @@
    "zeit": "12:10",
    "wehr": "FF Siems",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "12:10",
-   "wehr": "IuK",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "12:08",
-   "wehr": "FF Ivendorf",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "08.10.2026",
-   "zeit": "12:52",
-   "wehr": "FF Dummersdorf",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-21T12:34:14+00:00"
+ "stand": "2026-10-21T17:59:52+00:00"
 }

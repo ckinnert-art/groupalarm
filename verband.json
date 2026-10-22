@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "22.10.2026",
+   "zeit": "16:11",
+   "wehr": "FF Dänischburg",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "22.10.2026",
    "zeit": "14:34",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
@@ -137,12 +143,6 @@
    "zeit": "12:12",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "12:10",
-   "wehr": "FF Dummersdorf",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-22T13:44:01+00:00"
+ "stand": "2026-10-22T17:43:46+00:00"
 }

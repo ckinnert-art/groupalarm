@@ -9,6 +9,12 @@
   {
    "datum": "22.10.2026",
    "zeit": "14:34",
+   "wehr": "FF Priwall",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "22.10.2026",
+   "zeit": "14:34",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
   },
@@ -16,6 +22,12 @@
    "datum": "21.10.2026",
    "zeit": "09:18",
    "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "21.10.2026",
+   "zeit": "09:08",
+   "wehr": "FF Priwall",
    "art": "Brandeinsatz"
   },
   {
@@ -131,18 +143,6 @@
    "zeit": "17:38",
    "wehr": "FF Travemünde",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "12:13",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "12:12",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-22T17:43:46+00:00"
+ "stand": "2026-10-22T18:55:05+00:00"
 }

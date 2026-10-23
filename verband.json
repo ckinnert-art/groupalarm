@@ -19,6 +19,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "22.10.2026",
+   "zeit": "00:09",
+   "wehr": "FF Kücknitz",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "21.10.2026",
    "zeit": "09:18",
    "wehr": "FF Padelügge Buntekuh",
@@ -137,12 +143,6 @@
    "zeit": "18:42",
    "wehr": "FF Kücknitz",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "17:38",
-   "wehr": "FF Travemünde",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-22T18:55:05+00:00"
+ "stand": "2026-10-23T02:47:44+00:00"
 }

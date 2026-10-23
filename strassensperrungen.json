@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-23T07:22:39+00:00",
+ "stand": "2026-10-23T12:04:47+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -349,7 +349,7 @@
    "status": "aktuell",
    "plz": "23558",
    "teil": "Buntekuh",
-   "dates": "17.9.2026 bis 23.10.2026",
+   "dates": "17.9.2026 bis 20.11.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85539,
    "lng": 10.65416
@@ -386,6 +386,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.87175,
    "lng": 10.6842
+  },
+  {
+   "id": 6025,
+   "title": "Heiligen-Geist-Kamp / Einmündungsbereich zur Stauffenbergstraße",
+   "status": "aktuell",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "28.9.2026 bis 6.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8778,
+   "lng": 10.7086
   },
   {
    "id": 6109,

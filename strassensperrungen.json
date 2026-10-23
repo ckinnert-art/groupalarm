@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-23T19:36:21+00:00",
+ "stand": "2026-10-23T22:08:17+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -45,17 +45,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.95949,
    "lng": 10.8477
-  },
-  {
-   "id": 6100,
-   "title": "An der Dänischburg ggü. Nr. 27",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "12.10.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91125,
-   "lng": 10.73867
   },
   {
    "id": 6054,
@@ -146,17 +135,6 @@
    "lng": 10.78909
   },
   {
-   "id": 5872,
-   "title": "Blankenseer Dorfplatz 21 - Seekamp 7",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "24.8.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.7973,
-   "lng": 10.71552
-  },
-  {
    "id": 6103,
    "title": "Bunsenweg 7",
    "status": "aktuell",
@@ -210,17 +188,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85504,
    "lng": 10.68578
-  },
-  {
-   "id": 5994,
-   "title": "Darßer Schwelle 22",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "",
-   "dates": "8.10.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.82842,
-   "lng": 10.67977
   },
   {
    "id": 6106,
@@ -364,17 +331,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86269,
    "lng": 10.67254
-  },
-  {
-   "id": 6084,
-   "title": "Glindhorn 10",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "9.10.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.94084,
-   "lng": 10.8417
   },
   {
    "id": 6080,
@@ -652,17 +608,6 @@
    "lng": 10.72501
   },
   {
-   "id": 5986,
-   "title": "Marlistraße 102",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "5.10.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86488,
-   "lng": 10.71769
-  },
-  {
    "id": 6095,
    "title": "Meesenring",
    "status": "aktuell",
@@ -784,17 +729,6 @@
    "lng": 10.86879
   },
   {
-   "id": 5789,
-   "title": "Palinger Weg 62",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "5.10.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88004,
-   "lng": 10.79622
-  },
-  {
    "id": 6082,
    "title": "Pardiesgarten 2-4",
    "status": "aktuell",
@@ -826,17 +760,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.83623,
    "lng": 10.67128
-  },
-  {
-   "id": 6096,
-   "title": "Raabrede Nr. 63",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "13.10.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.82023,
-   "lng": 10.64689
   },
   {
    "id": 6089,
@@ -991,17 +914,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.91266,
    "lng": 10.73786
-  },
-  {
-   "id": 6091,
-   "title": "Schönböckener Straße",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "9.10.2026 bis 23.10.2026",
-   "wirkung": "Vollsperrung - Umleitung ausgeschildert",
-   "lat": 53.87434,
-   "lng": 10.66111
   },
   {
    "id": 6144,
@@ -1178,17 +1090,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.83714,
    "lng": 10.6774
-  },
-  {
-   "id": 6079,
-   "title": "Vorrader Straße, zwischen Karkbrede & Raabrede",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "28.9.2026 bis 23.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.82642,
-   "lng": 10.67345
   },
   {
    "id": 1576,

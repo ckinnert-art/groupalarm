@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-23T04:10:25+00:00",
+ "stand": "2026-10-23T07:22:39+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -793,6 +793,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87958,
    "lng": 10.70071
+  },
+  {
+   "id": 5845,
+   "title": "Prinzesskirschenweg und Quittenweg",
+   "status": "aktuell",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "31.8.2026 bis 27.10.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.83623,
+   "lng": 10.67128
   },
   {
    "id": 6096,

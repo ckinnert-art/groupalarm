@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-23T12:04:47+00:00",
+ "stand": "2026-10-23T12:44:38+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -718,6 +718,17 @@
    "lng": 10.69929
   },
   {
+   "id": 6146,
+   "title": "Mönkhofer Weg 199",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "St. Jürgen",
+   "dates": "26.10.2026 bis 30.5.2027",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84176,
+   "lng": 10.7015
+  },
+  {
    "id": 5671,
    "title": "Mühlentorbrücke",
    "status": "aktuell",
@@ -905,6 +916,17 @@
    "lng": 10.71223
   },
   {
+   "id": 6145,
+   "title": "Rosa-Luxemburg-Straße 25 bis Erich-Mühsam-Weg 20",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "26.10.2026 bis 5.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.83613,
+   "lng": 10.6835
+  },
+  {
    "id": 5987,
    "title": "Rosa-Luxemburg-Straße, Paul-Steen-Straße",
    "status": "geplant",
@@ -980,6 +1002,17 @@
    "wirkung": "Vollsperrung - Umleitung ausgeschildert",
    "lat": 53.87434,
    "lng": 10.66111
+  },
+  {
+   "id": 6144,
+   "title": "Schönböckener Straße 121",
+   "status": "aktuell",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "16.10.2026 bis 13.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8692,
+   "lng": 10.63997
   },
   {
    "id": 6030,

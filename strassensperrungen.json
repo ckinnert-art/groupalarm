@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-24T17:04:01+00:00",
+ "stand": "2026-10-24T22:00:19+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -652,17 +652,6 @@
    "lng": 10.62836
   },
   {
-   "id": 6097,
-   "title": "Mönkhofer Weg 101-179, 78-94",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 24.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84641,
-   "lng": 10.69929
-  },
-  {
    "id": 6146,
    "title": "Mönkhofer Weg 199",
    "status": "geplant",
@@ -716,17 +705,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84095,
    "lng": 10.63184
-  },
-  {
-   "id": 6141,
-   "title": "Nordlandring 35 und 65, Moorredder 12, Nordmeerstr. 102",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "15.10.2026 bis 24.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96762,
-   "lng": 10.86879
   },
   {
    "id": 6082,
@@ -872,17 +850,6 @@
    "lng": 10.8684
   },
   {
-   "id": 6050,
-   "title": "Rose 43-63",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "24.9.2026 bis 24.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96103,
-   "lng": 10.86619
-  },
-  {
    "id": 6135,
    "title": "Rose, zwischen Moorredder und Boelckestraße sowie Mühlenberg",
    "status": "aktuell",
@@ -1004,28 +971,6 @@
    "lng": 10.74044
   },
   {
-   "id": 5993,
-   "title": "St. Jürgen Ring 3-29",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "",
-   "dates": "14.9.2026 bis 24.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85112,
-   "lng": 10.68428
-  },
-  {
-   "id": 5870,
-   "title": "Stichweg zwischen Bergenstraße und Am Neuhof",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 24.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84384,
-   "lng": 10.70743
-  },
-  {
    "id": 6068,
    "title": "Stumpfer Weg",
    "status": "geplant",
@@ -1046,17 +991,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.89035,
    "lng": 10.71178
-  },
-  {
-   "id": 5971,
-   "title": "Torneiweg, von Celsiusweg bis Fahrentheitweg und Torneiweg 38 - 52",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "",
-   "dates": "21.9.2026 bis 24.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89294,
-   "lng": 10.71081
   },
   {
    "id": 6138,

@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "24.10.2026",
+   "zeit": "05:38",
+   "wehr": "LZG",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "22.10.2026",
    "zeit": "16:11",
    "wehr": "FF Dänischburg",
@@ -26,7 +32,7 @@
   },
   {
    "datum": "21.10.2026",
-   "zeit": "23:51",
+   "zeit": "23:44",
    "wehr": "LZG",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "13:02",
    "wehr": "FF Ivendorf",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "13.10.2026",
-   "zeit": "07:03",
-   "wehr": "FF Padelügge Buntekuh",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-25T20:56:25+00:00"
+ "stand": "2026-10-25T21:22:06+00:00"
 }

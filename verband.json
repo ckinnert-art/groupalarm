@@ -26,6 +26,12 @@
   },
   {
    "datum": "21.10.2026",
+   "zeit": "23:51",
+   "wehr": "LZG",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "21.10.2026",
    "zeit": "09:18",
    "wehr": "FF Padelügge Buntekuh",
    "art": "Brandeinsatz"
@@ -137,12 +143,6 @@
    "zeit": "07:03",
    "wehr": "FF Padelügge Buntekuh",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.10.2026",
-   "zeit": "18:42",
-   "wehr": "FF Kücknitz",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-23T02:47:44+00:00"
+ "stand": "2026-10-25T20:56:25+00:00"
 }

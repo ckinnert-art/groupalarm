@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-25T17:05:59+00:00",
+ "stand": "2026-10-25T23:28:14+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -82,7 +82,7 @@
   {
    "id": 6143,
    "title": "Auf dem Baggersand 13",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "26.10.2026 bis 26.10.2026",
@@ -126,7 +126,7 @@
   {
    "id": 6140,
    "title": "Beim Rosenwasser 20",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "26.10.2026 bis 13.11.2026",
@@ -236,7 +236,7 @@
   {
    "id": 6115,
    "title": "Dr.-Heinrich-Dräger-Straße und Maiblumenstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Süd",
    "dates": "26.10.2026 bis 15.11.2026",
@@ -401,7 +401,7 @@
   {
    "id": 6124,
    "title": "Im Musennest, Im Eulennest, Marderweg, Hamsterweg, Im Fuchsloch",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23564",
    "teil": "St. Gertrud",
    "dates": "26.10.2026 bis 5.11.2026",
@@ -632,7 +632,7 @@
   {
    "id": 6130,
    "title": "Moorredder 42",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "26.10.2026 bis 20.11.2026",
@@ -654,7 +654,7 @@
   {
    "id": 6146,
    "title": "Mönkhofer Weg 199",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "26.10.2026 bis 30.5.2027",
@@ -683,17 +683,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8591,
    "lng": 10.6911
-  },
-  {
-   "id": 6117,
-   "title": "Niendorfer Hauptstraße 6",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Gertrud",
-   "dates": "18.10.2026 bis 25.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83447,
-   "lng": 10.61156
   },
   {
    "id": 5855,
@@ -819,7 +808,7 @@
   {
    "id": 6145,
    "title": "Rosa-Luxemburg-Straße 25 bis Erich-Mühsam-Weg 20",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "26.10.2026 bis 5.11.2026",
@@ -938,17 +927,6 @@
    "lng": 10.68144
   },
   {
-   "id": 5882,
-   "title": "Siemser Landstraße 115-123",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "3.8.2026 bis 25.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91102,
-   "lng": 10.75941
-  },
-  {
    "id": 6105,
    "title": "Siemser Landstraße i. H. Unter der Herrenbrücke 21",
    "status": "aktuell",
@@ -958,6 +936,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.90411,
    "lng": 10.77618
+  },
+  {
+   "id": 6131,
+   "title": "St. Annen Straße",
+   "status": "geplant",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "9.11.2026 bis 11.11.2026",
+   "wirkung": "Vollsperrung der Kreuzung",
+   "lat": 53.86356,
+   "lng": 10.68966
   },
   {
    "id": 6139,
@@ -973,7 +962,7 @@
   {
    "id": 6068,
    "title": "Stumpfer Weg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "Schlutup",
    "dates": "26.10.2026 bis 13.11.2026",
@@ -1072,7 +1061,7 @@
   {
    "id": 6126,
    "title": "Zum 1. Fischerbuden",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "26.10.2026 bis 8.11.2026",

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-26T18:49:12+00:00",
+ "stand": "2026-10-26T23:07:38+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -38,7 +38,7 @@
   {
    "id": 6048,
    "title": "An der Bäk 84",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "27.10.2026 bis 30.10.2026",
@@ -78,17 +78,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86846,
    "lng": 10.69957
-  },
-  {
-   "id": 6143,
-   "title": "Auf dem Baggersand 13",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "26.10.2026 bis 26.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.95569,
-   "lng": 10.86224
   },
   {
    "id": 6108,
@@ -599,7 +588,7 @@
   {
    "id": 6125,
    "title": "Maikäferstieg 6",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "27.10.2026 bis 27.10.2026",

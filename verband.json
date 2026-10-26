@@ -1,9 +1,21 @@
 {
  "einsaetze": [
   {
+   "datum": "25.10.2026",
+   "zeit": "04:36",
+   "wehr": "FF Israelsdorf",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "24.10.2026",
    "zeit": "05:38",
    "wehr": "LZG",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "24.10.2026",
+   "zeit": "05:38",
+   "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
   },
   {
@@ -32,6 +44,12 @@
   },
   {
    "datum": "22.10.2026",
+   "zeit": "02:51",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "22.10.2026",
    "zeit": "00:09",
    "wehr": "FF Kücknitz",
    "art": "Brandeinsatz"
@@ -40,6 +58,12 @@
    "datum": "21.10.2026",
    "zeit": "23:44",
    "wehr": "LZG",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "21.10.2026",
+   "zeit": "23:44",
+   "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
   },
   {
@@ -62,6 +86,12 @@
   },
   {
    "datum": "20.10.2026",
+   "zeit": "06:56",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "20.10.2026",
    "zeit": "00:49",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
@@ -70,6 +100,12 @@
    "datum": "19.10.2026",
    "zeit": "01:51",
    "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "18.10.2026",
+   "zeit": "23:07",
+   "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
   },
   {
@@ -91,6 +127,12 @@
    "art": "Hilfeleistungseinsatz"
   },
   {
+   "datum": "18.10.2026",
+   "zeit": "09:56",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "17.10.2026",
    "zeit": "19:21",
    "wehr": "FF Ivendorf",
@@ -100,48 +142,6 @@
    "datum": "17.10.2026",
    "zeit": "13:12",
    "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "17.10.2026",
-   "zeit": "07:09",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "15.10.2026",
-   "zeit": "11:10",
-   "wehr": "FF Dummersdorf",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "15.10.2026",
-   "zeit": "11:10",
-   "wehr": "LZG",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "15.10.2026",
-   "zeit": "11:10",
-   "wehr": "FF Siems",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "15.10.2026",
-   "zeit": "08:36",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "15.10.2026",
-   "zeit": "06:16",
-   "wehr": "FF Padelügge Buntekuh",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "13.10.2026",
-   "zeit": "14:37",
-   "wehr": "FF Kücknitz",
    "art": "Brandeinsatz"
   }
  ],
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-26T11:10:48+00:00"
+ "stand": "2026-10-26T16:23:33+00:00"
 }

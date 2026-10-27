@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-27T16:23:34+00:00",
+ "stand": "2026-10-27T23:08:53+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -291,7 +291,7 @@
   {
    "id": 6142,
    "title": "Fischerweg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "28.10.2026 bis 28.10.2026",
@@ -619,17 +619,6 @@
    "lng": 10.7673
   },
   {
-   "id": 6125,
-   "title": "Maikäferstieg 6",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "27.10.2026 bis 27.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.83123,
-   "lng": 10.72501
-  },
-  {
    "id": 6095,
    "title": "Meesenring",
    "status": "aktuell",
@@ -751,17 +740,6 @@
    "lng": 10.70071
   },
   {
-   "id": 5845,
-   "title": "Prinzesskirschenweg und Quittenweg",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "31.8.2026 bis 27.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.83623,
-   "lng": 10.67128
-  },
-  {
    "id": 6089,
    "title": "Ratzeburger Allee",
    "status": "aktuell",
@@ -852,7 +830,7 @@
   {
    "id": 5987,
    "title": "Rosa-Luxemburg-Straße, Paul-Steen-Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "28.10.2026 bis 17.11.2026",
@@ -1028,7 +1006,7 @@
   {
    "id": 6086,
    "title": "Vilmring 11",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "28.10.2026 bis 13.11.2026",

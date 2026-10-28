@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-28T11:45:18+00:00",
+ "stand": "2026-10-28T15:54:05+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -243,6 +243,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85499,
    "lng": 10.66822
+  },
+  {
+   "id": 5977,
+   "title": "Dr.-Julius-Leber-Straße 1",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "31.8.2026 bis 17.12.2026",
+   "wirkung": "Fahrbahnverengung - Vollsperrung",
+   "lat": 53.86814,
+   "lng": 10.68693
   },
   {
    "id": 6129,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-28T22:42:12+00:00",
+ "stand": "2026-10-28T23:39:13+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -300,17 +300,6 @@
    "lng": 10.66546
   },
   {
-   "id": 6142,
-   "title": "Fischerweg",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "28.10.2026 bis 28.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.90604,
-   "lng": 10.7519
-  },
-  {
    "id": 5953,
    "title": "Fregattenstraße / Ziegelstraße",
    "status": "aktuell",
@@ -531,17 +520,6 @@
    "lng": 10.67649
   },
   {
-   "id": 6107,
-   "title": "Kiwittredder Nr. 14 bis 18 bzw. gegenüber Nr. 1",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "Moisling",
-   "dates": "15.10.2026 bis 28.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83763,
-   "lng": 10.6312
-  },
-  {
    "id": 6127,
    "title": "Kolk Nr. 24",
    "status": "aktuell",
@@ -606,17 +584,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.83131,
    "lng": 10.72814
-  },
-  {
-   "id": 6085,
-   "title": "Lofotenweg 5",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "9.10.2026 bis 28.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 54.33172,
-   "lng": 10.05265
   },
   {
    "id": 4319,
@@ -918,7 +885,7 @@
   {
    "id": 6137,
    "title": "Schönböckener Straße und Knoten Krempelsdorfer Allee",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "St. Lorenz-Nord",
    "dates": "29.10.2026 bis 29.10.2026",

@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-29T12:55:51+00:00",
+ "stand": "2026-10-29T14:59:09+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -91,6 +91,17 @@
    "lng": 10.65528
   },
   {
+   "id": 5894,
+   "title": "Augustenstraße Zufahrt Parkplatz",
+   "status": "aktuell",
+   "plz": "23564",
+   "teil": "St. Gertrud",
+   "dates": "17.8.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86239,
+   "lng": 10.7021
+  },
+  {
    "id": 4220,
    "title": "Balauerfohr",
    "status": "aktuell",
@@ -122,6 +133,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88664,
    "lng": 10.78909
+  },
+  {
+   "id": 6150,
+   "title": "Borstelweg 64",
+   "status": "geplant",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "2.11.2026 bis 17.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91072,
+   "lng": 10.7886
   },
   {
    "id": 6103,
@@ -298,6 +320,28 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88784,
    "lng": 10.66546
+  },
+  {
+   "id": 6149,
+   "title": "Falkenstraße 29",
+   "status": "aktuell",
+   "plz": "23564",
+   "teil": "St. Gertrud",
+   "dates": "19.10.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86981,
+   "lng": 10.69839
+  },
+  {
+   "id": 6151,
+   "title": "Forstmeisterweg 144 bis Einmündung Torneiweg",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "2.11.2026 bis 21.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88929,
+   "lng": 10.70998
   },
   {
    "id": 5953,
@@ -712,7 +756,7 @@
    "status": "aktuell",
    "plz": "23560",
    "teil": "St. Gertrud",
-   "dates": "19.10.2026 bis 31.10.2026",
+   "dates": "19.10.2026 bis 21.11.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87958,
    "lng": 10.70071
@@ -723,7 +767,7 @@
    "status": "aktuell",
    "plz": "23564",
    "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 30.10.2026",
+   "dates": "12.10.2026 bis 3.11.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85384,
    "lng": 10.69942

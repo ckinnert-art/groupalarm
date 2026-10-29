@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-29T22:44:07+00:00",
+ "stand": "2026-10-29T23:39:55+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -203,7 +203,7 @@
   {
    "id": 6147,
    "title": "Clara-Zetkin-Weg 20 bis Rosa-Luxemburg-Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "30.10.2026 bis 10.11.2026",
@@ -441,17 +441,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.82355,
    "lng": 10.59929
-  },
-  {
-   "id": 6078,
-   "title": "Huntenhorster Weg 25",
-   "status": "aktuell",
-   "plz": "23564",
-   "teil": "St. Jürgen",
-   "dates": "15.10.2026 bis 29.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84213,
-   "lng": 10.74461
   },
   {
    "id": 6128,
@@ -947,17 +936,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87277,
    "lng": 10.65558
-  },
-  {
-   "id": 6137,
-   "title": "Schönböckener Straße und Knoten Krempelsdorfer Allee",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "29.10.2026 bis 29.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87537,
-   "lng": 10.66421
   },
   {
    "id": 3887,

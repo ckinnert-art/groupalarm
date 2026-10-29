@@ -19,6 +19,18 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "26.10.2026",
+   "zeit": "17:27",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "25.10.2026",
+   "zeit": "17:50",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "25.10.2026",
    "zeit": "04:36",
    "wehr": "FF Israelsdorf",
@@ -86,6 +98,12 @@
   },
   {
    "datum": "21.10.2026",
+   "zeit": "09:29",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "21.10.2026",
    "zeit": "09:18",
    "wehr": "FF Padelügge Buntekuh",
    "art": "Brandeinsatz"
@@ -125,24 +143,6 @@
    "zeit": "23:07",
    "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "18.10.2026",
-   "zeit": "21:43",
-   "wehr": "FF Padelügge Buntekuh",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "18.10.2026",
-   "zeit": "12:39",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "18.10.2026",
-   "zeit": "10:27",
-   "wehr": "FF Büssau",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-28T19:57:04+00:00"
+ "stand": "2026-10-29T14:50:15+00:00"
 }

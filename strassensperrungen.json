@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-29T14:59:09+00:00",
+ "stand": "2026-10-29T15:55:55+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -729,6 +729,17 @@
    "lng": 10.6911
   },
   {
+   "id": 6153,
+   "title": "Niendorfer Straße 98",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "Moisling",
+   "dates": "5.11.2026 bis 20.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.84073,
+   "lng": 10.63143
+  },
+  {
    "id": 5855,
    "title": "Niendorfer Straße Nr. 90-130",
    "status": "aktuell",
@@ -815,6 +826,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.91195,
    "lng": 10.80818
+  },
+  {
+   "id": 6152,
+   "title": "Ringstraße 1 / Gneversdorfer Weg 24",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "9.11.2026 bis 14.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.96076,
+   "lng": 10.86056
   },
   {
    "id": 6104,

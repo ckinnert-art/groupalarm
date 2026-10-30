@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-30T05:46:51+00:00",
+ "stand": "2026-10-30T11:41:49+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -316,7 +316,7 @@
    "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
-   "dates": "30.9.2026 bis 31.10.2026",
+   "dates": "30.9.2026 bis 18.11.2026",
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88784,
    "lng": 10.66546
@@ -364,6 +364,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85539,
    "lng": 10.65416
+  },
+  {
+   "id": 6154,
+   "title": "Geniner Straße 247a",
+   "status": "aktuell",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "26.10.2026 bis 13.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84512,
+   "lng": 10.66417
   },
   {
    "id": 6053,

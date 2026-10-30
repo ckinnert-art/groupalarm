@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-30T17:44:30+00:00",
+ "stand": "2026-10-30T23:39:00+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -23,39 +23,6 @@
    "wirkung": "Vollsperrung im Baubereich",
    "lat": 53.86966,
    "lng": 10.68208
-  },
-  {
-   "id": 6110,
-   "title": "Am Dreilingsberg / Ecke Gneversdorfer Weg",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "12.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96219,
-   "lng": 10.85994
-  },
-  {
-   "id": 6048,
-   "title": "An der Bäk 84",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "27.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.95949,
-   "lng": 10.8477
-  },
-  {
-   "id": 6054,
-   "title": "Andersenring 14-16",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "Moisling",
-   "dates": "28.9.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84339,
-   "lng": 10.63793
   },
   {
    "id": 6092,
@@ -146,17 +113,6 @@
    "lng": 10.7886
   },
   {
-   "id": 6103,
-   "title": "Bunsenweg 7",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "13.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89201,
-   "lng": 10.71007
-  },
-  {
    "id": 4032,
    "title": "Bw. 29 Eutiner Eisenbahnbrücke",
    "status": "aktuell",
@@ -234,17 +190,6 @@
    "lng": 10.64025
   },
   {
-   "id": 5991,
-   "title": "Dornbreite 115-119a",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "7.9.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87583,
-   "lng": 10.63886
-  },
-  {
    "id": 5998,
    "title": "Dornbreite 59-97",
    "status": "aktuell",
@@ -298,17 +243,6 @@
    "wirkung": "Wanderbaustelle - Vollsperrung teilweise Fahrbahnverengung",
    "lat": 53.85977,
    "lng": 10.70537
-  },
-  {
-   "id": 6101,
-   "title": "Ernst-Deecke-Weg 65",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "13.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.90098,
-   "lng": 10.75364
   },
   {
    "id": 6072,
@@ -432,17 +366,6 @@
    "lng": 10.7086
   },
   {
-   "id": 6109,
-   "title": "Helgolandstraße 3",
-   "status": "aktuell",
-   "plz": "23554",
-   "teil": "St. Lorenz-Nord",
-   "dates": "13.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88689,
-   "lng": 10.68325
-  },
-  {
    "id": 6015,
    "title": "Hellkamp 9",
    "status": "aktuell",
@@ -474,17 +397,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85539,
    "lng": 10.73302
-  },
-  {
-   "id": 6061,
-   "title": "Im Trentsaal",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 30.10.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.81859,
-   "lng": 10.71349
   },
   {
    "id": 6121,
@@ -586,28 +498,6 @@
    "lng": 10.64381
   },
   {
-   "id": 6120,
-   "title": "Kottwitzstraße Ecke Werderstraße",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "19.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87017,
-   "lng": 10.71415
-  },
-  {
-   "id": 6047,
-   "title": "Kumulusstraße 7",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "25.9.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.95844,
-   "lng": 10.85283
-  },
-  {
    "id": 4282,
    "title": "Lange Reihe 35-39",
    "status": "aktuell",
@@ -617,17 +507,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8779,
    "lng": 10.6996
-  },
-  {
-   "id": 6075,
-   "title": "Libellenweg 25",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "16.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83131,
-   "lng": 10.72814
   },
   {
    "id": 4319,
@@ -751,17 +630,6 @@
    "lng": 10.63184
   },
   {
-   "id": 6082,
-   "title": "Pardiesgarten 2-4",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "19.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84739,
-   "lng": 10.69657
-  },
-  {
    "id": 6116,
    "title": "Parkstraße",
    "status": "aktuell",
@@ -795,17 +663,6 @@
    "lng": 10.7085
   },
   {
-   "id": 6122,
-   "title": "Ratzeburger Allee gegenüber Karl-Roß-Weg, defekten Straßenablauf auswechseln",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "19.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85278,
-   "lng": 10.70088
-  },
-  {
    "id": 6033,
    "title": "Redderkoppel",
    "status": "aktuell",
@@ -837,28 +694,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.96076,
    "lng": 10.86056
-  },
-  {
-   "id": 6104,
-   "title": "Robert-Koch-Straße",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "12.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84465,
-   "lng": 10.68954
-  },
-  {
-   "id": 5949,
-   "title": "Roonstraße 11-40",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "",
-   "dates": "7.9.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86665,
-   "lng": 10.71223
   },
   {
    "id": 6145,
@@ -905,28 +740,6 @@
    "lng": 10.86539
   },
   {
-   "id": 6119,
-   "title": "Scharnhorststraße 5-9",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "14.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86676,
-   "lng": 10.71621
-  },
-  {
-   "id": 5952,
-   "title": "Schäferkamp 3 - 11",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "24.8.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91266,
-   "lng": 10.73786
-  },
-  {
    "id": 6144,
    "title": "Schönböckener Straße 121",
    "status": "aktuell",
@@ -969,17 +782,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86912,
    "lng": 10.68144
-  },
-  {
-   "id": 6105,
-   "title": "Siemser Landstraße i. H. Unter der Herrenbrücke 21",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "19.10.2026 bis 30.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.90411,
-   "lng": 10.77618
   },
   {
    "id": 6131,

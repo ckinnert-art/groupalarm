@@ -3,6 +3,12 @@
   {
    "datum": "28.10.2026",
    "zeit": "21:07",
+   "wehr": "FF Priwall",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "28.10.2026",
+   "zeit": "21:07",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "09:08",
    "wehr": "FF Priwall",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "21.10.2026",
-   "zeit": "09:07",
-   "wehr": "FF Travemünde",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-29T20:59:16+00:00"
+ "stand": "2026-10-30T10:29:07+00:00"
 }

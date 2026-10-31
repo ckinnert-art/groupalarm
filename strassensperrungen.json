@@ -1,5 +1,5 @@
 {
- "stand": "2026-10-31T19:18:17+00:00",
+ "stand": "2026-10-31T23:08:11+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -177,28 +177,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85578,
    "lng": 10.7377
-  },
-  {
-   "id": 5990,
-   "title": "Dornbreite 101-115",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "7.9.2026 bis 31.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87616,
-   "lng": 10.64025
-  },
-  {
-   "id": 5998,
-   "title": "Dornbreite 59-97",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "",
-   "dates": "14.9.2026 bis 31.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87704,
-   "lng": 10.6444
   },
   {
    "id": 6115,
@@ -419,17 +397,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.84726,
    "lng": 10.69545
-  },
-  {
-   "id": 5967,
-   "title": "Karkbrede",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "",
-   "dates": "1.10.2026 bis 31.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.82301,
-   "lng": 10.66457
   },
   {
    "id": 6123,
@@ -793,17 +760,6 @@
    "wirkung": "Vollsperrung der Kreuzung",
    "lat": 53.86356,
    "lng": 10.68966
-  },
-  {
-   "id": 6139,
-   "title": "St. Gertrud",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "19.10.2026 bis 31.10.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86221,
-   "lng": 10.74044
   },
   {
    "id": 6068,

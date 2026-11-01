@@ -3,6 +3,12 @@
   {
    "datum": "30.10.2026",
    "zeit": "17:50",
+   "wehr": "FF Priwall",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "30.10.2026",
+   "zeit": "17:50",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
   },
@@ -137,12 +143,6 @@
    "zeit": "09:19",
    "wehr": "FF Innenstadt",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "21.10.2026",
-   "zeit": "09:18",
-   "wehr": "FF Padelügge Buntekuh",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-10-30T19:44:20+00:00"
+ "stand": "2026-11-01T15:29:13+00:00"
 }

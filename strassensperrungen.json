@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-01T18:12:04+00:00",
+ "stand": "2026-11-01T23:10:30+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -38,7 +38,7 @@
   {
    "id": 6133,
    "title": "Attendornstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23564",
    "teil": "St. Gertrud",
    "dates": "2.11.2026 bis 4.11.2026",
@@ -104,7 +104,7 @@
   {
    "id": 6150,
    "title": "Borstelweg 64",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23569",
    "teil": "Kücknitz",
    "dates": "2.11.2026 bis 17.11.2026",
@@ -247,7 +247,7 @@
   {
    "id": 6151,
    "title": "Forstmeisterweg 144 bis Einmündung Torneiweg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "2.11.2026 bis 21.11.2026",
@@ -511,7 +511,7 @@
   {
    "id": 6023,
    "title": "Mengstraße ggü. Nr. 10",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23552",
    "teil": "Innenstadt",
    "dates": "2.11.2026 bis 6.11.2026",

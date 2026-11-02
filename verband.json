@@ -147,12 +147,6 @@
  ],
  "veranstaltungen": [
   {
-   "datum": "02.11.2026",
-   "zeit": "19:00",
-   "name": "WF-Dienstbesprechung mit BL",
-   "ort": ""
-  },
-  {
    "datum": "09.11.2026",
    "zeit": "",
    "name": "Jugendwarteausschusssitzung",
@@ -201,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-02T17:38:39+00:00"
+ "stand": "2026-11-02T23:21:59+00:00"
 }

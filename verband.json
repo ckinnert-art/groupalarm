@@ -85,6 +85,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "24.10.2026",
+   "zeit": "03:37",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "22.10.2026",
    "zeit": "16:11",
    "wehr": "FF Dänischburg",
@@ -135,12 +141,6 @@
   {
    "datum": "21.10.2026",
    "zeit": "23:44",
-   "wehr": "FF Israelsdorf",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "21.10.2026",
-   "zeit": "09:29",
    "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
   }
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-02T06:32:39+00:00"
+ "stand": "2026-11-02T08:04:59+00:00"
 }

@@ -2,6 +2,18 @@
  "einsaetze": [
   {
    "datum": "02.11.2026",
+   "zeit": "14:22",
+   "wehr": "FF Moisling",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "02.11.2026",
+   "zeit": "13:20",
+   "wehr": "FF Moisling",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "02.11.2026",
    "zeit": "12:30",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
@@ -131,18 +143,6 @@
    "zeit": "00:09",
    "wehr": "FF Kücknitz",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "21.10.2026",
-   "zeit": "23:45",
-   "wehr": "FF Innenstadt",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "21.10.2026",
-   "zeit": "23:44",
-   "wehr": "LZG",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-02T15:37:56+00:00"
+ "stand": "2026-11-02T16:43:34+00:00"
 }

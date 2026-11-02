@@ -1,11 +1,11 @@
 {
- "stand": "2026-11-02T17:57:26+00:00",
+ "stand": "2026-11-02T23:39:30+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
    "id": 6134,
    "title": "Adlerstraße 33c",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "3.11.2026 bis 17.11.2026",

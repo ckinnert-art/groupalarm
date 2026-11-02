@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "02.11.2026",
+   "zeit": "12:30",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "30.10.2026",
    "zeit": "17:50",
    "wehr": "FF Priwall",
@@ -137,12 +143,6 @@
    "zeit": "23:44",
    "wehr": "LZG",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "21.10.2026",
-   "zeit": "23:44",
-   "wehr": "FF Israelsdorf",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -201,5 +201,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-02T08:04:59+00:00"
+ "stand": "2026-11-02T15:37:56+00:00"
 }

@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "03.11.2026",
+   "zeit": "09:33",
+   "wehr": "FF Groß Steinrade",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.11.2026",
    "zeit": "09:01",
    "wehr": "FF Groß Steinrade",
    "art": "Brandeinsatz"
@@ -137,12 +143,6 @@
    "zeit": "14:34",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "22.10.2026",
-   "zeit": "09:49",
-   "wehr": "FF Padelügge Buntekuh",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-03T10:39:01+00:00"
+ "stand": "2026-11-03T11:34:53+00:00"
 }

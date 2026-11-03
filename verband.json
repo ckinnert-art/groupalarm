@@ -2,6 +2,18 @@
  "einsaetze": [
   {
    "datum": "03.11.2026",
+   "zeit": "17:28",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.11.2026",
+   "zeit": "15:52",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.11.2026",
    "zeit": "09:33",
    "wehr": "FF Groß Steinrade",
    "art": "Brandeinsatz"
@@ -9,7 +21,19 @@
   {
    "datum": "03.11.2026",
    "zeit": "09:01",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.11.2026",
+   "zeit": "09:01",
    "wehr": "FF Groß Steinrade",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "02.11.2026",
+   "zeit": "18:04",
+   "wehr": "FF Schönböcken",
    "art": "Brandeinsatz"
   },
   {
@@ -119,30 +143,6 @@
    "zeit": "05:38",
    "wehr": "FF Innenstadt",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "24.10.2026",
-   "zeit": "05:38",
-   "wehr": "LZG",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "24.10.2026",
-   "zeit": "05:38",
-   "wehr": "FF Israelsdorf",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "24.10.2026",
-   "zeit": "03:37",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "22.10.2026",
-   "zeit": "16:11",
-   "wehr": "FF Dänischburg",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-03T12:36:51+00:00"
+ "stand": "2026-11-03T18:28:25+00:00"
 }

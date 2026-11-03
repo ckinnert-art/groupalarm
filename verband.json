@@ -14,6 +14,12 @@
   },
   {
    "datum": "03.11.2026",
+   "zeit": "15:30",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.11.2026",
    "zeit": "09:33",
    "wehr": "FF Groß Steinrade",
    "art": "Brandeinsatz"
@@ -50,6 +56,12 @@
   },
   {
    "datum": "02.11.2026",
+   "zeit": "12:33",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "02.11.2026",
    "zeit": "12:31",
    "wehr": "LZG",
    "art": "Brandeinsatz"
@@ -64,6 +76,12 @@
    "datum": "02.11.2026",
    "zeit": "12:30",
    "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "31.10.2026",
+   "zeit": "08:35",
+   "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
   },
   {
@@ -125,24 +143,6 @@
    "zeit": "17:50",
    "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "25.10.2026",
-   "zeit": "04:36",
-   "wehr": "FF Israelsdorf",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "24.10.2026",
-   "zeit": "05:39",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "24.10.2026",
-   "zeit": "05:38",
-   "wehr": "FF Innenstadt",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-03T18:28:25+00:00"
+ "stand": "2026-11-03T19:27:05+00:00"
 }

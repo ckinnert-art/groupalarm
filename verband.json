@@ -37,6 +37,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "02.11.2026",
+   "zeit": "12:30",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "30.10.2026",
    "zeit": "17:50",
    "wehr": "FF Priwall",
@@ -104,6 +110,12 @@
   },
   {
    "datum": "24.10.2026",
+   "zeit": "05:39",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "24.10.2026",
    "zeit": "05:38",
    "wehr": "FF Innenstadt",
    "art": "Hilfeleistungseinsatz"
@@ -130,18 +142,6 @@
    "datum": "22.10.2026",
    "zeit": "16:11",
    "wehr": "FF Dänischburg",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "22.10.2026",
-   "zeit": "14:34",
-   "wehr": "FF Priwall",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "22.10.2026",
-   "zeit": "14:34",
-   "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
   }
  ],
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-03T11:34:53+00:00"
+ "stand": "2026-11-03T12:36:51+00:00"
 }

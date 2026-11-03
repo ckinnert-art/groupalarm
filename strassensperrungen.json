@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-03T12:26:38+00:00",
+ "stand": "2026-11-03T14:57:26+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -23,6 +23,17 @@
    "wirkung": "Vollsperrung im Baubereich",
    "lat": 53.86966,
    "lng": 10.68208
+  },
+  {
+   "id": 6054,
+   "title": "Andersenring 14-16",
+   "status": "aktuell",
+   "plz": "23560",
+   "teil": "Moisling",
+   "dates": "28.9.2026 bis 18.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84339,
+   "lng": 10.63793
   },
   {
    "id": 6092,
@@ -111,6 +122,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.91072,
    "lng": 10.7886
+  },
+  {
+   "id": 6157,
+   "title": "Brockesstraße 32",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "13.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87654,
+   "lng": 10.67515
   },
   {
    "id": 4032,
@@ -344,15 +366,15 @@
    "lng": 10.7086
   },
   {
-   "id": 6015,
-   "title": "Hellkamp 9",
+   "id": 6028,
+   "title": "Hellkamp und Holzkoppel",
    "status": "aktuell",
    "plz": "23560",
    "teil": "Moisling",
-   "dates": "14.9.2026 bis 6.11.2026",
+   "dates": "14.9.2026 bis 11.12.2026",
    "wirkung": "Vollsperrung",
-   "lat": 53.82355,
-   "lng": 10.59929
+   "lat": 53.82432,
+   "lng": 10.59836
   },
   {
    "id": 6128,
@@ -443,6 +465,17 @@
    "lng": 10.67649
   },
   {
+   "id": 6156,
+   "title": "Kleine Altefähre 1-25",
+   "status": "geplant",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "9.11.2026 bis 23.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.87326,
+   "lng": 10.68885
+  },
+  {
    "id": 6127,
    "title": "Kolk Nr. 24",
    "status": "aktuell",
@@ -463,6 +496,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85517,
    "lng": 10.64381
+  },
+  {
+   "id": 6047,
+   "title": "Kumulusstraße 7",
+   "status": "aktuell",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "25.9.2026 bis 29.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.95844,
+   "lng": 10.85283
   },
   {
    "id": 4282,
@@ -573,6 +617,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8591,
    "lng": 10.6911
+  },
+  {
+   "id": 6158,
+   "title": "Niendorfer Straße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "Moisling",
+   "dates": "9.11.2026 bis 20.3.2027",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84195,
+   "lng": 10.6392
   },
   {
    "id": 6153,

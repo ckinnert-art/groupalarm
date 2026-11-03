@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-03T14:57:26+00:00",
+ "stand": "2026-11-03T15:53:10+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -201,6 +201,28 @@
    "lng": 10.7377
   },
   {
+   "id": 5990,
+   "title": "Dornbreite 101-115",
+   "status": "aktuell",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "7.9.2026 bis 30.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87616,
+   "lng": 10.64025
+  },
+  {
+   "id": 5998,
+   "title": "Dornbreite 59-97",
+   "status": "aktuell",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "14.9.2026 bis 30.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87704,
+   "lng": 10.6444
+  },
+  {
    "id": 6115,
    "title": "Dr.-Heinrich-Dräger-Straße und Maiblumenstraße",
    "status": "aktuell",
@@ -243,6 +265,17 @@
    "wirkung": "Wanderbaustelle - Vollsperrung teilweise Fahrbahnverengung",
    "lat": 53.85977,
    "lng": 10.70537
+  },
+  {
+   "id": 6163,
+   "title": "Erich-Klann-Straße",
+   "status": "aktuell",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "3.11.2026 bis 24.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.83859,
+   "lng": 10.68276
   },
   {
    "id": 6072,
@@ -298,6 +331,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85539,
    "lng": 10.65416
+  },
+  {
+   "id": 6161,
+   "title": "Geniner Dorfstraße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "11.11.2026 bis 13.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84158,
+   "lng": 10.65076
   },
   {
    "id": 6154,
@@ -375,6 +419,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.82432,
    "lng": 10.59836
+  },
+  {
+   "id": 6159,
+   "title": "Holländerkoppel 10",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "12.11.2026 bis 26.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87355,
+   "lng": 10.62515
   },
   {
    "id": 6128,
@@ -562,6 +617,28 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86828,
    "lng": 10.68495
+  },
+  {
+   "id": 6160,
+   "title": "Mengstraße, Buddenbrookhaus",
+   "status": "geplant",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "6.11.2026 bis 16.4.2027",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86828,
+   "lng": 10.68495
+  },
+  {
+   "id": 6162,
+   "title": "Moislinger Allee 175",
+   "status": "aktuell",
+   "plz": "23558",
+   "teil": "Moisling",
+   "dates": "30.10.2026 bis 20.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84991,
+   "lng": 10.64675
   },
   {
    "id": 6130,

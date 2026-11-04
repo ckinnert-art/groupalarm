@@ -15,6 +15,12 @@
   {
    "datum": "03.11.2026",
    "zeit": "15:30",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "03.11.2026",
+   "zeit": "15:30",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
   },
@@ -79,6 +85,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "02.11.2026",
+   "zeit": "12:30",
+   "wehr": "FF Israelsdorf",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "31.10.2026",
    "zeit": "08:35",
    "wehr": "FF Schlutup",
@@ -130,18 +142,6 @@
    "datum": "27.10.2026",
    "zeit": "12:19",
    "wehr": "FF Travemünde",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "26.10.2026",
-   "zeit": "17:27",
-   "wehr": "FF Israelsdorf",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "25.10.2026",
-   "zeit": "17:50",
-   "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
   }
  ],
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-03T19:27:05+00:00"
+ "stand": "2026-11-04T18:56:02+00:00"
 }

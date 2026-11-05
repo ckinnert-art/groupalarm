@@ -68,12 +68,6 @@
   },
   {
    "datum": "02.11.2026",
-   "zeit": "12:33",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
    "zeit": "12:31",
    "wehr": "LZG",
    "art": "Brandeinsatz"
@@ -143,6 +137,12 @@
    "zeit": "12:19",
    "wehr": "FF Priwall",
    "art": "Brandeinsatz"
+  },
+  {
+   "datum": "27.10.2026",
+   "zeit": "12:19",
+   "wehr": "FF Travemünde",
+   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -207,5 +207,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-05T13:57:46+00:00"
+ "stand": "2026-11-05T15:54:01+00:00"
 }

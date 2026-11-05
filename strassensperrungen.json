@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-05T14:34:55+00:00",
+ "stand": "2026-11-05T15:32:35+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -256,6 +256,17 @@
    "lng": 10.69786
   },
   {
+   "id": 6172,
+   "title": "Eichenweg 24",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "9.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.90076,
+   "lng": 10.74201
+  },
+  {
    "id": 5978,
    "title": "Elsässer Straße",
    "status": "aktuell",
@@ -342,6 +353,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85539,
    "lng": 10.65416
+  },
+  {
+   "id": 6173,
+   "title": "Fährbergweg 14",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "9.11.2026 bis 27.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.90001,
+   "lng": 10.75177
   },
   {
    "id": 6161,
@@ -564,6 +586,17 @@
    "lng": 10.68247
   },
   {
+   "id": 6171,
+   "title": "Konstinstraße i. H. Jerusalemsberg 4 (Einmündungsbereich)",
+   "status": "aktuell",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "30.10.2026 bis 24.11.2026",
+   "wirkung": "Fahrbahnverengung mit Vollsperrung vom 09. - 24.11.2026",
+   "lat": 53.88146,
+   "lng": 10.6931
+  },
+  {
    "id": 6035,
    "title": "Korvettenstraße und Kutterweg",
    "status": "aktuell",
@@ -617,6 +650,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.9082,
    "lng": 10.7673
+  },
+  {
+   "id": 6170,
+   "title": "Marlesgrube 61",
+   "status": "geplant",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "16.11.2026 bis 21.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86365,
+   "lng": 10.68173
   },
   {
    "id": 6095,
@@ -696,6 +740,17 @@
    "lng": 10.7015
   },
   {
+   "id": 6175,
+   "title": "Mühlenberg i. H. Brodtener Kirchsteig",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "10.11.2026 bis 21.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.95904,
+   "lng": 10.86189
+  },
+  {
    "id": 5671,
    "title": "Mühlentorbrücke",
    "status": "aktuell",
@@ -749,6 +804,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84095,
    "lng": 10.63184
+  },
+  {
+   "id": 6174,
+   "title": "Nordmeerstraße 93 / Ecke Polarweg",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "9.11.2026 bis 20.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.96528,
+   "lng": 10.86061
   },
   {
    "id": 6116,

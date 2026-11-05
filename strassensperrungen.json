@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-05T21:49:09+00:00",
+ "stand": "2026-11-05T23:46:10+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -188,6 +188,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85578,
    "lng": 10.7377
+  },
+  {
+   "id": 6114,
+   "title": "Dohlenweg 9",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "St. Jürgen",
+   "dates": "20.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85261,
+   "lng": 10.71348
   },
   {
    "id": 5990,
@@ -487,17 +498,6 @@
    "lng": 10.74658
   },
   {
-   "id": 6124,
-   "title": "Im Musennest, Im Eulennest, Marderweg, Hamsterweg, Im Fuchsloch",
-   "status": "aktuell",
-   "plz": "23564",
-   "teil": "St. Gertrud",
-   "dates": "26.10.2026 bis 5.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85539,
-   "lng": 10.73302
-  },
-  {
    "id": 6121,
    "title": "Johannes-Stelling-Straße",
    "status": "aktuell",
@@ -698,7 +698,7 @@
   {
    "id": 6160,
    "title": "Mengstraße, Buddenbrookhaus",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23552",
    "teil": "Innenstadt",
    "dates": "6.11.2026 bis 16.4.2027",
@@ -870,17 +870,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.96076,
    "lng": 10.86056
-  },
-  {
-   "id": 6145,
-   "title": "Rosa-Luxemburg-Straße 25 bis Erich-Mühsam-Weg 20",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "26.10.2026 bis 5.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83613,
-   "lng": 10.6835
   },
   {
    "id": 5987,

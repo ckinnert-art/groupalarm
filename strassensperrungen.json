@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-05T13:10:20+00:00",
+ "stand": "2026-11-05T14:34:55+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -201,6 +201,17 @@
    "lng": 10.64025
   },
   {
+   "id": 6167,
+   "title": "Dornbreite 5",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "9.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8804,
+   "lng": 10.65437
+  },
+  {
    "id": 5998,
    "title": "Dornbreite 59-97",
    "status": "aktuell",
@@ -289,6 +300,17 @@
    "lng": 10.69839
   },
   {
+   "id": 6169,
+   "title": "Finkenberg 38",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Süd",
+   "dates": "11.11.2026 bis 12.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85556,
+   "lng": 10.67089
+  },
+  {
    "id": 6151,
    "title": "Forstmeisterweg 144 bis Einmündung Torneiweg",
    "status": "aktuell",
@@ -353,6 +375,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86269,
    "lng": 10.67254
+  },
+  {
+   "id": 6168,
+   "title": "Georgstraße Ecke Meierstraße",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Süd",
+   "dates": "9.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.8605,
+   "lng": 10.67096
   },
   {
    "id": 6148,
@@ -562,6 +595,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8779,
    "lng": 10.6996
+  },
+  {
+   "id": 6166,
+   "title": "Langensahl",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "16.11.2026 bis 31.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.82157,
+   "lng": 10.65379
   },
   {
    "id": 4319,
@@ -883,6 +927,17 @@
    "lng": 10.71178
   },
   {
+   "id": 6165,
+   "title": "Travemünder Allee 22-24",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "9.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88212,
+   "lng": 10.70288
+  },
+  {
    "id": 6138,
    "title": "Triftstraße 63a",
    "status": "aktuell",
@@ -947,6 +1002,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86395,
    "lng": 10.65577
+  },
+  {
+   "id": 6164,
+   "title": "Wilhelm-Geusendam-Weg",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "12.11.2026 bis 23.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.83714,
+   "lng": 10.68216
   },
   {
    "id": 5979,

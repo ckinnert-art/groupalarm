@@ -1,6 +1,24 @@
 {
  "einsaetze": [
   {
+   "datum": "06.11.2026",
+   "zeit": "12:12",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "07:30",
+   "wehr": "FF Moisling",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "07:00",
+   "wehr": "FF Krummesse",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "05.11.2026",
    "zeit": "09:14",
    "wehr": "FF Wulfsdorf-Vorrade",
@@ -125,24 +143,6 @@
    "zeit": "17:50",
    "wehr": "FF Priwall",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "30.10.2026",
-   "zeit": "17:50",
-   "wehr": "FF Travemünde",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "30.10.2026",
-   "zeit": "10:50",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "28.10.2026",
-   "zeit": "21:07",
-   "wehr": "FF Priwall",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -207,5 +207,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-05T18:50:40+00:00"
+ "stand": "2026-11-06T12:21:10+00:00"
 }

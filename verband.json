@@ -8,6 +8,18 @@
   },
   {
    "datum": "06.11.2026",
+   "zeit": "12:10",
+   "wehr": "FF Krummesse",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "11:48",
+   "wehr": "FF Krummesse",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "06.11.2026",
    "zeit": "07:30",
    "wehr": "FF Moisling",
    "art": "Hilfeleistungseinsatz"
@@ -131,18 +143,6 @@
    "zeit": "12:30",
    "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "31.10.2026",
-   "zeit": "08:35",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "30.10.2026",
-   "zeit": "17:50",
-   "wehr": "FF Priwall",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -207,5 +207,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-06T12:21:10+00:00"
+ "stand": "2026-11-06T13:41:41+00:00"
 }

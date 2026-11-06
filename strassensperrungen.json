@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-06T20:23:39+00:00",
+ "stand": "2026-11-06T23:15:58+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -34,17 +34,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84339,
    "lng": 10.63793
-  },
-  {
-   "id": 6092,
-   "title": "Arfrader Straße 11",
-   "status": "aktuell",
-   "plz": "23554",
-   "teil": "St. Lorenz-Nord",
-   "dates": "22.10.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88404,
-   "lng": 10.65661
   },
   {
    "id": 6108,
@@ -432,39 +421,6 @@
    "lng": 10.74086
   },
   {
-   "id": 6080,
-   "title": "Große Kiesau 9",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "5.10.2026 bis 6.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.87175,
-   "lng": 10.6842
-  },
-  {
-   "id": 6040,
-   "title": "Güldene Straße 2",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "21.9.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.90536,
-   "lng": 10.80825
-  },
-  {
-   "id": 6025,
-   "title": "Heiligen-Geist-Kamp / Einmündungsbereich zur Stauffenbergstraße",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "28.9.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8778,
-   "lng": 10.7086
-  },
-  {
    "id": 6028,
    "title": "Hellkamp und Holzkoppel",
    "status": "aktuell",
@@ -674,28 +630,6 @@
    "lng": 10.71635
   },
   {
-   "id": 6055,
-   "title": "Mengstraße 2-14 (Buddenbrookhaus)",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "28.9.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86833,
-   "lng": 10.68597
-  },
-  {
-   "id": 6023,
-   "title": "Mengstraße ggü. Nr. 10",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "2.11.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.86828,
-   "lng": 10.68495
-  },
-  {
    "id": 6160,
    "title": "Mengstraße, Buddenbrookhaus",
    "status": "aktuell",
@@ -883,28 +817,6 @@
    "lng": 10.68365
   },
   {
-   "id": 6111,
-   "title": "Rose 30a",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "20.10.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96056,
-   "lng": 10.8684
-  },
-  {
-   "id": 6135,
-   "title": "Rose, zwischen Moorredder und Boelckestraße sowie Mühlenberg",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "22.10.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96209,
-   "lng": 10.86539
-  },
-  {
    "id": 6144,
    "title": "Schönböckener Straße 121",
    "status": "aktuell",
@@ -936,17 +848,6 @@
    "wirkung": "Vollsperrung - Umleitung ausgeschildert",
    "lat": 53.8627,
    "lng": 10.6636
-  },
-  {
-   "id": 6118,
-   "title": "Siebente Querstraße 10",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "5.10.2026 bis 6.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.86912,
-   "lng": 10.68144
   },
   {
    "id": 6131,
@@ -991,17 +892,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88212,
    "lng": 10.70288
-  },
-  {
-   "id": 6138,
-   "title": "Triftstraße 63a",
-   "status": "aktuell",
-   "plz": "23554",
-   "teil": "St. Lorenz-Nord",
-   "dates": "16.10.2026 bis 6.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88784,
-   "lng": 10.67822
   },
   {
    "id": 6086,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-07T16:49:15+00:00",
+ "stand": "2026-11-08T00:28:50+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -476,17 +476,6 @@
    "lng": 10.69545
   },
   {
-   "id": 6123,
-   "title": "Kastanienallee",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "",
-   "dates": "15.10.2026 bis 7.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84481,
-   "lng": 10.70292
-  },
-  {
    "id": 6077,
    "title": "Katharinenstraße (von Höhe Marquardstraße – Marienstraße)",
    "status": "aktuell",
@@ -870,17 +859,6 @@
    "wirkung": "Baumfällung mit kurzeitiger Straßensperrung",
    "lat": 53.87812,
    "lng": 10.80049
-  },
-  {
-   "id": 6062,
-   "title": "Torneiweg 22 - 34d und 3 - 17b",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "28.9.2026 bis 7.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89035,
-   "lng": 10.71178
   },
   {
    "id": 6165,

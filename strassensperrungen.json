@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-08T22:50:57+00:00",
+ "stand": "2026-11-09T02:36:16+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -203,7 +203,7 @@
   {
    "id": 6167,
    "title": "Dornbreite 5",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "St. Lorenz-Nord",
    "dates": "9.11.2026 bis 27.11.2026",
@@ -258,7 +258,7 @@
   {
    "id": 6172,
    "title": "Eichenweg 24",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "9.11.2026 bis 4.12.2026",
@@ -357,7 +357,7 @@
   {
    "id": 6173,
    "title": "Fährbergweg 14",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "9.11.2026 bis 27.11.2026",
@@ -401,7 +401,7 @@
   {
    "id": 6168,
    "title": "Georgstraße Ecke Meierstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Süd",
    "dates": "9.11.2026 bis 27.11.2026",
@@ -511,7 +511,7 @@
   {
    "id": 6156,
    "title": "Kleine Altefähre 1-25",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23552",
    "teil": "Innenstadt",
    "dates": "9.11.2026 bis 23.12.2026",
@@ -696,9 +696,20 @@
    "lng": 10.6911
   },
   {
+   "id": 6132,
+   "title": "Niendorfer Hauptstraße, Ecke Grote Bleeken",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "Moisling",
+   "dates": "23.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.82058,
+   "lng": 10.59147
+  },
+  {
    "id": 6158,
    "title": "Niendorfer Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "Moisling",
    "dates": "9.11.2026 bis 20.3.2027",
@@ -731,7 +742,7 @@
   {
    "id": 6174,
    "title": "Nordmeerstraße 93 / Ecke Polarweg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "9.11.2026 bis 20.11.2026",
@@ -786,7 +797,7 @@
   {
    "id": 6152,
    "title": "Ringstraße 1 / Gneversdorfer Weg 24",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "9.11.2026 bis 14.11.2026",
@@ -841,7 +852,7 @@
   {
    "id": 6131,
    "title": "St. Annen Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23552",
    "teil": "Innenstadt",
    "dates": "9.11.2026 bis 11.11.2026",
@@ -863,7 +874,7 @@
   {
    "id": 6165,
    "title": "Travemünder Allee 22-24",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "9.11.2026 bis 4.12.2026",
@@ -947,17 +958,6 @@
    "wirkung": "Fahrbahnverengung - Einbahnstr.-Regelung",
    "lat": 53.85643,
    "lng": 10.64056
-  },
-  {
-   "id": 6126,
-   "title": "Zum 1. Fischerbuden",
-   "status": "aktuell",
-   "plz": "23562",
-   "teil": "St. Jürgen",
-   "dates": "26.10.2026 bis 8.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84738,
-   "lng": 10.72055
   }
  ]
 }

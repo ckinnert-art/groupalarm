@@ -20,18 +20,6 @@
   },
   {
    "datum": "06.11.2026",
-   "zeit": "10:16",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:42",
-   "wehr": "FF Schönböcken",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "06.11.2026",
    "zeit": "07:30",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
@@ -143,6 +131,18 @@
    "zeit": "12:33",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
+  },
+  {
+   "datum": "02.11.2026",
+   "zeit": "12:31",
+   "wehr": "FF Siems",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "02.11.2026",
+   "zeit": "12:31",
+   "wehr": "LZG",
+   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-10T02:38:26+00:00"
+ "stand": "2026-11-10T10:27:55+00:00"
 }

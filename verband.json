@@ -1,6 +1,24 @@
 {
  "einsaetze": [
   {
+   "datum": "10.11.2026",
+   "zeit": "10:12",
+   "wehr": "Führung FF",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.11.2026",
+   "zeit": "01:04",
+   "wehr": "FF Travemünde",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "07.11.2026",
+   "zeit": "09:21",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "06.11.2026",
    "zeit": "12:12",
    "wehr": "FF Moisling",
@@ -17,6 +35,18 @@
    "zeit": "11:48",
    "wehr": "FF Krummesse",
    "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "10:17",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "07:30",
+   "wehr": "Führung FF",
+   "art": "Brandeinsatz"
   },
   {
    "datum": "06.11.2026",
@@ -113,36 +143,6 @@
    "zeit": "14:22",
    "wehr": "FF Moisling",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "13:20",
-   "wehr": "FF Moisling",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:42",
-   "wehr": "FF Niendorf",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:33",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:31",
-   "wehr": "FF Siems",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:31",
-   "wehr": "LZG",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -195,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-10T10:27:55+00:00"
+ "stand": "2026-11-10T18:07:44+00:00"
 }

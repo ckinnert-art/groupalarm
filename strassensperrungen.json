@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-09T21:01:52+00:00",
+ "stand": "2026-11-10T03:28:32+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -665,7 +665,7 @@
   {
    "id": 6175,
    "title": "Mühlenberg i. H. Brodtener Kirchsteig",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "10.11.2026 bis 21.11.2026",

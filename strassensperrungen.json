@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-10T11:42:29+00:00",
+ "stand": "2026-11-10T19:39:14+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -34,6 +34,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84339,
    "lng": 10.63793
+  },
+  {
+   "id": 6183,
+   "title": "Artlenburger Straße 10",
+   "status": "aktuell",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "9.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87048,
+   "lng": 10.6623
   },
   {
    "id": 6108,
@@ -140,7 +151,7 @@
    "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
-   "dates": "10.8.2026 bis 20.11.2026",
+   "dates": "10.8.2026 bis 17.12.2026",
    "wirkung": "Vollsperrung während der Arbeitszeit von 6.30 - 16.00 Uhr danach ist die Zufahrt wieder frei - Fahrbahnverengung",
    "lat": 53.87032,
    "lng": 10.71798
@@ -287,6 +298,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.83859,
    "lng": 10.68276
+  },
+  {
+   "id": 6179,
+   "title": "Ernst-Deecke-Weg 76-82",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "12.11.2026 bis 13.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.89998,
+   "lng": 10.75346
   },
   {
    "id": 6072,
@@ -553,6 +575,17 @@
    "lng": 10.64381
   },
   {
+   "id": 6176,
+   "title": "Krempelsdorfer Allee Kreuzungsbereich Stockelsdorfer Straße/Friedhofsallee",
+   "status": "aktuell",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "9.11.2026 bis 12.11.2026",
+   "wirkung": "Nachtbaustelle - Fahrbahnverengung",
+   "lat": 53.88201,
+   "lng": 10.65717
+  },
+  {
    "id": 6047,
    "title": "Kumulusstraße 7",
    "status": "aktuell",
@@ -630,6 +663,17 @@
    "lng": 10.68495
   },
   {
+   "id": 6181,
+   "title": "Mittelschlag Nr. 1",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "Moisling",
+   "dates": "17.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.81961,
+   "lng": 10.59068
+  },
+  {
    "id": 6162,
    "title": "Moislinger Allee 175",
    "status": "aktuell",
@@ -650,6 +694,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.96475,
    "lng": 10.86939
+  },
+  {
+   "id": 6178,
+   "title": "Morier Straße 41",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "11.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88179,
+   "lng": 10.63098
   },
   {
    "id": 6146,
@@ -751,6 +806,17 @@
    "lng": 10.86061
   },
   {
+   "id": 6180,
+   "title": "Ovendorfer Straße ggü. Nr. 20",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "12.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.94053,
+   "lng": 10.8392
+  },
+  {
    "id": 6116,
    "title": "Parkstraße",
    "status": "aktuell",
@@ -839,6 +905,17 @@
    "lng": 10.65558
   },
   {
+   "id": 6177,
+   "title": "Schönböckener Straße 82-86",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "16.11.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86975,
+   "lng": 10.64611
+  },
+  {
    "id": 3887,
    "title": "Schützenstraße, Töpferweg",
    "status": "aktuell",
@@ -870,6 +947,17 @@
    "wirkung": "Baumfällung mit kurzeitiger Straßensperrung",
    "lat": 53.87812,
    "lng": 10.80049
+  },
+  {
+   "id": 6062,
+   "title": "Torneiweg 22 - 34d und 3 - 17b",
+   "status": "aktuell",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "28.9.2026 bis 18.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.89035,
+   "lng": 10.71178
   },
   {
    "id": 6165,
@@ -936,6 +1024,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86395,
    "lng": 10.65577
+  },
+  {
+   "id": 6182,
+   "title": "Westpreußenring 55",
+   "status": "geplant",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "16.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91942,
+   "lng": 10.82257
   },
   {
    "id": 6164,

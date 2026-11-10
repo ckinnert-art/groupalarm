@@ -20,6 +20,18 @@
   },
   {
    "datum": "06.11.2026",
+   "zeit": "10:16",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "07:42",
+   "wehr": "FF Schönböcken",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "06.11.2026",
    "zeit": "07:30",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
@@ -28,6 +40,12 @@
    "datum": "06.11.2026",
    "zeit": "07:30",
    "wehr": "FF Moisling",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "07:21",
+   "wehr": "FF Schönböcken",
    "art": "Hilfeleistungseinsatz"
   },
   {
@@ -125,39 +143,9 @@
    "zeit": "12:33",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:31",
-   "wehr": "FF Siems",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:31",
-   "wehr": "LZG",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "12:30",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
-  {
-   "datum": "09.11.2026",
-   "zeit": "",
-   "name": "Jugendwarteausschusssitzung",
-   "ort": "Kücknitz"
-  },
-  {
-   "datum": "09.11.2026",
-   "zeit": "",
-   "name": "Kreisausbildertreffen (Abgesagt)",
-   "ort": ""
-  },
   {
    "datum": "10.11.2026",
    "zeit": "",
@@ -207,5 +195,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-09T19:58:16+00:00"
+ "stand": "2026-11-10T02:38:26+00:00"
 }

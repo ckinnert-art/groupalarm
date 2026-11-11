@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-10T19:39:14+00:00",
+ "stand": "2026-11-11T00:36:40+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -168,17 +168,6 @@
    "lng": 10.68578
   },
   {
-   "id": 6147,
-   "title": "Clara-Zetkin-Weg 20 bis Rosa-Luxemburg-Straße",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "30.10.2026 bis 10.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8372,
-   "lng": 10.6858
-  },
-  {
    "id": 6106,
    "title": "Dieselstraße",
    "status": "aktuell",
@@ -335,7 +324,7 @@
   {
    "id": 6169,
    "title": "Finkenberg 38",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Süd",
    "dates": "11.11.2026 bis 12.11.2026",
@@ -390,7 +379,7 @@
   {
    "id": 6161,
    "title": "Geniner Dorfstraße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "11.11.2026 bis 13.11.2026",
@@ -698,7 +687,7 @@
   {
    "id": 6178,
    "title": "Morier Straße 41",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "St. Lorenz-Nord",
    "dates": "11.11.2026 bis 27.11.2026",
@@ -914,6 +903,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86975,
    "lng": 10.64611
+  },
+  {
+   "id": 6155,
+   "title": "Schützenhof 18",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Nord",
+   "dates": "25.11.2026 bis 5.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86758,
+   "lng": 10.66701
   },
   {
    "id": 3887,

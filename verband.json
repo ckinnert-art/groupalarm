@@ -1,6 +1,24 @@
 {
  "einsaetze": [
   {
+   "datum": "11.11.2026",
+   "zeit": "14:46",
+   "wehr": "FF Travemünde",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "11.11.2026",
+   "zeit": "14:46",
+   "wehr": "FF Priwall",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "11.11.2026",
+   "zeit": "12:53",
+   "wehr": "FF Priwall",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "10.11.2026",
    "zeit": "16:22",
    "wehr": "FF Vorwerk",
@@ -125,24 +143,6 @@
    "zeit": "09:33",
    "wehr": "FF Groß Steinrade",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.11.2026",
-   "zeit": "09:01",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.11.2026",
-   "zeit": "09:01",
-   "wehr": "FF Groß Steinrade",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "02.11.2026",
-   "zeit": "18:04",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -189,5 +189,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-11T10:33:53+00:00"
+ "stand": "2026-11-11T18:05:07+00:00"
 }

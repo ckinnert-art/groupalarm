@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "12.11.2026",
+   "zeit": "04:22",
+   "wehr": "FF Vorwerk",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "11.11.2026",
    "zeit": "14:46",
    "wehr": "FF Travemünde",
@@ -34,6 +40,12 @@
    "datum": "10.11.2026",
    "zeit": "01:04",
    "wehr": "FF Travemünde",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "09.11.2026",
+   "zeit": "09:46",
+   "wehr": "FF Dänischburg",
    "art": "Brandeinsatz"
   },
   {
@@ -131,18 +143,6 @@
    "zeit": "15:30",
    "wehr": "FF Israelsdorf",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.11.2026",
-   "zeit": "15:30",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.11.2026",
-   "zeit": "09:33",
-   "wehr": "FF Groß Steinrade",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -189,5 +189,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-11T18:05:07+00:00"
+ "stand": "2026-11-12T07:47:01+00:00"
 }

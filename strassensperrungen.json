@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-11T22:15:46+00:00",
+ "stand": "2026-11-12T03:19:32+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -291,7 +291,7 @@
   {
    "id": 6179,
    "title": "Ernst-Deecke-Weg 76-82",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "12.11.2026 bis 13.11.2026",
@@ -445,7 +445,7 @@
   {
    "id": 6159,
    "title": "Holländerkoppel 10",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "St. Lorenz-Nord",
    "dates": "12.11.2026 bis 26.11.2026",
@@ -797,7 +797,7 @@
   {
    "id": 6180,
    "title": "Ovendorfer Straße ggü. Nr. 20",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "12.11.2026 bis 27.11.2026",
@@ -927,17 +927,6 @@
    "lng": 10.6636
   },
   {
-   "id": 6131,
-   "title": "St. Annen Straße",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "9.11.2026 bis 11.11.2026",
-   "wirkung": "Vollsperrung der Kreuzung",
-   "lat": 53.86356,
-   "lng": 10.68966
-  },
-  {
    "id": 6068,
    "title": "Stumpfer Weg",
    "status": "aktuell",
@@ -1039,7 +1028,7 @@
   {
    "id": 6164,
    "title": "Wilhelm-Geusendam-Weg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "St. Jürgen",
    "dates": "12.11.2026 bis 23.11.2026",

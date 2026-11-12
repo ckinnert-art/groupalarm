@@ -1,7 +1,18 @@
 {
- "stand": "2026-11-12T11:46:53+00:00",
+ "stand": "2026-11-12T19:50:54+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
+  {
+   "id": 6184,
+   "title": "Adalbert-Stifter-Straße 5-11",
+   "status": "geplant",
+   "plz": "23562",
+   "teil": "St. Jürgen",
+   "dates": "13.11.2026 bis 5.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84375,
+   "lng": 10.69874
+  },
   {
    "id": 6134,
    "title": "Adlerstraße 33c",
@@ -432,6 +443,17 @@
    "lng": 10.74086
   },
   {
+   "id": 6080,
+   "title": "Große Kiesau 9",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "5.10.2026 bis 11.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.87175,
+   "lng": 10.6842
+  },
+  {
    "id": 6028,
    "title": "Hellkamp und Holzkoppel",
    "status": "aktuell",
@@ -718,6 +740,17 @@
    "lng": 10.86189
   },
   {
+   "id": 6064,
+   "title": "Mühlendamm 14-20",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "12.10.2026 bis 1.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86089,
+   "lng": 10.6845
+  },
+  {
    "id": 5671,
    "title": "Mühlentorbrücke",
    "status": "aktuell",
@@ -925,6 +958,28 @@
    "wirkung": "Vollsperrung - Umleitung ausgeschildert",
    "lat": 53.8627,
    "lng": 10.6636
+  },
+  {
+   "id": 6118,
+   "title": "Siebente Querstraße 10",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "5.10.2026 bis 11.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86912,
+   "lng": 10.68144
+  },
+  {
+   "id": 6131,
+   "title": "St. Annen Straße",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "9.11.2026 bis 13.11.2026",
+   "wirkung": "Vollsperrung der Kreuzung",
+   "lat": 53.86356,
+   "lng": 10.68966
   },
   {
    "id": 6068,

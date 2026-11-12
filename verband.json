@@ -26,12 +26,6 @@
   },
   {
    "datum": "10.11.2026",
-   "zeit": "16:22",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.11.2026",
    "zeit": "10:12",
    "wehr": "Führung FF",
    "art": "Brandeinsatz"
@@ -77,6 +71,18 @@
    "zeit": "10:17",
    "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "10:16",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
+   "zeit": "07:42",
+   "wehr": "FF Schönböcken",
+   "art": "Hilfeleistungseinsatz"
   },
   {
    "datum": "06.11.2026",
@@ -137,12 +143,6 @@
    "zeit": "15:52",
    "wehr": "FF Schönböcken",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.11.2026",
-   "zeit": "15:30",
-   "wehr": "FF Israelsdorf",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -189,5 +189,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-12T07:47:01+00:00"
+ "stand": "2026-11-12T22:24:26+00:00"
 }

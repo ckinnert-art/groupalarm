@@ -1,11 +1,11 @@
 {
- "stand": "2026-11-12T19:50:54+00:00",
+ "stand": "2026-11-13T01:01:20+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
    "id": 6184,
    "title": "Adalbert-Stifter-Straße 5-11",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23562",
    "teil": "St. Jürgen",
    "dates": "13.11.2026 bis 5.12.2026",
@@ -126,7 +126,7 @@
   {
    "id": 6157,
    "title": "Brockesstraße 32",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "13.11.2026 bis 27.11.2026",
@@ -331,17 +331,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86981,
    "lng": 10.69839
-  },
-  {
-   "id": 6169,
-   "title": "Finkenberg 38",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "St. Lorenz-Süd",
-   "dates": "11.11.2026 bis 12.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85556,
-   "lng": 10.67089
   },
   {
    "id": 6151,
@@ -584,17 +573,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85517,
    "lng": 10.64381
-  },
-  {
-   "id": 6176,
-   "title": "Krempelsdorfer Allee Kreuzungsbereich Stockelsdorfer Straße/Friedhofsallee",
-   "status": "aktuell",
-   "plz": "23554",
-   "teil": "St. Lorenz-Nord",
-   "dates": "9.11.2026 bis 12.11.2026",
-   "wirkung": "Nachtbaustelle - Fahrbahnverengung",
-   "lat": 53.88201,
-   "lng": 10.65717
   },
   {
    "id": 6047,
@@ -859,17 +837,6 @@
    "wirkung": "Vollsperrung / Wanderbaustelle",
    "lat": 53.8463,
    "lng": 10.7085
-  },
-  {
-   "id": 6033,
-   "title": "Redderkoppel",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "21.9.2026 bis 12.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91194,
-   "lng": 10.808
   },
   {
    "id": 5931,

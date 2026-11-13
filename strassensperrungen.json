@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-13T07:51:03+00:00",
+ "stand": "2026-11-13T16:12:46+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -34,6 +34,17 @@
    "wirkung": "Vollsperrung im Baubereich",
    "lat": 53.86966,
    "lng": 10.68208
+  },
+  {
+   "id": 6186,
+   "title": "Alte Mühle 1-1c",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "16.11.2026 bis 17.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88704,
+   "lng": 10.78365
   },
   {
    "id": 6054,
@@ -102,6 +113,17 @@
    "lng": 10.6862
   },
   {
+   "id": 6197,
+   "title": "Bei den Obstgärten (zwischen Herrenholz und Nr. 4)",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "Buntekuh",
+   "dates": "23.11.2026 bis 17.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.85427,
+   "lng": 10.62692
+  },
+  {
    "id": 6140,
    "title": "Beim Rosenwasser 20",
    "status": "aktuell",
@@ -111,6 +133,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88664,
    "lng": 10.78909
+  },
+  {
+   "id": 6188,
+   "title": "Borstelweg 21",
+   "status": "geplant",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "16.11.2026 bis 29.12.2026",
+   "wirkung": "Zufahrten zur Tankstelle gesperrt",
+   "lat": 53.9122,
+   "lng": 10.79269
   },
   {
    "id": 6150,
@@ -133,6 +166,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87654,
    "lng": 10.67515
+  },
+  {
+   "id": 6190,
+   "title": "Brömbsenstraße 25 + St.-Jürgen-Ring 1-3 (Stichstraße)",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "16.11.2026 bis 5.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85186,
+   "lng": 10.68474
   },
   {
    "id": 4032,
@@ -311,6 +355,17 @@
    "lng": 10.75346
   },
   {
+   "id": 6195,
+   "title": "Eutiner Straße 50",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "19.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.89028,
+   "lng": 10.66737
+  },
+  {
    "id": 6072,
    "title": "Eutiner Straße 9 -49",
    "status": "aktuell",
@@ -342,6 +397,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88929,
    "lng": 10.70998
+  },
+  {
+   "id": 6193,
+   "title": "Forstmeisterweg ggü. Nr. 71",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "16.11.2026 bis 21.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.89002,
+   "lng": 10.7124
   },
   {
    "id": 5953,
@@ -476,6 +542,28 @@
    "lng": 10.74658
   },
   {
+   "id": 6191,
+   "title": "Im Winkel 4b",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "16.11.2026 bis 24.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86728,
+   "lng": 10.62255
+  },
+  {
+   "id": 6194,
+   "title": "Ivendorfer Landstraße 66a",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "19.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.93837,
+   "lng": 10.84203
+  },
+  {
    "id": 6121,
    "title": "Johannes-Stelling-Straße",
    "status": "aktuell",
@@ -608,6 +696,17 @@
    "lng": 10.65379
   },
   {
+   "id": 6192,
+   "title": "Lindwurmstraße und Am Krautacker",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "16.11.2026 bis 26.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.95688,
+   "lng": 10.84611
+  },
+  {
    "id": 4319,
    "title": "Luisenhof i. H. Siemser Landstraße 123a",
    "status": "aktuell",
@@ -672,6 +771,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84991,
    "lng": 10.64675
+  },
+  {
+   "id": 6187,
+   "title": "Moorredder 4",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "16.11.2026 bis 23.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.96221,
+   "lng": 10.86132
   },
   {
    "id": 6130,
@@ -861,6 +971,17 @@
    "lng": 10.86056
   },
   {
+   "id": 6198,
+   "title": "Rosa-Luxemburg-Straße 1-15",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "16.11.2026 bis 25.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.83792,
+   "lng": 10.68492
+  },
+  {
    "id": 5987,
    "title": "Rosa-Luxemburg-Straße, Paul-Steen-Straße",
    "status": "aktuell",
@@ -1035,6 +1156,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86395,
    "lng": 10.65577
+  },
+  {
+   "id": 6196,
+   "title": "Westhoffstraße 1-3",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "18.11.2026 bis 18.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.87481,
+   "lng": 10.67594
   },
   {
    "id": 6182,

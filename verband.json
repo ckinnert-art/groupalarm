@@ -13,6 +13,12 @@
    "art": "Hilfeleistungseinsatz"
   },
   {
+   "datum": "12.11.2026",
+   "zeit": "04:22",
+   "wehr": "FF Dänischburg",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "11.11.2026",
    "zeit": "14:46",
    "wehr": "FF Travemünde",
@@ -137,12 +143,6 @@
    "zeit": "03:27",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "03.11.2026",
-   "zeit": "17:28",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -189,5 +189,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-13T10:44:21+00:00"
+ "stand": "2026-11-13T23:36:25+00:00"
 }

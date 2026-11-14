@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-13T16:12:46+00:00",
+ "stand": "2026-11-14T02:40:20+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -122,17 +122,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.85427,
    "lng": 10.62692
-  },
-  {
-   "id": 6140,
-   "title": "Beim Rosenwasser 20",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "26.10.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88664,
-   "lng": 10.78909
   },
   {
    "id": 6188,
@@ -344,17 +333,6 @@
    "lng": 10.68276
   },
   {
-   "id": 6179,
-   "title": "Ernst-Deecke-Weg 76-82",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "12.11.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89998,
-   "lng": 10.75346
-  },
-  {
    "id": 6195,
    "title": "Eutiner Straße 50",
    "status": "geplant",
@@ -443,28 +421,6 @@
    "lng": 10.75177
   },
   {
-   "id": 6161,
-   "title": "Geniner Dorfstraße",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "11.11.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84158,
-   "lng": 10.65076
-  },
-  {
-   "id": 6154,
-   "title": "Geniner Straße 247a",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "26.10.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84512,
-   "lng": 10.66417
-  },
-  {
    "id": 6053,
    "title": "Georgstraße 3",
    "status": "aktuell",
@@ -485,17 +441,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8605,
    "lng": 10.67096
-  },
-  {
-   "id": 6148,
-   "title": "Grenzweg 5a",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "27.10.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91448,
-   "lng": 10.74086
   },
   {
    "id": 6080,
@@ -628,17 +573,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.87326,
    "lng": 10.68885
-  },
-  {
-   "id": 6127,
-   "title": "Kolk Nr. 24",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "19.10.2026 bis 13.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.86545,
-   "lng": 10.68247
   },
   {
    "id": 6171,
@@ -993,28 +927,6 @@
    "lng": 10.68365
   },
   {
-   "id": 6144,
-   "title": "Schönböckener Straße 121",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "16.10.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.8692,
-   "lng": 10.63997
-  },
-  {
-   "id": 6030,
-   "title": "Schönböckener Straße 40b",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "16.9.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87277,
-   "lng": 10.65558
-  },
-  {
    "id": 6177,
    "title": "Schönböckener Straße 82-86",
    "status": "geplant",
@@ -1059,28 +971,6 @@
    "lng": 10.68144
   },
   {
-   "id": 6131,
-   "title": "St. Annen Straße",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "9.11.2026 bis 13.11.2026",
-   "wirkung": "Vollsperrung der Kreuzung",
-   "lat": 53.86356,
-   "lng": 10.68966
-  },
-  {
-   "id": 6068,
-   "title": "Stumpfer Weg",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "Schlutup",
-   "dates": "26.10.2026 bis 13.11.2026",
-   "wirkung": "Baumfällung mit kurzeitiger Straßensperrung",
-   "lat": 53.87812,
-   "lng": 10.80049
-  },
-  {
    "id": 6062,
    "title": "Torneiweg 22 - 34d und 3 - 17b",
    "status": "aktuell",
@@ -1101,17 +991,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88212,
    "lng": 10.70288
-  },
-  {
-   "id": 6086,
-   "title": "Vilmring 11",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "28.10.2026 bis 13.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.82229,
-   "lng": 10.68408
   },
   {
    "id": 5917,

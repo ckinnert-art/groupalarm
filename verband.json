@@ -13,10 +13,22 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "13.11.2026",
+   "zeit": "15:25",
+   "wehr": "FF Genin",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "12.11.2026",
    "zeit": "15:18",
    "wehr": "FF Siems",
    "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "12.11.2026",
+   "zeit": "14:46",
+   "wehr": "FF Genin",
+   "art": "Brandeinsatz"
   },
   {
    "datum": "12.11.2026",
@@ -80,6 +92,12 @@
   },
   {
    "datum": "06.11.2026",
+   "zeit": "12:11",
+   "wehr": "FF Genin",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "06.11.2026",
    "zeit": "12:10",
    "wehr": "FF Krummesse",
    "art": "Brandeinsatz"
@@ -125,24 +143,6 @@
    "zeit": "07:30",
    "wehr": "FF Moisling",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:21",
-   "wehr": "FF Schönböcken",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:00",
-   "wehr": "FF Vorwerk",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:00",
-   "wehr": "FF Krummesse",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -177,5 +177,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-15T01:05:23+00:00"
+ "stand": "2026-11-15T20:31:13+00:00"
 }

@@ -147,18 +147,6 @@
  ],
  "veranstaltungen": [
   {
-   "datum": "14.11.2026",
-   "zeit": "",
-   "name": "Nachtwanderung der Jugendfeuerwehren",
-   "ort": "Krummesse"
-  },
-  {
-   "datum": "14.11.2026",
-   "zeit": "",
-   "name": "Truppführer Lehrgang",
-   "ort": ""
-  },
-  {
    "datum": "21.11.2026",
    "zeit": "",
    "name": "Herbstbesichtigung",
@@ -189,5 +177,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-14T21:13:31+00:00"
+ "stand": "2026-11-15T01:05:23+00:00"
 }

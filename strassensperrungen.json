@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-14T16:42:34+00:00",
+ "stand": "2026-11-15T01:17:05+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -419,17 +419,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.90001,
    "lng": 10.75177
-  },
-  {
-   "id": 6053,
-   "title": "Georgstraße 3",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "St. Lorenz-Süd",
-   "dates": "19.10.2026 bis 14.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.86269,
-   "lng": 10.67254
   },
   {
    "id": 6168,
@@ -892,17 +881,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.91195,
    "lng": 10.80818
-  },
-  {
-   "id": 6152,
-   "title": "Ringstraße 1 / Gneversdorfer Weg 24",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "9.11.2026 bis 14.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.96076,
-   "lng": 10.86056
   },
   {
    "id": 6198,

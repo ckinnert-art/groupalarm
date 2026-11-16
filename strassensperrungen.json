@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-16T07:54:03+00:00",
+ "stand": "2026-11-16T18:24:17+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -212,6 +212,17 @@
    "lng": 10.68578
   },
   {
+   "id": 6201,
+   "title": "Depenau 4",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "16.11.2026 bis 27.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86487,
+   "lng": 10.68307
+  },
+  {
    "id": 6106,
    "title": "Dieselstraße",
    "status": "aktuell",
@@ -355,6 +366,17 @@
    "lng": 10.69839
   },
   {
+   "id": 6202,
+   "title": "Falkenstraße _ An der Falkenwiese",
+   "status": "aktuell",
+   "plz": "23564",
+   "teil": "St. Jürgen",
+   "dates": "16.11.2026 bis 20.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86594,
+   "lng": 10.69848
+  },
+  {
    "id": 6151,
    "title": "Forstmeisterweg 144 bis Einmündung Torneiweg",
    "status": "aktuell",
@@ -419,6 +441,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8605,
    "lng": 10.67096
+  },
+  {
+   "id": 6203,
+   "title": "Gerade Querstraße / Alfstraße",
+   "status": "geplant",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "19.11.2026 bis 19.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86848,
+   "lng": 10.6813
   },
   {
    "id": 6080,
@@ -707,6 +740,17 @@
    "lng": 10.63098
   },
   {
+   "id": 6199,
+   "title": "Moristeig 48",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "25.11.2026 bis 9.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87815,
+   "lng": 10.63827
+  },
+  {
    "id": 6146,
    "title": "Mönkhofer Weg 199",
    "status": "aktuell",
@@ -903,6 +947,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.8365,
    "lng": 10.68365
+  },
+  {
+   "id": 6200,
+   "title": "Schauenburger Weg 15",
+   "status": "geplant",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "24.11.2026 bis 8.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87992,
+   "lng": 10.65064
   },
   {
    "id": 6177,

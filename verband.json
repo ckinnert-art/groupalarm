@@ -32,6 +32,18 @@
   },
   {
    "datum": "12.11.2026",
+   "zeit": "13:36",
+   "wehr": "FF Moisling",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "12.11.2026",
+   "zeit": "10:03",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "12.11.2026",
    "zeit": "04:22",
    "wehr": "FF Vorwerk",
    "art": "Hilfeleistungseinsatz"
@@ -131,18 +143,6 @@
    "zeit": "07:30",
    "wehr": "Führung FF",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:30",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:30",
-   "wehr": "FF Moisling",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -177,5 +177,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-15T20:31:13+00:00"
+ "stand": "2026-11-16T17:03:56+00:00"
 }

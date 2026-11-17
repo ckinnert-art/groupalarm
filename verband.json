@@ -165,6 +165,12 @@
    "ort": ""
   },
   {
+   "datum": "11.01.2027",
+   "zeit": "",
+   "name": "Jugendwarteausschusssitzung",
+   "ort": "Travemünde"
+  },
+  {
    "datum": "27.02.2027",
    "zeit": "",
    "name": "Stadtjugendfeuerwehrversammlung",
@@ -175,7 +181,61 @@
    "zeit": "",
    "name": "Jahreshauptversammlung StFV",
    "ort": ""
+  },
+  {
+   "datum": "19.03.2027",
+   "zeit": "",
+   "name": "Jugendgruppenleitung",
+   "ort": ""
+  },
+  {
+   "datum": "10.05.2027",
+   "zeit": "",
+   "name": "Jugendwarteausschusssitzung",
+   "ort": "Padelügge-Buntekuh"
+  },
+  {
+   "datum": "19.06.2027",
+   "zeit": "",
+   "name": "Pokalwettkampf/Spiele ohne Grenzen JF",
+   "ort": "Burgtor Sportplatz"
+  },
+  {
+   "datum": "05.07.2027",
+   "zeit": "",
+   "name": "Jugendwarteausschusssitzung",
+   "ort": "Moisling"
+  },
+  {
+   "datum": "28.08.2027",
+   "zeit": "",
+   "name": "Aktionstag Hansapark JF",
+   "ort": ""
+  },
+  {
+   "datum": "04.09.2027",
+   "zeit": "",
+   "name": "Abschlussübung JF",
+   "ort": "Schlutup"
+  },
+  {
+   "datum": "13.09.2027",
+   "zeit": "",
+   "name": "Jugendwarteausschusssitzung",
+   "ort": "Israelsdorf"
+  },
+  {
+   "datum": "13.11.2027",
+   "zeit": "",
+   "name": "Nachtwanderung der Jugendfeuerwehren",
+   "ort": "Israelsdorf"
+  },
+  {
+   "datum": "15.11.2027",
+   "zeit": "",
+   "name": "Jugendwarteausschusssitzung",
+   "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-17T08:55:42+00:00"
+ "stand": "2026-11-17T18:20:06+00:00"
 }

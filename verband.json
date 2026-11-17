@@ -26,6 +26,12 @@
   },
   {
    "datum": "12.11.2026",
+   "zeit": "15:58",
+   "wehr": "FF Kücknitz",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "12.11.2026",
    "zeit": "15:18",
    "wehr": "FF Siems",
    "art": "Hilfeleistungseinsatz"
@@ -137,12 +143,6 @@
    "zeit": "10:16",
    "wehr": "FF Schönböcken",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "07:42",
-   "wehr": "FF Schönböcken",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -177,5 +177,5 @@
    "ort": ""
   }
  ],
- "stand": "2026-11-17T00:49:49+00:00"
+ "stand": "2026-11-17T08:55:42+00:00"
 }

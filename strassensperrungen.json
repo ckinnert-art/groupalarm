@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-18T10:39:51+00:00",
+ "stand": "2026-11-18T19:22:12+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -113,6 +113,17 @@
    "lng": 10.6862
   },
   {
+   "id": 6206,
+   "title": "Beethovenstraße Höhe Lortzingstraße",
+   "status": "aktuell",
+   "plz": "23556",
+   "teil": "St. Lorenz-Nord",
+   "dates": "18.11.2026 bis 15.1.2027",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86666,
+   "lng": 10.6554
+  },
+  {
    "id": 6197,
    "title": "Bei den Obstgärten (zwischen Herrenholz und Nr. 4)",
    "status": "geplant",
@@ -122,6 +133,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.85427,
    "lng": 10.62692
+  },
+  {
+   "id": 6207,
+   "title": "Beim Meilenstein ggü. 14",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "23.11.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88939,
+   "lng": 10.79036
   },
   {
    "id": 6188,
@@ -311,6 +333,17 @@
    "lng": 10.70537
   },
   {
+   "id": 6204,
+   "title": "Eric-Warburg-Brücke",
+   "status": "geplant",
+   "plz": "23568",
+   "teil": "St. Gertrud",
+   "dates": "25.11.2026 bis 25.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.88384,
+   "lng": 10.69225
+  },
+  {
    "id": 6163,
    "title": "Erich-Klann-Straße",
    "status": "aktuell",
@@ -364,6 +397,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86594,
    "lng": 10.69848
+  },
+  {
+   "id": 6169,
+   "title": "Finkenberg 38",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Süd",
+   "dates": "23.11.2026 bis 26.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85556,
+   "lng": 10.67089
   },
   {
    "id": 6151,
@@ -630,6 +674,17 @@
    "lng": 10.84611
   },
   {
+   "id": 6208,
+   "title": "Louise Schröder Weg 37",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "Buntekuh",
+   "dates": "25.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84854,
+   "lng": 10.66057
+  },
+  {
    "id": 4319,
    "title": "Luisenhof i. H. Siemser Landstraße 123a",
    "status": "aktuell",
@@ -639,6 +694,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.9082,
    "lng": 10.7673
+  },
+  {
+   "id": 6209,
+   "title": "Lüderitzstraße 19",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "25.11.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.90238,
+   "lng": 10.68603
   },
   {
    "id": 6170,
@@ -1035,6 +1101,17 @@
    "wirkung": "Sperrung der Straße",
    "lat": 53.8466,
    "lng": 10.7206
+  },
+  {
+   "id": 6049,
+   "title": "Weidekamp, Güterschlag und Am Neuhof",
+   "status": "aktuell",
+   "plz": "23558",
+   "teil": "St. Lorenz-Nord",
+   "dates": "12.10.2026 bis 4.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86395,
+   "lng": 10.65577
   },
   {
    "id": 6196,

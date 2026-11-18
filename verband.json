@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "18.11.2026",
+   "zeit": "12:57",
+   "wehr": "FF Travemünde",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "18.11.2026",
    "zeit": "03:32",
    "wehr": "FF Büssau",
    "art": "Brandeinsatz"
@@ -92,6 +98,12 @@
   },
   {
    "datum": "10.11.2026",
+   "zeit": "16:22",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "10.11.2026",
    "zeit": "10:12",
    "wehr": "Führung FF",
    "art": "Brandeinsatz"
@@ -130,18 +142,6 @@
    "datum": "06.11.2026",
    "zeit": "12:10",
    "wehr": "FF Krummesse",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "11:48",
-   "wehr": "FF Krummesse",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "10:17",
-   "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
   }
  ],
@@ -237,5 +237,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-18T17:36:16+00:00"
+ "stand": "2026-11-18T23:36:40+00:00"
 }

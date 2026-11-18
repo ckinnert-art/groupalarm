@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "18.11.2026",
+   "zeit": "03:32",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "16.11.2026",
    "zeit": "06:32",
    "wehr": "FF Wulfsdorf-Vorrade",
@@ -137,12 +143,6 @@
    "zeit": "10:17",
    "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "10:16",
-   "wehr": "FF Schönböcken",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -237,5 +237,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-17T18:20:06+00:00"
+ "stand": "2026-11-18T17:36:16+00:00"
 }

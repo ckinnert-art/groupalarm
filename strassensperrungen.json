@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-19T09:27:42+00:00",
+ "stand": "2026-11-19T18:38:15+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -1079,6 +1079,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.86912,
    "lng": 10.68144
+  },
+  {
+   "id": 6139,
+   "title": "St. Gertrud / Diamantweg",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "23.11.2026 bis 13.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86221,
+   "lng": 10.74044
   },
   {
    "id": 6165,

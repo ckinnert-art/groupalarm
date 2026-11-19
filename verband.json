@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "18.11.2026",
+   "zeit": "20:00",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "18.11.2026",
    "zeit": "12:57",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
@@ -137,12 +143,6 @@
    "zeit": "12:11",
    "wehr": "FF Genin",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "12:10",
-   "wehr": "FF Krummesse",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -237,5 +237,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-18T23:36:40+00:00"
+ "stand": "2026-11-19T22:01:49+00:00"
 }

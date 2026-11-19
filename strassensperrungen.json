@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-19T01:26:58+00:00",
+ "stand": "2026-11-19T09:27:42+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -56,6 +56,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87048,
    "lng": 10.6623
+  },
+  {
+   "id": 6213,
+   "title": "Auf dem Baggersand 19 - 25",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "23.11.2026 bis 26.11.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.95547,
+   "lng": 10.85763
   },
   {
    "id": 6108,
@@ -289,6 +300,17 @@
    "lng": 10.68693
   },
   {
+   "id": 6212,
+   "title": "Dummersdorfer Straße 2",
+   "status": "geplant",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "23.11.2026 bis 23.11.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91341,
+   "lng": 10.80678
+  },
+  {
    "id": 6129,
    "title": "Dürerstraße, Holbeinstraße",
    "status": "aktuell",
@@ -386,6 +408,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.85556,
    "lng": 10.67089
+  },
+  {
+   "id": 6210,
+   "title": "Flintenbreite Ecke Paul-Gerhardt-Straße",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "23.11.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88742,
+   "lng": 10.65804
   },
   {
    "id": 6151,
@@ -661,6 +694,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84854,
    "lng": 10.66057
+  },
+  {
+   "id": 6211,
+   "title": "Louise-Schroeder-Weg 25",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Süd",
+   "dates": "25.11.2026 bis 4.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84876,
+   "lng": 10.66019
   },
   {
    "id": 4319,
@@ -980,6 +1024,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87992,
    "lng": 10.65064
+  },
+  {
+   "id": 5952,
+   "title": "Schäferkamp 3 - 11",
+   "status": "aktuell",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "24.8.2026 bis 12.2.2027",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91266,
+   "lng": 10.73786
   },
   {
    "id": 6177,

@@ -1,6 +1,12 @@
 {
  "einsaetze": [
   {
+   "datum": "20.11.2026",
+   "zeit": "08:31",
+   "wehr": "FF Vorwerk",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "18.11.2026",
    "zeit": "20:00",
    "wehr": "FF Vorwerk",
@@ -137,12 +143,6 @@
    "zeit": "12:12",
    "wehr": "FF Moisling",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "12:11",
-   "wehr": "FF Genin",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -237,5 +237,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-19T22:01:49+00:00"
+ "stand": "2026-11-20T11:23:13+00:00"
 }

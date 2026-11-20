@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-20T17:58:51+00:00",
+ "stand": "2026-11-20T23:56:59+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -78,17 +78,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.95547,
    "lng": 10.85763
-  },
-  {
-   "id": 6108,
-   "title": "Auf der Höhe 6a",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "Buntekuh",
-   "dates": "11.8.2026 bis 20.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84793,
-   "lng": 10.65528
   },
   {
    "id": 5894,
@@ -199,17 +188,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.8728,
    "lng": 10.6786
-  },
-  {
-   "id": 5873,
-   "title": "Bülowstr.- von Marlistr. bis Paul-Behnke-Str",
-   "status": "aktuell",
-   "plz": "23566",
-   "teil": "St. Gertrud",
-   "dates": "10.8.2026 bis 20.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87032,
-   "lng": 10.71798
   },
   {
    "id": 6042,
@@ -463,17 +441,6 @@
    "wirkung": "Halbseitige Fahrbahnsperrung",
    "lat": 53.86116,
    "lng": 10.64899
-  },
-  {
-   "id": 6020,
-   "title": "Fregattenstraße 30",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "Buntekuh",
-   "dates": "17.9.2026 bis 20.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85539,
-   "lng": 10.65416
   },
   {
    "id": 6216,
@@ -773,17 +740,6 @@
    "lng": 10.59068
   },
   {
-   "id": 6162,
-   "title": "Moislinger Allee 175",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "Moisling",
-   "dates": "30.10.2026 bis 20.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.84991,
-   "lng": 10.64675
-  },
-  {
    "id": 6187,
    "title": "Moorredder 4",
    "status": "aktuell",
@@ -793,17 +749,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.96221,
    "lng": 10.86132
-  },
-  {
-   "id": 6130,
-   "title": "Moorredder 42",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "26.10.2026 bis 20.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96475,
-   "lng": 10.86939
   },
   {
    "id": 6178,
@@ -927,17 +872,6 @@
    "lng": 10.6392
   },
   {
-   "id": 6153,
-   "title": "Niendorfer Straße 98",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "Moisling",
-   "dates": "5.11.2026 bis 20.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.84073,
-   "lng": 10.63143
-  },
-  {
    "id": 5855,
    "title": "Niendorfer Straße Nr. 90-130",
    "status": "aktuell",
@@ -947,17 +881,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84095,
    "lng": 10.63184
-  },
-  {
-   "id": 6174,
-   "title": "Nordmeerstraße 93 / Ecke Polarweg",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "9.11.2026 bis 20.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.96528,
-   "lng": 10.86061
   },
   {
    "id": 6180,
@@ -1123,17 +1046,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88888,
    "lng": 10.67862
-  },
-  {
-   "id": 5917,
-   "title": "Vorrader Straße 45",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "11.8.2026 bis 20.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83714,
-   "lng": 10.6774
   },
   {
    "id": 1576,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-20T09:07:37+00:00",
+ "stand": "2026-11-20T17:58:51+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -34,6 +34,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88704,
    "lng": 10.78365
+  },
+  {
+   "id": 6214,
+   "title": "Alter Wasserturm 2-20",
+   "status": "geplant",
+   "plz": "23564",
+   "teil": "St. Jürgen",
+   "dates": "23.11.2026 bis 12.12.2026",
+   "wirkung": "Fahrbahnverengung - Wanderbaustelle",
+   "lat": 53.85568,
+   "lng": 10.7007
   },
   {
    "id": 6090,
@@ -465,6 +476,17 @@
    "lng": 10.65416
   },
   {
+   "id": 6216,
+   "title": "Friedhofsallee 84",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "30.11.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88734,
+   "lng": 10.66141
+  },
+  {
    "id": 6173,
    "title": "Fährbergweg 14",
    "status": "aktuell",
@@ -806,6 +828,17 @@
    "lng": 10.63827
   },
   {
+   "id": 6215,
+   "title": "Morkerkestraße",
+   "status": "aktuell",
+   "plz": "23564",
+   "teil": "St. Jürgen",
+   "dates": "9.11.2026 bis 4.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.86754,
+   "lng": 10.7012
+  },
+  {
    "id": 6146,
    "title": "Mönkhofer Weg 199",
    "status": "aktuell",
@@ -1079,6 +1112,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88212,
    "lng": 10.70288
+  },
+  {
+   "id": 6218,
+   "title": "Triftstraße 79",
+   "status": "geplant",
+   "plz": "23554",
+   "teil": "St. Lorenz-Nord",
+   "dates": "27.11.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.88888,
+   "lng": 10.67862
   },
   {
    "id": 5917,

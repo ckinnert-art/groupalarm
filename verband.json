@@ -31,6 +31,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "15.11.2026",
+   "zeit": "13:48",
+   "wehr": "FF Schönböcken",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "14.11.2026",
    "zeit": "19:19",
    "wehr": "FF Wulfsdorf-Vorrade",
@@ -137,12 +143,6 @@
    "zeit": "09:21",
    "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "06.11.2026",
-   "zeit": "12:12",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -237,5 +237,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-20T11:23:13+00:00"
+ "stand": "2026-11-20T19:13:30+00:00"
 }

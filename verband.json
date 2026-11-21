@@ -1,6 +1,18 @@
 {
  "einsaetze": [
   {
+   "datum": "21.11.2026",
+   "zeit": "12:32",
+   "wehr": "FF Dummersdorf",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "21.11.2026",
+   "zeit": "01:39",
+   "wehr": "FF Wulfsdorf-Vorrade",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "20.11.2026",
    "zeit": "08:31",
    "wehr": "FF Vorwerk",
@@ -131,18 +143,6 @@
    "zeit": "01:04",
    "wehr": "FF Travemünde",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "09.11.2026",
-   "zeit": "09:46",
-   "wehr": "FF Dänischburg",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "07.11.2026",
-   "zeit": "09:21",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -237,5 +237,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-20T19:13:30+00:00"
+ "stand": "2026-11-21T16:10:28+00:00"
 }

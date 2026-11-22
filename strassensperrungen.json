@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-21T15:16:29+00:00",
+ "stand": "2026-11-22T01:13:24+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -410,28 +410,6 @@
    "lng": 10.65804
   },
   {
-   "id": 6151,
-   "title": "Forstmeisterweg 144 bis Einmündung Torneiweg",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "2.11.2026 bis 21.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.88929,
-   "lng": 10.70998
-  },
-  {
-   "id": 6193,
-   "title": "Forstmeisterweg ggü. Nr. 71",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "16.11.2026 bis 21.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.89002,
-   "lng": 10.7124
-  },
-  {
    "id": 5953,
    "title": "Fregattenstraße / Ziegelstraße",
    "status": "aktuell",
@@ -696,17 +674,6 @@
    "lng": 10.68603
   },
   {
-   "id": 6170,
-   "title": "Marlesgrube 61",
-   "status": "aktuell",
-   "plz": "23552",
-   "teil": "Innenstadt",
-   "dates": "16.11.2026 bis 21.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.86365,
-   "lng": 10.68173
-  },
-  {
    "id": 6095,
    "title": "Meesenring",
    "status": "aktuell",
@@ -806,17 +773,6 @@
    "lng": 10.72351
   },
   {
-   "id": 6175,
-   "title": "Mühlenberg i. H. Brodtener Kirchsteig",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "10.11.2026 bis 21.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.95904,
-   "lng": 10.86189
-  },
-  {
    "id": 6064,
    "title": "Mühlendamm 14-20",
    "status": "aktuell",
@@ -892,17 +848,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.94053,
    "lng": 10.8392
-  },
-  {
-   "id": 6116,
-   "title": "Parkstraße",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Gertrud",
-   "dates": "19.10.2026 bis 21.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87958,
-   "lng": 10.70071
   },
   {
    "id": 4133,

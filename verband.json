@@ -147,12 +147,6 @@
  ],
  "veranstaltungen": [
   {
-   "datum": "21.11.2026",
-   "zeit": "",
-   "name": "Herbstbesichtigung",
-   "ort": ""
-  },
-  {
    "datum": "23.11.2026",
    "zeit": "19:00",
    "name": "WF-Dienstbesprechung",
@@ -237,5 +231,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-21T16:10:28+00:00"
+ "stand": "2026-11-22T01:38:05+00:00"
 }

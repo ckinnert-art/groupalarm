@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T03:03:31+00:00",
+ "stand": "2026-11-23T12:20:39+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -716,6 +716,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.81961,
    "lng": 10.59068
+  },
+  {
+   "id": 6219,
+   "title": "Moislinger Berg",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "Moisling",
+   "dates": "7.12.2026 bis 25.12.2026",
+   "wirkung": "Fahrbahnverengung. Arbeiten von 9.00 Uhr- 14.30 Uhr.",
+   "lat": 53.84489,
+   "lng": 10.64237
   },
   {
    "id": 6187,

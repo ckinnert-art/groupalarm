@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-22T17:04:19+00:00",
+ "stand": "2026-11-23T03:03:31+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -38,7 +38,7 @@
   {
    "id": 6214,
    "title": "Alter Wasserturm 2-20",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23564",
    "teil": "St. Jürgen",
    "dates": "23.11.2026 bis 12.12.2026",
@@ -71,7 +71,7 @@
   {
    "id": 6213,
    "title": "Auf dem Baggersand 19 - 25",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23570",
    "teil": "Travemünde",
    "dates": "23.11.2026 bis 26.11.2026",
@@ -126,7 +126,7 @@
   {
    "id": 6197,
    "title": "Bei den Obstgärten (zwischen Herrenholz und Nr. 4)",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "Buntekuh",
    "dates": "23.11.2026 bis 17.12.2026",
@@ -137,7 +137,7 @@
   {
    "id": 6207,
    "title": "Beim Meilenstein ggü. 14",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23568",
    "teil": "St. Gertrud",
    "dates": "23.11.2026 bis 18.12.2026",
@@ -155,6 +155,17 @@
    "wirkung": "Zufahrten zur Tankstelle gesperrt",
    "lat": 53.9122,
    "lng": 10.79269
+  },
+  {
+   "id": 6205,
+   "title": "Brandenbaumer Landstr. 177",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "7.12.2026 bis 18.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85421,
+   "lng": 10.73652
   },
   {
    "id": 6157,
@@ -291,7 +302,7 @@
   {
    "id": 6212,
    "title": "Dummersdorfer Straße 2",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23569",
    "teil": "Kücknitz",
    "dates": "23.11.2026 bis 23.11.2026",
@@ -390,7 +401,7 @@
   {
    "id": 6169,
    "title": "Finkenberg 38",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23558",
    "teil": "St. Lorenz-Süd",
    "dates": "23.11.2026 bis 26.11.2026",
@@ -401,7 +412,7 @@
   {
    "id": 6210,
    "title": "Flintenbreite Ecke Paul-Gerhardt-Straße",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "23.11.2026 bis 18.12.2026",
@@ -808,7 +819,7 @@
   {
    "id": 6132,
    "title": "Niendorfer Hauptstraße, Ecke Grote Bleeken",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23560",
    "teil": "Moisling",
    "dates": "23.11.2026 bis 4.12.2026",
@@ -962,7 +973,7 @@
   {
    "id": 6139,
    "title": "St. Gertrud / Diamantweg",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23566",
    "teil": "St. Gertrud",
    "dates": "23.11.2026 bis 13.12.2026",

@@ -1,6 +1,18 @@
 {
  "einsaetze": [
   {
+   "datum": "23.11.2026",
+   "zeit": "10:53",
+   "wehr": "FF Büssau",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.11.2026",
+   "zeit": "10:53",
+   "wehr": "FF Kronsforde",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "21.11.2026",
    "zeit": "12:32",
    "wehr": "FF Dummersdorf",
@@ -131,27 +143,9 @@
    "zeit": "16:22",
    "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.11.2026",
-   "zeit": "10:12",
-   "wehr": "Führung FF",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "10.11.2026",
-   "zeit": "01:04",
-   "wehr": "FF Travemünde",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
-  {
-   "datum": "23.11.2026",
-   "zeit": "19:00",
-   "name": "WF-Dienstbesprechung",
-   "ort": ""
-  },
   {
    "datum": "30.11.2026",
    "zeit": "",
@@ -231,5 +225,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-22T01:38:05+00:00"
+ "stand": "2026-11-23T23:57:17+00:00"
 }

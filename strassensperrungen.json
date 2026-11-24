@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T12:20:39+00:00",
+ "stand": "2026-11-24T00:18:13+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -298,17 +298,6 @@
    "wirkung": "Fahrbahnverengung - Vollsperrung",
    "lat": 53.86814,
    "lng": 10.68693
-  },
-  {
-   "id": 6212,
-   "title": "Dummersdorfer Straße 2",
-   "status": "aktuell",
-   "plz": "23569",
-   "teil": "Kücknitz",
-   "dates": "23.11.2026 bis 23.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.91341,
-   "lng": 10.80678
   },
   {
    "id": 6129,
@@ -729,17 +718,6 @@
    "lng": 10.64237
   },
   {
-   "id": 6187,
-   "title": "Moorredder 4",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "16.11.2026 bis 23.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.96221,
-   "lng": 10.86132
-  },
-  {
    "id": 6178,
    "title": "Morier Straße 41",
    "status": "aktuell",
@@ -918,7 +896,7 @@
   {
    "id": 6200,
    "title": "Schauenburger Weg 15",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23556",
    "teil": "St. Lorenz-Nord",
    "dates": "24.11.2026 bis 8.12.2026",
@@ -1057,17 +1035,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.91942,
    "lng": 10.82257
-  },
-  {
-   "id": 6164,
-   "title": "Wilhelm-Geusendam-Weg",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "12.11.2026 bis 23.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83714,
-   "lng": 10.68216
   },
   {
    "id": 5979,

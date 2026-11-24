@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-24T00:18:13+00:00",
+ "stand": "2026-11-24T10:22:47+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -45,6 +45,17 @@
    "wirkung": "Fahrbahnverengung - Wanderbaustelle",
    "lat": 53.85568,
    "lng": 10.7007
+  },
+  {
+   "id": 6221,
+   "title": "Am Am Stadtrand 5-21",
+   "status": "aktuell",
+   "plz": "Lübeck",
+   "teil": "St. Lorenz-Nord",
+   "dates": "23.11.2026 bis 23.12.2026",
+   "wirkung": "Vollsperrung",
+   "lat": 53.88265,
+   "lng": 10.65154
   },
   {
    "id": 6090,
@@ -584,6 +595,17 @@
    "wirkung": "Fahrbahnverengung mit Vollsperrung vom 09. - 24.11.2026",
    "lat": 53.88146,
    "lng": 10.6931
+  },
+  {
+   "id": 6220,
+   "title": "Kreuzungsbereich Beckergrube / Kupferschmiedestraße / Fünfhausen / Breite Straße",
+   "status": "aktuell",
+   "plz": "23552",
+   "teil": "Innenstadt",
+   "dates": "8.10.2026 bis 4.12.2026",
+   "wirkung": "Halbseitige Sperrung",
+   "lat": 53.86952,
+   "lng": 10.68471
   },
   {
    "id": 6047,

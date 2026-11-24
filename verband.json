@@ -79,6 +79,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "14.11.2026",
+   "zeit": "09:01",
+   "wehr": "FF Innenstadt",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "13.11.2026",
    "zeit": "15:25",
    "wehr": "FF Genin",
@@ -137,12 +143,6 @@
    "zeit": "14:46",
    "wehr": "FF Priwall",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "11.11.2026",
-   "zeit": "12:53",
-   "wehr": "FF Priwall",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -225,5 +225,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-24T09:20:11+00:00"
+ "stand": "2026-11-24T20:17:32+00:00"
 }

@@ -2,6 +2,12 @@
  "einsaetze": [
   {
    "datum": "23.11.2026",
+   "zeit": "13:39",
+   "wehr": "FF Genin",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.11.2026",
    "zeit": "10:53",
    "wehr": "FF Büssau",
    "art": "Brandeinsatz"
@@ -137,12 +143,6 @@
    "zeit": "12:53",
    "wehr": "FF Priwall",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "10.11.2026",
-   "zeit": "16:22",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -225,5 +225,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-23T23:57:17+00:00"
+ "stand": "2026-11-24T09:20:11+00:00"
 }

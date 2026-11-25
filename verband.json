@@ -19,6 +19,12 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "22.11.2026",
+   "zeit": "07:27",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "21.11.2026",
    "zeit": "12:32",
    "wehr": "FF Dummersdorf",
@@ -55,9 +61,27 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "17.11.2026",
+   "zeit": "22:54",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "16.11.2026",
+   "zeit": "12:50",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "16.11.2026",
    "zeit": "06:32",
    "wehr": "FF Wulfsdorf-Vorrade",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "16.11.2026",
+   "zeit": "00:05",
+   "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
   },
   {
@@ -118,30 +142,6 @@
    "datum": "12.11.2026",
    "zeit": "15:18",
    "wehr": "FF Siems",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "14:46",
-   "wehr": "FF Genin",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "13:36",
-   "wehr": "FF Moisling",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "10:03",
-   "wehr": "FF Büssau",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "04:22",
-   "wehr": "FF Vorwerk",
    "art": "Hilfeleistungseinsatz"
   }
  ],
@@ -225,5 +225,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-25T13:32:54+00:00"
+ "stand": "2026-11-25T22:49:15+00:00"
 }

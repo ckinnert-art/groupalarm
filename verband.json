@@ -74,6 +74,12 @@
   },
   {
    "datum": "14.11.2026",
+   "zeit": "18:50",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "14.11.2026",
    "zeit": "09:02",
    "wehr": "FF Vorwerk",
    "art": "Brandeinsatz"
@@ -91,10 +97,22 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "13.11.2026",
+   "zeit": "13:51",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "12.11.2026",
    "zeit": "15:58",
    "wehr": "FF Kücknitz",
    "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "12.11.2026",
+   "zeit": "15:57",
+   "wehr": "FF Schlutup",
+   "art": "Brandeinsatz"
   },
   {
    "datum": "12.11.2026",
@@ -125,24 +143,6 @@
    "zeit": "04:22",
    "wehr": "FF Vorwerk",
    "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "04:22",
-   "wehr": "FF Dänischburg",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "11.11.2026",
-   "zeit": "14:46",
-   "wehr": "FF Travemünde",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "11.11.2026",
-   "zeit": "14:46",
-   "wehr": "FF Priwall",
-   "art": "Brandeinsatz"
   }
  ],
  "veranstaltungen": [
@@ -225,5 +225,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-24T20:17:32+00:00"
+ "stand": "2026-11-25T13:32:54+00:00"
 }

@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-25T14:15:51+00:00",
+ "stand": "2026-11-25T23:16:23+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -342,17 +342,6 @@
    "wirkung": "Wanderbaustelle - Vollsperrung teilweise Fahrbahnverengung",
    "lat": 53.85977,
    "lng": 10.70537
-  },
-  {
-   "id": 6204,
-   "title": "Eric-Warburg-Brücke",
-   "status": "aktuell",
-   "plz": "23568",
-   "teil": "St. Gertrud",
-   "dates": "25.11.2026 bis 25.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.88384,
-   "lng": 10.69225
   },
   {
    "id": 6195,
@@ -870,17 +859,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.91195,
    "lng": 10.80818
-  },
-  {
-   "id": 6198,
-   "title": "Rosa-Luxemburg-Straße 1-15",
-   "status": "aktuell",
-   "plz": "23560",
-   "teil": "St. Jürgen",
-   "dates": "16.11.2026 bis 25.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.83792,
-   "lng": 10.68492
   },
   {
    "id": 6200,

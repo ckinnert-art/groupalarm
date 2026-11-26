@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-26T05:24:51+00:00",
+ "stand": "2026-11-26T15:43:24+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -56,6 +56,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.88265,
    "lng": 10.65154
+  },
+  {
+   "id": 6225,
+   "title": "An den Schießständen",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "30.11.2026 bis 22.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.84883,
+   "lng": 10.74393
   },
   {
    "id": 6090,
@@ -144,6 +155,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.85427,
    "lng": 10.62692
+  },
+  {
+   "id": 6234,
+   "title": "Beidendorfer Hauptstraße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "30.11.2026 bis 11.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.78755,
+   "lng": 10.67675
   },
   {
    "id": 6207,
@@ -377,6 +399,17 @@
    "lng": 10.69848
   },
   {
+   "id": 6228,
+   "title": "Finkenberg",
+   "status": "geplant",
+   "plz": "23558",
+   "teil": "St. Lorenz-Süd",
+   "dates": "7.12.2026 bis 10.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85483,
+   "lng": 10.66997
+  },
+  {
    "id": 6169,
    "title": "Finkenberg 38",
    "status": "aktuell",
@@ -397,6 +430,28 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88742,
    "lng": 10.65804
+  },
+  {
+   "id": 6233,
+   "title": "Forstweg",
+   "status": "aktuell",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "25.11.2026 bis 11.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91184,
+   "lng": 10.7889
+  },
+  {
+   "id": 6227,
+   "title": "Fregattenstrasse",
+   "status": "geplant",
+   "plz": "23588",
+   "teil": "Buntekuh",
+   "dates": "30.11.2026 bis 17.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.85923,
+   "lng": 10.65373
   },
   {
    "id": 5953,
@@ -487,6 +542,17 @@
    "lng": 10.74658
   },
   {
+   "id": 6230,
+   "title": "Ivendorfer Landstrasse",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "1.12.2026 bis 29.1.2027",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.94407,
+   "lng": 10.8487
+  },
+  {
    "id": 6194,
    "title": "Ivendorfer Landstraße 66a",
    "status": "aktuell",
@@ -540,6 +606,17 @@
    "wirkung": "Vollsperrung",
    "lat": 53.8389,
    "lng": 10.67649
+  },
+  {
+   "id": 6224,
+   "title": "Kirschenallee",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "30.11.2026 bis 22.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.87057,
+   "lng": 10.74854
   },
   {
    "id": 6156,
@@ -784,6 +861,17 @@
    "lng": 10.6911
   },
   {
+   "id": 6236,
+   "title": "Niendorfer Hauptstraße",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "30.11.2026 bis 16.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.83045,
+   "lng": 10.60956
+  },
+  {
    "id": 6132,
    "title": "Niendorfer Hauptstraße, Ecke Grote Bleeken",
    "status": "aktuell",
@@ -815,6 +903,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.84095,
    "lng": 10.63184
+  },
+  {
+   "id": 6235,
+   "title": "Otternweg",
+   "status": "geplant",
+   "plz": "23560",
+   "teil": "St. Jürgen",
+   "dates": "30.11.2026 bis 1.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.80115,
+   "lng": 10.6258
   },
   {
    "id": 6180,
@@ -872,6 +971,17 @@
    "lng": 10.65064
   },
   {
+   "id": 6226,
+   "title": "Schlutuper Straße",
+   "status": "geplant",
+   "plz": "23566",
+   "teil": "St. Gertrud",
+   "dates": "30.11.2026 bis 22.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.86862,
+   "lng": 10.73478
+  },
+  {
    "id": 5952,
    "title": "Schäferkamp 3 - 11",
    "status": "aktuell",
@@ -927,6 +1037,17 @@
    "lng": 10.68144
   },
   {
+   "id": 6231,
+   "title": "Spitzbergenstraße",
+   "status": "geplant",
+   "plz": "23570",
+   "teil": "Travemünde",
+   "dates": "30.11.2026 bis 11.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.96916,
+   "lng": 10.86158
+  },
+  {
    "id": 6139,
    "title": "St. Gertrud / Diamantweg",
    "status": "aktuell",
@@ -936,6 +1057,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.86221,
    "lng": 10.74044
+  },
+  {
+   "id": 6232,
+   "title": "Tannenbergstraße",
+   "status": "geplant",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "1.12.2026 bis 2.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91999,
+   "lng": 10.81882
   },
   {
    "id": 6165,
@@ -958,6 +1090,17 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.88888,
    "lng": 10.67862
+  },
+  {
+   "id": 6223,
+   "title": "Waldhusener Weg",
+   "status": "geplant",
+   "plz": "23569",
+   "teil": "Kücknitz",
+   "dates": "30.11.2026 bis 22.12.2026",
+   "wirkung": "Fahrbahnverengung",
+   "lat": 53.91706,
+   "lng": 10.79013
   },
   {
    "id": 1576,

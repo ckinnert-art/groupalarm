@@ -1,10 +1,40 @@
 {
  "einsaetze": [
   {
+   "datum": "26.11.2026",
+   "zeit": "09:07",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "25.11.2026",
+   "zeit": "23:50",
+   "wehr": "LZG",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "25.11.2026",
+   "zeit": "23:50",
+   "wehr": "FF Dummersdorf",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
+   "datum": "25.11.2026",
+   "zeit": "23:48",
+   "wehr": "FF Siems",
+   "art": "Hilfeleistungseinsatz"
+  },
+  {
    "datum": "23.11.2026",
    "zeit": "13:39",
    "wehr": "FF Genin",
    "art": "Brandeinsatz"
+  },
+  {
+   "datum": "23.11.2026",
+   "zeit": "13:38",
+   "wehr": "FF Krummesse",
+   "art": "Hilfeleistungseinsatz"
   },
   {
    "datum": "23.11.2026",
@@ -23,6 +53,12 @@
    "zeit": "07:27",
    "wehr": "FF Schlutup",
    "art": "Brandeinsatz"
+  },
+  {
+   "datum": "21.11.2026",
+   "zeit": "12:39",
+   "wehr": "FF Travemünde",
+   "art": "Hilfeleistungseinsatz"
   },
   {
    "datum": "21.11.2026",
@@ -74,6 +110,12 @@
   },
   {
    "datum": "16.11.2026",
+   "zeit": "07:26",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
+   "datum": "16.11.2026",
    "zeit": "06:32",
    "wehr": "FF Wulfsdorf-Vorrade",
    "art": "Brandeinsatz"
@@ -91,58 +133,16 @@
    "art": "Brandeinsatz"
   },
   {
+   "datum": "15.11.2026",
+   "zeit": "13:48",
+   "wehr": "FF Padelügge Buntekuh",
+   "art": "Brandeinsatz"
+  },
+  {
    "datum": "14.11.2026",
    "zeit": "19:19",
    "wehr": "FF Wulfsdorf-Vorrade",
    "art": "Brandeinsatz"
-  },
-  {
-   "datum": "14.11.2026",
-   "zeit": "18:50",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "14.11.2026",
-   "zeit": "09:02",
-   "wehr": "FF Vorwerk",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "14.11.2026",
-   "zeit": "09:01",
-   "wehr": "FF Innenstadt",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "13.11.2026",
-   "zeit": "15:25",
-   "wehr": "FF Genin",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "13.11.2026",
-   "zeit": "13:51",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "15:58",
-   "wehr": "FF Kücknitz",
-   "art": "Hilfeleistungseinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "15:57",
-   "wehr": "FF Schlutup",
-   "art": "Brandeinsatz"
-  },
-  {
-   "datum": "12.11.2026",
-   "zeit": "15:18",
-   "wehr": "FF Siems",
-   "art": "Hilfeleistungseinsatz"
   }
  ],
  "veranstaltungen": [
@@ -225,5 +225,5 @@
    "ort": "Wulfsdorf-Vorrade"
   }
  ],
- "stand": "2026-11-25T22:49:15+00:00"
+ "stand": "2026-11-26T23:36:53+00:00"
 }

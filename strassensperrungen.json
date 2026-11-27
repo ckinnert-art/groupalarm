@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-26T15:43:24+00:00",
+ "stand": "2026-11-27T00:31:32+00:00",
  "quelle": "https://www.luebeck.de/de/rathaus/verwaltung/stadtgruen-und-verkehr/baustelleninfo/baustelleninfo",
  "baustellen": [
   {
@@ -89,17 +89,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.87048,
    "lng": 10.6623
-  },
-  {
-   "id": 6213,
-   "title": "Auf dem Baggersand 19 - 25",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "23.11.2026 bis 26.11.2026",
-   "wirkung": "Vollsperrung",
-   "lat": 53.95547,
-   "lng": 10.85763
   },
   {
    "id": 5894,
@@ -410,17 +399,6 @@
    "lng": 10.66997
   },
   {
-   "id": 6169,
-   "title": "Finkenberg 38",
-   "status": "aktuell",
-   "plz": "23558",
-   "teil": "St. Lorenz-Süd",
-   "dates": "23.11.2026 bis 26.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.85556,
-   "lng": 10.67089
-  },
-  {
    "id": 6210,
    "title": "Flintenbreite Ecke Paul-Gerhardt-Straße",
    "status": "aktuell",
@@ -518,17 +496,6 @@
    "wirkung": "Vollsperrung",
    "lat": 53.82432,
    "lng": 10.59836
-  },
-  {
-   "id": 6159,
-   "title": "Holländerkoppel 10",
-   "status": "aktuell",
-   "plz": "23556",
-   "teil": "St. Lorenz-Nord",
-   "dates": "12.11.2026 bis 26.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.87355,
-   "lng": 10.62515
   },
   {
    "id": 6128,
@@ -672,17 +639,6 @@
    "wirkung": "Fahrbahnverengung",
    "lat": 53.82157,
    "lng": 10.65379
-  },
-  {
-   "id": 6192,
-   "title": "Lindwurmstraße und Am Krautacker",
-   "status": "aktuell",
-   "plz": "23570",
-   "teil": "Travemünde",
-   "dates": "16.11.2026 bis 26.11.2026",
-   "wirkung": "Fahrbahnverengung",
-   "lat": 53.95688,
-   "lng": 10.84611
   },
   {
    "id": 6208,
@@ -1083,7 +1039,7 @@
   {
    "id": 6218,
    "title": "Triftstraße 79",
-   "status": "geplant",
+   "status": "aktuell",
    "plz": "23554",
    "teil": "St. Lorenz-Nord",
    "dates": "27.11.2026 bis 18.12.2026",
